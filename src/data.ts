@@ -35,18 +35,18 @@ type imageLinkType = InstanceType<typeof imageLink>
 
 export const gameImages={
   buttonsTrail: new imageLink('/images/buttonsTrail.png', 'https://wansou.itch.io/buttons-trail'),
-  doodleBullets: new imageLink('/images/doodleBullets.png',''),
-  droidVisChanger: new imageLink('/images/droidVisChanger.png',''),
-  dyingSwitch: new imageLink('/images/dyingSwitch.png',''),
-  forwardAdventure: new imageLink('/images/forwardAdventure.png',''),
-  idleParticles: new imageLink('/images/idleParticles.png',''),
-  lootbags: new imageLink('/images/lootbags.png',''),
-  match2048: new imageLink('/images/match2048.png',''),
-  quickCiv: new imageLink('/images/quickCiv.png',''),
+  doodleBullets: new imageLink('/images/doodleBullets.png','https://wansou.itch.io/doodle-bullets'),
+  droidVisChanger: new imageLink('/images/droidVisChanger.png','https://steamcommunity.com/sharedfiles/filedetails/?id=1970775475'),
+  dyingSwitch: new imageLink('/images/dyingSwitch.png','https://wansou.itch.io/dying-switch'),
+  forwardAdventure: new imageLink('/images/forwardAdventure.png','https://wansou.itch.io/forward-adventure'),
+  idleParticles: new imageLink('/images/idleParticles.png','https://wansou.itch.io/idle-particle-simulator'),
+  lootbags: new imageLink('/images/lootbags.png','https://steamcommunity.com/sharedfiles/filedetails/?id=1977502034'),
+  match2048: new imageLink('/images/match2048.png','https://wansou.itch.io/match-2048'),
+  quickCiv: new imageLink('/images/quickCiv.png','https://wansou.itch.io/quick-civ'),
 }
 
 export const miscImages={
-  itchBanner: new imageLink('/images/itchBanner.png',''),
+  itchBanner: new imageLink('/images/itchBanner.png','https://wansou.itch.io'),
 }
 
 export const showcase=[
@@ -147,11 +147,11 @@ class footerLink {
 
 export const footerData={
   icons: [
-    new footerIcon(icons.github, "https://github.com/WanSouu"),
-    new footerIcon(icons.x, "https://twitter.com/WanSouWasTaken"),
+    new footerIcon(icons.github, "https://github.com/WanTheDev"),
+    new footerIcon(icons.x, "https://twitter.com/WanTheDev"),
     new footerIcon(icons.youtube,"https://www.youtube.com/channel/UCYkk_vCc9g36VvVQEF6_NAg"),
-    new footerIcon(icons.itch,"https://wansou.itch.io"),
-    new footerIcon(icons.leetcode,"https://leetcode.com/WanSouu/")
+    new footerIcon(icons.itch,"https://wanthedev.itch.io"),
+    new footerIcon(icons.leetcode,"leetcode.com/WanTheDev")
   ],
   links: [
     new footerLink("Vite", "https://vitejs.dev"),
