@@ -22,5 +22,14 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+*.cjs
 
+vite.config.ts
+tsconfig.node.json
+tsconfig.json
+postcss.config.js
+tsconfig.node.json
+package.json
+package-lock.json
 gh-pages-publish.js
+.gitignore
