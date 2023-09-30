@@ -6,36 +6,15 @@ import HomeSection from "../components/HomeSection";
 import StarryArea from "../components/StarryArea";
 import GlowingImage from "../components/GlowingImage";
 
-/*
-function GlowingImage({image}:{image:string}) {
-  return(
-  <>
-      <Image radius="xl" src={image} className={classes.floating} data-blurry pos="absolute" />
-      <Image radius="xl" src={image} className={classes.floating} />
-  </>
-  )
-}
-function GlowingIcon({image, maxHeight='35vw'}:{image:string, maxHeight: string | number, }) {
-  const largeScreen = useMediaQuery('(min-width: 60em)');
-
-  return(
-      <Container style={{zIndex: 1, maxWidth: "50vw", maxHeight: maxHeight, aspectRatio: 1}}  pos="relative">
-          <Image pos="absolute" src={image} className={classes.floating} data-blurry/>
-          <Image pos="absolute" src={image} className={classes.floating}/>
-      </Container>
-  )
-}
-*/
-
-function Showcase({showHalf}:{showHalf:boolean}) {
+function Showcase({showHalf, wrap=false}:{showHalf:boolean, wrap?:boolean}) {
   return(
       <Stack h="fit-content">
       <Title style={{textAlign: 'center'}}>Showcase</Title>
-      <Flex wrap="wrap" justify="center" align="center" gap="xl" p="md" pos="relative">
+      <Flex wrap="wrap" justify="center" align="center" gap="xl" pos="relative">
           {
           new Array(showHalf ? showcase.length/2 : showcase.length).fill(0).map((_, curPic) => {
               return(
-              <Box pos="relative" w="40%" component="a" href={showcase[curPic].link} target="_blank" className={classes.hoverContainer}  key={curPic}>
+              <Box pos="relative" w={wrap ? "40vh" : "40%"} component="a" href={showcase[curPic].link} target="_blank" className={classes.hoverContainer} key={curPic}>
                   <GlowingImage image={showcase[curPic].image} radius="xl"/>
               </Box>
               )
@@ -47,32 +26,26 @@ function Showcase({showHalf}:{showHalf:boolean}) {
   )
 }
 
-function About() {
-//const {classes} = useStyles()
-return(
-    <Stack h="fit-content">
-    <Title>WanSou</Title>
-    <Text>{aboutData[0]}</Text>
-    <Space />
-    <a href={miscImages.itchBanner.link} target="_blank" className={classes.bannerContainer}>
-        <GlowingImage image={miscImages.itchBanner.image} radius="xl"/>
-    </a>
-    <Space />
-    <Text>{aboutData[1]}</Text>
-    </Stack>
-)
-}
-
 export default function HomePage() {
     const largeScreen = useMediaQuery('(min-width: 60em)');
+    const mediumScreen = useMediaQuery('(min-width: 100em)');
     const smallScreen = useMediaQuery('(max-width: 32em)');
-
+    const curFontSize=smallScreen ? "sm" : "md"
     return(
       <Stack p="xl" gap={largeScreen ? "xl" : "sm" }>
         
         <SimpleGrid cols={largeScreen ? 2 : 1} spacing="xl">
-          <Showcase showHalf={smallScreen || false}/>
-          <About />
+          <Showcase showHalf={(smallScreen || (!mediumScreen && largeScreen)) || false} wrap={(!mediumScreen && largeScreen)}/>
+          <Stack h="fit-content">
+            <Title>WanSou</Title>
+            <Text fz={curFontSize}>{aboutData[0]}</Text>
+            <Space />
+            <a href={miscImages.itchBanner.link} target="_blank" className={classes.bannerContainer}>
+                <GlowingImage image={miscImages.itchBanner.image} radius="xl"/>
+            </a>
+            <Space />
+            <Text fz={curFontSize}>{aboutData[1]}</Text>
+          </Stack>
         </SimpleGrid>
         {
           sectionData.map((sectionData, sectionNum) => 
@@ -95,7 +68,7 @@ export default function HomePage() {
                 }}>{sectionData.title}</Title>
                 
               </div>
-              <Text>{sectionData.description}</Text>
+              <Text fz={curFontSize}>{sectionData.description}</Text>
               
             </HomeSection>
           )
