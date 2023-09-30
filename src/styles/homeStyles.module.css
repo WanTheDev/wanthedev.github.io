@@ -1,0 +1,42 @@
+
+
+@keyframes hover {
+    from, to {
+        transform: translate(4%,5%) rotate(0deg);
+    }
+    25% {
+        transform: translate(-2.5%,2%) rotate(-4deg);
+    }
+
+    75% {
+        transform: translate(1%,3%) rotate(4deg);
+    }
+}
+
+.floating {
+    animation: hover 5000ms ease infinite;
+    user-select: none;
+    pointer-events: none;
+    transform-origin: top;
+    z-index: 0;
+    &[data-blurry] {
+        filter: blur(2rem);
+    }
+}
+
+.bannerContainer {
+    position: relative;
+    cursor: pointer;
+    aspect-ratio: 14/4;
+    transition: transform 0.25s ease;
+}
+.bannerContainer:hover {
+    transform: scale(1.05);
+}
+.hoverContainer {
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+.hoverContainer:hover {
+    transform: scale(1.05)
+}

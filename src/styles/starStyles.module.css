@@ -1,0 +1,40 @@
+@keyframes star {
+    from, to {
+        transform: translate(4%,5%) rotate(0deg);
+        opacity: 20%;
+    }
+    25% {
+        transform: translate(-2.5%,2%) rotate(-4deg);
+        opacity: 60%;
+    }
+
+    75% {
+        transform: translate(1%,3%) rotate(4deg);
+        opacity: 40%;
+    }
+}
+
+.star {
+    user-select: none;
+    pointer-events: none;
+    transform-origin: center;
+    filter: blur(1px);
+    &[data-glow] {
+        scale: 0.5 2;
+        opacity: 0.33;
+        filter: blur(2px);
+    }
+    &[data-shadow] {
+        scale: 2 2;
+        filter: blur(6px);
+    }
+}
+
+.wobble {
+    animation: star 10000ms ease infinite;
+    aspect-ratio: 1;
+    padding: 0;
+    &[data-foreground] {
+        z-index: 2;
+    }
+}

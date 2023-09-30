@@ -1,0 +1,7 @@
+.footerIcon {
+    max-width: 48px;
+    aspect-ratio: 1;
+}
+.link {
+    color: var(--mantine-color-primary-1);
+}
