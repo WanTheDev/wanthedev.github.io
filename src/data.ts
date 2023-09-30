@@ -93,34 +93,39 @@ class section {
 }
 //type sectionDataType=InstanceType<typeof section>
 
+export const aboutData=[
+  "I've been programming since late 2018, starting with game development and later transitioning to web development. While I have a solid foundation in web development, my true passion lies in game development. I've created numerous games using Game Maker Studio 2, which uses the GML language; a fortunate overlap with JavaScript, making web development more accessible for me.",
+  "As a self-driven programmer, I've thrived on the challenges of game development, pushing the boundaries of creativity and technical problem-solving. My journey in this field has seen me tackle a diverse range of projects, from 2D platformers to complex simulations, each teaching me valuable lessons in design, optimization, and user engagement. This hands-on experience has honed my ability to bring concepts to life while ensuring a seamless and enjoyable user experience."
+]
+
 export const sectionData=[
   new section(
     [icons.gms2, icons.js], ["white 40%", "gold 70%"],
-    "GML & JS", "I've started with GML back in 2018, it was a very forgiving and intuitive language which made it really easy to learn, it was a really nice introduction to a lot of programming concepts which came in hand when learning JS, luckily these 2 languages are really similar so I've mastered them both really quickly."),
+    "GML & JS", "In web development, I've used my solid JavaScript skills to craft interactive and user-friendly web apps. This blend of game and web work has broadened my skill set and provided me with a unique perspective on merging gaming and web technologies. I'm excited about applying this mix of expertise to future projects and collaborations."),
   
   new section(
     [icons.nodejs], ["lawngreen", "limegreen"],
-    "Node.js", "This was a huge leap in difficulty for me, I've decided to try making a multiplayer game which sounds easier than it actually was, I made a quick prototype of a game in GML and then connected multiple clients to a Node.js server, it was a nice introduction to backend development which came in handy later on when I got into web development."),
+    "Node.js", "Diving into Node.js backend development was quite a challenge. I decided to venture into creating a multiplayer game, which, on the surface, seemed simpler than it turned out to be. I started with a swift GML game prototype and then connected multiple clients to a Node.js server. This experience served as a valuable introduction to backend development, and it has proven to be a useful foundation as I delved further into web development."),
   
   new section(
     [icons.html,icons.css,icons.react], ["orangered","#b15ba8 21%, royalblue 42%, #2bcbf2 63%, cyan"],
-    "HTML, CSS & React","Later on I've moved onto web development, starting out with raw HTML & CSS and then learning about frameworks, out of all I've picked React due to the concept of components being really appealing to me, and component libraries making web applications really easy and fast to create."),
+    "HTML, CSS & React","Then, I made the shift to web development, beginning with the basics of HTML and CSS before exploring various frameworks. Among them, React caught my attention because I found the concept of components incredibly appealing. The availability of component libraries made the process of creating web applications both smooth and efficient."),
   
   new section(
     [icons.vite,icons.ts],["darkorchid 30%", "royalblue 60%"],
-    "Vite & Typescript","I learned about Vite which made setting up projects 10x faster, funnily enough Vite is how I learned about Typescript and even though I prefer Javascript, I still use Typescript due to it being type safe and more readable."),
+    "Vite & Typescript","Later on, I found Vite, a tool that made setting up projects much faster. While using Vite, I also learned about Typescript. Despite my preference for JavaScript, I started using Typescript because it makes code safer and easier to understand. It's become a valuable part of my development toolkit."),
   
   new section(
     [icons.firebase],["orange", "gold 40%"],
-    "Firebase","This is when I realised I am really close to being a full stack developer, which is why I tried using firebase as a good starting point for database managment & backend development, I decided to make a store web app with an admin panel, it surprisingly worked and the backend introduction went a lot smoother than I expected."),
+    "Firebase","At that moment, I realized I was getting close to becoming a full-stack developer. So, I decided to use Firebase as a starting point for managing databases and backend development. I took on the challenge of creating a web store app with an admin panel, and to my pleasant surprise, it all went much smoother than I expected."),
   
   new section(
     [icons.express],["white", "gray"],
-    "Express","Afterwards I tried learning more about node.js and how could I use it to make my own web server, I went through a whole course which taught me a lot of important topics about middleware and security, later on I decided to switch to express.js due to it being easier to use."),
+    "Express","Later on, I decided to explore more Node.js and its applications in building web servers. I took a course that taught me important concepts like middleware and security. As I progressed, I made the choice to transition to Express.js, driven by its user-friendly nature and ease of implementation."),
   
   new section(
     [icons.python,icons.cpp],["gold", "#e6bc5c 35%, #8e7ebe 45%, royalblue 50%"],
-    "Python & C++","I didn't mention these languages yet, but I did learn Python and C++ way before web development, but due to not needing these languages for any projects, I haven't used them in a long time, but I still know these languages and can use them effectively.")
+    "Python & C++","Before diving into web development, I learned Python and C++. While I haven't used them in my recent projects, it's important to note that I still possess a solid grasp of these languages. Although some time has passed since my last hands-on experience with Python and C++, my proficiency in both languages remains intact. I may not have had the chance to showcase them in recent work, but they are valuable tools that I can readily bring to the table when the need arises.")
 ]
 
 class footerIcon {

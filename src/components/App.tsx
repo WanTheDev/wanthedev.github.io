@@ -6,22 +6,27 @@ import ContactPage from "../pages/ContactPage.tsx"
 import HomePage from "../pages/HomePage.tsx"
 
 export default function App() {
-  //
   return (
     <BrowserRouter basename="/">
-      {/* Routes */}
       <Routes>
-        <Route path="/" element={<><Header /><Outlet /></>}>
+
+        { /* Root path which defines the page layout */}
+        <Route path="/" element={
+            <> {/* Page layout */}
+              <Header /> {/* Header */}
+              <Outlet /> {/* Page content */}
+              <PageFooter /> {/* Page footer */}
+            </>
+        }>
+
+          {/* Routes inside the root path serving page content as <Outlet /> */}
           <Route path="" element={<HomePage />}/>
           <Route path="contact" element={<ContactPage />}/>
           <Route path="projects" element={<ProjectsPage />}/>
+
         </Route>
-        
+
       </Routes>
-      
-      {/* Footer */}
-      <PageFooter />
-    
     </BrowserRouter>
   );
 }

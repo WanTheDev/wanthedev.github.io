@@ -1,0 +1,22 @@
+@keyframes hover {
+    from, to {
+        transform: translate(1%,1%) rotate(0deg);
+    }
+    25% {
+        transform: translate(-2%,2%) rotate(-1deg);
+    }
+
+    75% {
+        transform: translate(1%,-1%) rotate(1deg);
+    }
+}
+
+.floating {
+    animation: hover 6500ms ease-in-out infinite;
+    user-select: none;
+    pointer-events: none;
+    z-index: 0;
+    &[data-blurry] {
+        filter: blur(2rem);
+    }
+}

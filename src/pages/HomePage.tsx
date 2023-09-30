@@ -1,46 +1,50 @@
-import { Box, Container, Flex, Group, Image, SimpleGrid, Stack, Text, Title } from "@mantine/core";
+import { Box, Flex, SimpleGrid, Space, Stack, Text, Title } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import classes from '../styles/homeStyles.module.css'
-import { miscImages, sectionData, showcase } from "../data";
-import React from "react";
+import { miscImages, sectionData, showcase, aboutData } from "../data";
+import HomeSection from "../components/HomeSection";
+import StarryArea from "../components/StarryArea";
+import GlowingImage from "../components/GlowingImage";
 
+/*
 function GlowingImage({image}:{image:string}) {
-    return(
-    <>
-        <Image radius="xl" src={image} className={classes.floating} data-blurry pos="absolute" />
-        <Image radius="xl" src={image} className={classes.floating} />
-    </>
-    )
+  return(
+  <>
+      <Image radius="xl" src={image} className={classes.floating} data-blurry pos="absolute" />
+      <Image radius="xl" src={image} className={classes.floating} />
+  </>
+  )
 }
-function GlowingIcon({image}:{image:string}) {
-    const largeScreen = useMediaQuery('(min-width: 60em)');
+function GlowingIcon({image, maxHeight='35vw'}:{image:string, maxHeight: string | number, }) {
+  const largeScreen = useMediaQuery('(min-width: 60em)');
 
-    return(
-        <Container style={{zIndex: 1, maxWidth: "50vw", maxHeight: `${largeScreen ? "35" : "20"}vh`, aspectRatio: 1}} p={0} pos="relative">
-            <Image pos="absolute" src={image} className={classes.floating} data-blurry/>
-            <Image pos="absolute" src={image} className={classes.floating}/>
-        </Container>
-    )
+  return(
+      <Container style={{zIndex: 1, maxWidth: "50vw", maxHeight: maxHeight, aspectRatio: 1}}  pos="relative">
+          <Image pos="absolute" src={image} className={classes.floating} data-blurry/>
+          <Image pos="absolute" src={image} className={classes.floating}/>
+      </Container>
+  )
 }
+*/
+
 function Showcase({showHalf}:{showHalf:boolean}) {
-//const {classes} = useStyles()
-//const [gamePictures, setGamePictures] = useState([])
-return(
-    <Stack h="fit-content">
-    <Title style={{align: 'center'}} >Showcase</Title>
-    <Flex wrap="wrap" gap="xl" justify="center" align="center" direction="row" p="md" >
-        {
-        new Array(showHalf ? showcase.length/2 : showcase.length).fill(0).map((_, curPic) => {
-            return(
-            <Box pos="relative" w="40%" component="a" href={showcase[curPic].link} target="_blank" className={classes.hoverContainer}  key={curPic}>
-                <GlowingImage image={showcase[curPic].image}/>
-            </Box>
-            )
-        })
-        }
-    </Flex>
-    </Stack>
-)
+  return(
+      <Stack h="fit-content">
+      <Title style={{textAlign: 'center'}}>Showcase</Title>
+      <Flex wrap="wrap" justify="center" align="center" gap="xl" p="md" pos="relative">
+          {
+          new Array(showHalf ? showcase.length/2 : showcase.length).fill(0).map((_, curPic) => {
+              return(
+              <Box pos="relative" w="40%" component="a" href={showcase[curPic].link} target="_blank" className={classes.hoverContainer}  key={curPic}>
+                  <GlowingImage image={showcase[curPic].image} radius="xl"/>
+              </Box>
+              )
+          })
+          }
+          <StarryArea />
+      </Flex>
+      </Stack>
+  )
 }
 
 function About() {
@@ -48,45 +52,14 @@ function About() {
 return(
     <Stack h="fit-content">
     <Title>WanSou</Title>
-    <Text>I've been programming since late 2018, starting out with simple games and later on moving into web development, although I still consider myself more of a game developer rather than a web developer.</Text>
-    <a href={miscImages.itchBanner.link} target="_blank" className={classes.bannerContainer} >
-        <GlowingImage image={miscImages.itchBanner.image}/>
+    <Text>{aboutData[0]}</Text>
+    <Space />
+    <a href={miscImages.itchBanner.link} target="_blank" className={classes.bannerContainer}>
+        <GlowingImage image={miscImages.itchBanner.image} radius="xl"/>
     </a>
-    <Text>I've made countless of games using Game Maker Studio 2 which uses the GML language, luckily it's very similar to javascript making web development a lot easier for me to learn.</Text>
+    <Space />
+    <Text>{aboutData[1]}</Text>
     </Stack>
-)
-}
-
-function HomeSection({icons, children, side=true}:{icons: Array<string>, children: Array<JSX.Element>, side?:boolean}) {
-const largeScreen = useMediaQuery('(min-width: 60em)');
-//const smallScreen = useMediaQuery('(max-width: 32em)');
-//const [pictureSeeds, _setPictureSeeds] = useState(Array(icons.length).fill(0).map(() => Math.round(Math.random()*255)))
-
-const sectionElements = [
-    <Group w={largeScreen ? "30%" : "100%"} gap="md" wrap="nowrap" grow>
-    {
-        icons.map((curIcon:string, curIndex:number) => 
-        <Container key={curIndex} pos="relative" mt="xl" mb="xl">
-            <GlowingIcon image={curIcon}/>
-        </Container>
-        )
-    }
-    </Group>
-]
-const textSection = 
-<Stack w={largeScreen ? "40%" : "100%"}>
-    {typeof(children)=="object" ? children.map((c:JSX.Element) => c) : children}
-</Stack>
-
-if (side || !largeScreen) { sectionElements.push(textSection) }
-else { sectionElements.unshift(textSection) }
-
-return(
-    <Flex direction={largeScreen ? "row" : "column"} mt={largeScreen ? "xl" : "0"} gap="xl" align="center" justify="space-evenly">
-    {
-        sectionElements.map((curElement, curIndex) => <React.Fragment key={curIndex}>{curElement}</React.Fragment>)
-    }
-    </Flex>
 )
 }
 
