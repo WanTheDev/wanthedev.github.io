@@ -1,75 +1,99 @@
-import { Box, Flex, SimpleGrid, Space, Stack, Text, Title } from "@mantine/core";
+import { Box, Flex, Stack, Text, Title } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import classes from '../styles/homeStyles.module.css'
 import { miscImages, sectionData, showcase, aboutData } from "../data";
 import HomeSection from "../components/HomeSection";
 import StarryArea from "../components/StarryArea";
 import GlowingImage from "../components/GlowingImage";
+import Shadow from "../components/Shadow";
 
-function Showcase({showHalf, wrap=false}:{showHalf:boolean, wrap?:boolean}) {
+function Showcase({showHalf, showcaseDir}:{showHalf:boolean, showcaseDir:boolean}) {
+  const imageSkewAmount = 25
   return(
-      <Stack h="fit-content">
-      <Title style={{textAlign: 'center'}}>Showcase</Title>
-      <Flex wrap="wrap" justify="center" align="center" gap="xl" pos="relative">
-          {
-          new Array(showHalf ? showcase.length/2 : showcase.length).fill(0).map((_, curPic) => {
-              return(
-              <Box pos="relative" w={wrap ? "40vh" : "40%"} component="a" href={showcase[curPic].link} target="_blank" className={classes.hoverContainer} key={curPic}>
-                  <GlowingImage image={showcase[curPic].image} radius="xl"/>
-              </Box>
-              )
-          })
-          }
-          <StarryArea />
-      </Flex>
+      <Stack gap="0">
+        <Title c="text.0" ta="center">Showcase</Title>
+        <Flex h="100%" wrap="wrap" gap="md" direction={(showcaseDir && showHalf) ? "column" : "row"} justify="space-around" align="center" pos="relative">
+            {
+            new Array(showHalf ? showcase.length/2 : showcase.length).fill(0).map((_, curPic) => {
+                return(
+                <Box
+                  w={(showcaseDir && showHalf) ? "100%" : "45%"}
+                  style={(showHalf) ? {} : {marginTop: `${curPic*imageSkewAmount - (imageSkewAmount*3*(+(curPic>1)) + imageSkewAmount * 0.5)}%`}}
+                  
+                  className={classes.hoverContainer}
+                  key={curPic}
+
+                  component="a"
+                  href={showcase[curPic].link}
+                  target="_blank">
+                    <GlowingImage image={showcase[curPic].image} radius="xl"/>
+                </Box>
+                )
+            })
+            }
+            <StarryArea />
+        </Flex>
       </Stack>
   )
 }
 
+function GradientTitle({title, gradientColors}:{title:string, gradientColors: Array<string>}) {
+  return(
+    <div className={classes.gradientTitleContainer}>
+      <Title
+        className={classes.gradientTitle}
+        style={{backgroundImage: `linear-gradient(125deg, ${gradientColors[0]}, ${gradientColors[1]})`}}
+      >
+        {title}
+        <div
+          className={classes.gradientGlow}
+          style={{backgroundImage: `linear-gradient(125deg, ${gradientColors[0]}, ${gradientColors[1]})`}}>
+        </div>
+      </Title>
+    </div>
+  )
+}
+
+function ItchBanner() {
+  return(
+    <>
+    <a href={miscImages.itchBanner.link} target="_blank" className={classes.bannerContainer}>
+        <GlowingImage image={miscImages.itchBanner.image} radius="xl"/>
+    </a>
+    </>
+  )
+}
+
 export default function HomePage() {
-    const largeScreen = useMediaQuery('(min-width: 60em)');
-    const mediumScreen = useMediaQuery('(min-width: 100em)');
-    const smallScreen = useMediaQuery('(max-width: 32em)');
-    const curFontSize=smallScreen ? "sm" : "md"
+    //const largeScreen = useMediaQuery('(min-width: 60em)');
+    //const mediumScreen = useMediaQuery('(min-width: 100em)');
+    //const smallScreen = useMediaQuery('(max-width: 32em)');
+    //const curFontSize=smallScreen ? "sm" : "md"
+    const showHalf = useMediaQuery('(max-width: 80em)') || false
+    const showcaseDir = useMediaQuery('(min-width: 70em)') || false
     return(
-      <Stack p="xl" gap={largeScreen ? "xl" : "sm" }>
+      <Stack p="xl" gap={"xl"}>
         
-        <SimpleGrid cols={largeScreen ? 2 : 1} spacing="xl">
-          <Showcase showHalf={(smallScreen || (!mediumScreen && largeScreen)) || false} wrap={(!mediumScreen && largeScreen)}/>
-          <Stack h="fit-content">
-            <Title>WanSou</Title>
-            <Text fz={curFontSize}>{aboutData[0]}</Text>
-            <Space />
-            <a href={miscImages.itchBanner.link} target="_blank" className={classes.bannerContainer}>
-                <GlowingImage image={miscImages.itchBanner.image} radius="xl"/>
-            </a>
-            <Space />
-            <Text fz={curFontSize}>{aboutData[1]}</Text>
+        <Flex gap="xl" pos="relative" direction={showcaseDir ? "row" : "column"}>
+          <Showcase showHalf={showHalf} showcaseDir={showcaseDir}/>
+          <Stack w={(!showcaseDir && showHalf) ? "100%" : "200%"} gap="sm">
+            <Title c="text.0">WanSou</Title>
+            <Text c="text.0">{aboutData[0]}</Text>
+            <ItchBanner />
+            <Text c="text.0">{aboutData[1]}</Text>
           </Stack>
-        </SimpleGrid>
+          <Shadow />
+        </Flex>
         {
           sectionData.map((sectionData, sectionNum) => 
             <HomeSection icons={sectionData.icons} side={sectionNum % 2 == 1} key={sectionNum}>
-              <div style={{width: "fit-content", position: "relative"}}>
-                <div style={{
-                  zIndex: -1,
-                      position: "absolute",
-                      width: "100%",
-                      height: "100%",
-                      backgroundImage: `linear-gradient(125deg, ${sectionData.gradientColors[0]}, ${sectionData.gradientColors[1]})`,
-                      filter: `blur(${largeScreen ? "1" : "3"}rem)`,
-                      opacity: 0.4
-                }}></div>
-                <Title style={{
-                  alignItems: largeScreen ? "left" : "center",
-                  backgroundImage: `linear-gradient(125deg, ${sectionData.gradientColors[0]}, ${sectionData.gradientColors[1]})`,
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}>{sectionData.title}</Title>
-                
+              <GradientTitle title={sectionData.title} gradientColors={sectionData.gradientColors} />
+              <div style={{position: "relative"}}>
+                <Shadow />
+                <Text c="text.0" >
+                  {sectionData.description}
+                </Text>
               </div>
-              <Text fz={curFontSize}>{sectionData.description}</Text>
-              
             </HomeSection>
           )
         }

@@ -94,8 +94,8 @@ class section {
 //type sectionDataType=InstanceType<typeof section>
 
 export const aboutData=[
-  "I've been programming since late 2018, starting with game development and later transitioning to web development. While I have a solid foundation in web development, my true passion lies in game development. I've created numerous games using Game Maker Studio 2, which uses the GML language; a fortunate overlap with JavaScript, making web development more accessible for me.",
-  "As a self-driven programmer, I've thrived on the challenges of game development, pushing the boundaries of creativity and technical problem-solving. My journey in this field has seen me tackle a diverse range of projects, from 2D platformers to complex simulations, each teaching me valuable lessons in design, optimization, and user engagement. This hands-on experience has honed my ability to bring concepts to life while ensuring a seamless and enjoyable user experience."
+  "I've been programming since late 2018, starting with game development and later transitioning onto web development. I've created numerous games using Game Maker Studio 2, which uses the GML language; a fortunate overlap with JavaScript, making web development more accessible for me.",
+  "I've always enjoyed learning new things and concepts in game development, pushing the boundaries of creativity and technical problem-solving in this field has seen me tackle a diverse range of projects, from 2D platformers to complex simulations, each teaching me valuable lessons in design, optimization, and user engagement. This hands-on experience has honed my ability to bring concepts to life while ensuring a seamless and enjoyable user experience."
 ]
 
 export const sectionData=[

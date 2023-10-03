@@ -3,5 +3,5 @@
     aspect-ratio: 1;
 }
 .link {
-    color: var(--mantine-color-primary-1);
+    color: var(--mantine-color-text-1);
 }

@@ -1,6 +1,7 @@
 import classes from '../styles/footerStyles.module.css'
 import {footerData} from '../data'
-import {Group, Box, Text, Image, UnstyledButton} from '@mantine/core'
+import {Group, Text, Image, UnstyledButton} from '@mantine/core'
+import Shadow from './Shadow'
 
 interface iconType {
     image: string
@@ -32,17 +33,19 @@ return(
 
 export default function PageFooter() {
     return(
+        <div style={{position: "relative"}}>
+        <Shadow />
         <Group justify="space-between" p="md" w="100%">
-          <Box>
-            <Text>Website made using</Text>
+          <div>
+            <Text c="text.0">Website made using</Text>
             {footerData.links.map((curLink:linkType, i:number) => <div style={{display: "inline"}} key={i}><TextLink linkData={curLink}/></div>)}
-          </Box>
+          </div>
           <Group>
             {
               footerData.icons.map((curIcon:iconType, i:number) => <FooterIcon footerIcon={curIcon} key={i}/>)
             }
           </Group>
-      
         </Group>
+        </div>
     )
 }

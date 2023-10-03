@@ -8,11 +8,10 @@ import { useEffect, useRef, useState } from 'react';
 export default function Header() {
     const largeScreen = useMediaQuery('(min-width: 60em)') || false;
     const smallScreen = useMediaQuery('(max-width: 32em)') || false;
-    const headerHeight=100
+    //const headerHeight=100
     const ref = useRef<HTMLDivElement>(null)
+    const [headerHeight, setHeight]=useState(100)
     const headerPinned=useHeadroom({ fixedAt: headerHeight})
-    const [headerHeightF, setHeight]=useState(0)
-
 
     useEffect(() => {
         setHeight(ref?.current?.clientHeight || 0)
@@ -47,7 +46,7 @@ export default function Header() {
         </Flex>
         {/* Header spacer */}
         {/* without this the page content would overlap with the header due to the header having position set to fixed */}
-        <div style={{height: `${headerHeightF}px`}}></div>
+        <div style={{height: `${headerHeight*0.8}px`}}></div>
         </>
     )
 }

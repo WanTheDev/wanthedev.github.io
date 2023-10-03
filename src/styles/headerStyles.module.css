@@ -12,17 +12,31 @@
     z-index: 1000000;
     transition: transform 400ms ease;
     border-radius: 0px 0px 1rem 1rem;
-    background-color: var(--mantine-color-primary-6);
-    background-image: linear-gradient(var(--mantine-color-primary-9), var(--mantine-color-primary-6) 10%, var(--mantine-color-primary-1));
+    background-color: var(--mantine-color-primary-1);
+    background-image: linear-gradient(var(--mantine-color-primary-4) 15%, var(--mantine-color-primary-3) 75%, var(--mantine-color-primary-1));
 }
 .headerButton {
-    color: var(--mantine-color-text-1);
+    color: var(--mantine-color-text-0);
     border-radius: 8px;
     padding: 16px;
-    transition: transform 0.33s ease, background-color 0.33s ease;
     aspect-ratio: 4/1;
     text-align: center;
+    position: relative;
 }
-.headerButton:hover {
-    background-color: color-mix(in lch, var(--mantine-color-primary-8), 10%,var(--mantine-color-primary-1));
+.headerButton::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 50%, var(--mantine-color-text-1));
+    opacity: 0.1;
+    scale: 0.7 0.5;
+    transform-origin: bottom;
+    transition: opacity 0.5s, scale 0.2s;
+}
+.headerButton:hover::before {
+    opacity: 0.3;
+    scale: 0.8 1.7;
 }

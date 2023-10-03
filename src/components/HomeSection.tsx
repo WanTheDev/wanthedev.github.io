@@ -5,32 +5,9 @@ import GlowingImage from "./GlowingImage";
 import {useMediaQuery} from '@mantine/hooks'
 import React from 'react'
 
-/*
-function GlowingImage({image}:{image:string}) {
-    return(
-    <>
-        <Image src={image} className={classes.floating} data-blurry pos="absolute" />
-        <Image src={image} className={classes.floating} />
-    </>
-    )
-}
-function GlowingIcon({image}:{image:string}) {
-    const largeScreen = useMediaQuery('(min-width: 60em)');
-
-    return(
-        <Container style={{zIndex: 1, maxWidth: "50vw", maxHeight: `${largeScreen ? "35" : "20"}vh`, aspectRatio: 1}} p={0} pos="relative">
-            <Image pos="absolute" src={image} className={classes.floating} data-blurry/>
-            <Image pos="absolute" src={image} className={classes.floating}/>
-        </Container>
-    )
-}
-*/
-
 export default function HomeSection({icons, children, side=true}:{icons: Array<string>, children: Array<JSX.Element>, side?:boolean}) {
     const largeScreen = useMediaQuery('(min-width: 60em)');
-    //const smallScreen = useMediaQuery('(max-width: 32em)');
-    //const [pictureSeeds, _setPictureSeeds] = useState(Array(icons.length).fill(0).map(() => Math.round(Math.random()*255)))
-  
+    
     const sectionElements = [
         <Group w={largeScreen ? "40%" : "100%"} gap="md" wrap="nowrap" grow>
           {

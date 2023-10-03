@@ -1,12 +1,12 @@
 import '@mantine/core/styles.css';
+import '/src/styles/globalStyles.css'
 import { MantineProvider, createTheme, rem } from '@mantine/core';
-//import roboto from './assets/fonts/RobotoMono-Medium.ttf';
 
 const theme = createTheme({
   colors: {
-    'background': ['#151515', '#212121', '#2c2c2c', '#383838', '#444444', '#505050', '#5b5b5b', '#676767', '#737373', '#7e7e7e'],
-    'text': ['#ffe1a8','#f2d6a0','#e6cb97','#d9bf8f','#ccb486','#bfa97e','#b39e76','#a6926d','#998765','#8c7c5c'],
-    'primary': ['#64a671','#5f9e6b','#5a9566','#558d60','#50855a','#4b7d55','#46744f','#416c49','#3c6444','#375b3e']
+    'background': ['#222222', '#212121', '#2c2c2c', '#383838', '#444444', '#505050', '#5b5b5b', '#676767', '#737373', '#7e7e7e'],
+    'text': ['#E0E2DB','#8F8F8F','#e6cb97','#d9bf8f','#ccb486','#bfa97e','#b39e76','#a6926d','#998765','#8c7c5c'],
+    'primary': ['#333333','#333333','#3D3D3D','#292929','#1F1F1F','#42967a','#3e8e72','#3b856b','#4eb18f','#377c64']
   },
   fontSizes: {
     xs: rem(12),
@@ -15,7 +15,7 @@ const theme = createTheme({
     lg: rem(24),
     xl: rem(28),
   },
-  //fontFamily: 'Roboto Mono',
+  fontFamily: 'RobotoMono',
 });
 
 /*
