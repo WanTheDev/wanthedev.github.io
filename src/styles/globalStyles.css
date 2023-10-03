@@ -9,10 +9,23 @@
     }
 }
 
+
 body {
     animation: background-move 20000ms linear infinite;
     background-image: conic-gradient(var(--mantine-color-primary-3) 25%, var(--mantine-color-primary-4) 25%, var(--mantine-color-primary-4) 50%, var(--mantine-color-primary-3) 50%, var(--mantine-color-primary-3) 75%, var(--mantine-color-primary-4) 75%);
     background-size: 8rem 8rem;
+}
+ 
+
+
+.fade-enter {
+opacity: 0;
+z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+opacity: 1;
+transition: opacity 250ms ease-in;
 }
 
 @font-face {

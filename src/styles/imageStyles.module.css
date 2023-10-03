@@ -11,6 +11,18 @@
     }
 }
 
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
 .floating {
     animation: hover 6500ms ease-in-out infinite;
     user-select: none;
@@ -19,4 +31,11 @@
     &[data-blurry] {
         filter: blur(2rem);
     }
+}
+
+.container {
+    z-index: 1;
+    animation: fadeInAnimation ease 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }

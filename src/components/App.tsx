@@ -4,9 +4,9 @@ import ProjectsPage from "../pages/ProjectsPage"
 import Header from './Header'
 import ContactPage from "../pages/ContactPage.tsx"
 import HomePage from "../pages/HomePage.tsx"
-
 export default function App() {
   return (
+    <>
     <BrowserRouter basename="/">
       <Routes>
 
@@ -25,8 +25,9 @@ export default function App() {
           <Route path="projects" element={<ProjectsPage />}/>
 
         </Route>
-
       </Routes>
+      
     </BrowserRouter>
+    </>
   );
 }

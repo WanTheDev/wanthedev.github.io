@@ -18,7 +18,11 @@ export default function ProjectsPage() {
     */
    // mt={rem(headroomHeight)}
     return(
-      <SimpleGrid cols={{base: 4, md: 2, sm: 1}} spacing={{base: 'md', md: 'sm'}} p="xl" >
+      <>
+      <div>-</div>
+      hey this page is also in progress lol
+      
+      <SimpleGrid cols={{md: 4, sm: 2, xs: 1}} spacing={{base: 'md', md: 'sm'}} p="xl" >
         {
           projectData.map((curProject) => {
             return(
@@ -34,5 +38,6 @@ export default function ProjectsPage() {
           })
         }
       </SimpleGrid>
+      </>
     )
   }

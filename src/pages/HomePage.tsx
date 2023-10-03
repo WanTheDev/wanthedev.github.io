@@ -78,7 +78,7 @@ export default function HomePage() {
           <Showcase showHalf={showHalf} showcaseDir={showcaseDir}/>
           <Stack w={(!showcaseDir && showHalf) ? "100%" : "200%"} gap="sm">
             <Title c="text.0">WanSou</Title>
-            <Text c="text.0">{aboutData[0]}</Text>
+            <Text c="text.0" className={classes.text}>{aboutData[0]}</Text>
             <ItchBanner />
             <Text c="text.0">{aboutData[1]}</Text>
           </Stack>

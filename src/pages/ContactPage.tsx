@@ -8,6 +8,8 @@ export default function ContactPage() {
     return(
       <Flex p="xl" w="100%" h="100%" justify="center">
         <Stack w="100%" maw={rem(1200)}>
+          hey this contact page is work in progress and does NOT currently work
+          if you want to contact me directly message me on twitter/x
           <Input placeholder="Your email" size={sizing}/>
           <Input placeholder="Subject" size={sizing}/>
           <Textarea placeholder="Message" size={sizing} minRows={longScreen * 8 + 14 - shortScreen * 8} autosize/>
