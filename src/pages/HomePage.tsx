@@ -69,14 +69,14 @@ export default function HomePage() {
     //const mediumScreen = useMediaQuery('(min-width: 100em)');
     //const smallScreen = useMediaQuery('(max-width: 32em)');
     //const curFontSize=smallScreen ? "sm" : "md"
-    const showHalf = useMediaQuery('(max-width: 80em)') || false
-    const showcaseDir = useMediaQuery('(min-width: 70em)') || false
+    const showHalf = useMediaQuery('(max-width: 85em)') || false
+    const showcaseDir = useMediaQuery('(min-width: 60em)') || false
     return(
       <Stack p="xl" gap={"xl"}>
         
         <Flex gap="xl" pos="relative" direction={showcaseDir ? "row" : "column"}>
           <Showcase showHalf={showHalf} showcaseDir={showcaseDir}/>
-          <Stack w={(!showcaseDir && showHalf) ? "100%" : "200%"} gap="sm">
+          <Stack w={(showcaseDir && showHalf) ? "85%" : showcaseDir ? "140%" : "100%"} gap="sm">
             <Title c="text.0">WanSou</Title>
             <Text c="text.0" className={classes.text}>{aboutData[0]}</Text>
             <ItchBanner />
