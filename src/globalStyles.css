@@ -9,6 +9,30 @@
     }
 }
 
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(10%)
+    }
+    10% {
+        opacity: 0;
+    }
+    70% {
+        transform: translateY(0%)
+    }
+    100% {
+        opacity: 1;
+        
+     }
+}
+
+p, h1 {
+    animation: fadeInAnimation ease .33s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
 body {
     animation: background-move 15000ms linear infinite;
     background-image: conic-gradient(var(--mantine-color-primary-7) 25%, var(--mantine-color-primary-9) 25%, var(--mantine-color-primary-9) 50%, var(--mantine-color-primary-7) 50%, var(--mantine-color-primary-7) 75%, var(--mantine-color-primary-9) 75%);
@@ -20,6 +44,10 @@ body {
 .mantine-Textarea-input, .mantine-Input-input, 	.mantine-Card-root {
     border-color: var(--mantine-color-primary-0);
     background-color: var(--mantine-color-primary-4);
+}
+
+.mantine-Title-root {
+    color: var(--mantine-color-text-0);
 }
 
 @font-face {

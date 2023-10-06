@@ -31,8 +31,32 @@ function Star({starClass, foreground=undefined}:{starClass: InstanceType<typeof 
         </Container>
     )
 }
-export default function CornerStars() {
-    const [stars, _setStars] = useState([new StarClass(0), new StarClass(3)])
+function getRandomCornerPositions() {
+  var possibleCorners=[0,1,2,3]
+  var randomIndex=Math.floor(Math.random()*4)
+  var randomNext=1+Math.floor(Math.random()*3)
+
+  return([
+    possibleCorners[randomIndex],
+    possibleCorners[(randomIndex+randomNext) % 4]
+  ])
+}
+export default function CornerStars({starPreset}:{starPreset?:Array<number>}) {
+  console.log(getRandomCornerPositions())
+  console.log(getRandomCornerPositions())
+  console.log(getRandomCornerPositions())
+  console.log(getRandomCornerPositions())
+  console.log(getRandomCornerPositions())
+  console.log(getRandomCornerPositions())
+  console.log(getRandomCornerPositions())
+  console.log(getRandomCornerPositions())
+  console.log(getRandomCornerPositions())
+  console.log(getRandomCornerPositions())
+  
+    const [stars, _setStars] = useState(
+      (starPreset==undefined ? getRandomCornerPositions() :
+      starPreset).map((curCornerPosition:number) => new StarClass(curCornerPosition))
+      )
     
     return(
       <Container className={classes.starryArea}>

@@ -1,0 +1,54 @@
+.allProjectsContainer {
+    display: flex;
+    margin-top: var(--mantine-spacing-xl);
+    margin-bottom: var(--mantine-spacing-xl);
+    min-height: 100%;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: var(--mantine-spacing-xl);
+    padding-top: var(--mantine-spacing-md);
+}
+
+.outerContainer {
+    width: 45%;
+    height: fit-content;
+    padding: 0;
+    position: relative;
+    margin-bottom: var(--mantine-spacing-xl)
+}
+
+@media (max-width: 60em) {
+    .outerContainer {
+        width: 90%;
+        margin-top: 0;
+    }
+}
+
+.projectContainer {
+    position: relative;
+    z-index: 0;
+
+    overflow: hidden;
+    border-radius: var(--mantine-radius-md);
+
+    padding: var(--mantine-spacing-md);
+    cursor: pointer;
+}
+.projectContainer:hover .projectImage {
+    filter: blur(5px) brightness(66%);
+    scale: 1.2;
+}
+.projectContainer h1, .projectContainer p {
+    user-select: none;
+}
+.projectImage {
+    object-fit: fill;
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    scale: 1.1;
+    filter: blur(10px) brightness(50%);
+    transition: filter 0.33s ease, scale 0.33s ease;
+}

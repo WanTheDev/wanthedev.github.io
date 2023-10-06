@@ -77,7 +77,7 @@ export default function ContactPage() {
               {buttonStates[emailState].text}
             </Button>
             <Shadow />
-            <CornerStars />
+            <CornerStars starPreset={[0, 3]} />
           </Stack>
           
         </form>

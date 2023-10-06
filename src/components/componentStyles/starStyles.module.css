@@ -36,6 +36,7 @@
     animation: star 5000ms ease-in-out infinite;
     aspect-ratio: 1;
     padding: 0;
+    z-index: 1;
     &[data-foreground] {
         z-index: 1;
     }

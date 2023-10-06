@@ -1,43 +1,32 @@
-import { Button, Card, SimpleGrid, Text, Title, Image } from "@mantine/core"
+import { Title, Image, Container, Text } from "@mantine/core"
 import { projectData } from '../data.ts'
-
+import Shadow from "../components/Shadow.tsx"
+import classes from './pageStyles/projectStyles.module.css'
+import CornerStars from "../components/CornerStars.tsx"
+import { useMediaQuery } from '@mantine/hooks'
 export default function ProjectsPage() {
-    // as boolean & number due to doing boolean math later on for a responsive layout 
-    /*
-    useEffect(() => {
-      fetch("/apiGet/projectsData")
-      .then(response => response.json())
-      .then(data => {
-        setAllProjects(
-          data.map((curProject:projectType, index:number) => {
-            return{...curProject, image:`./apiGet/images/banners?name=${curProject.image}`}
-          })
-        )
-      })
-    }, [])
-    */
-   // mt={rem(headroomHeight)}
-    return(
-      <>
-      <div>-</div>
-      This page is a work in progress
-      
-      <SimpleGrid cols={{md: 4, sm: 2, xs: 1}} spacing={{base: 'md', md: 'sm'}} p="xl" >
+  const narrowScreen = useMediaQuery('(max-width: 60em)');
+  const imageSkewAmount=7.5
+   return(
+      <div className={classes.allProjectsContainer} >
         {
-          projectData.map((curProject) => {
-            return(
-              <Card h="fit-content" key={curProject.name}>
-                <Card.Section component="a" href={curProject.imageLink.link} target="_blank">
-                  <Image src={curProject.imageLink.image}/>
-                </Card.Section>
+          projectData.map((curProject, projectIndex) => 
+            <Container className={classes.outerContainer}
+            style={narrowScreen ? {} : {
+              marginTop: `${projectIndex*imageSkewAmount - (imageSkewAmount*2*(Math.floor(projectIndex/2)))}%`,
+            }}
+            >
+              <Shadow />
+              <CornerStars />
+              <Container className={classes.projectContainer} onClick={() => {window.open(curProject.imageLink.link, '_blank')}}>
+                <Image mih="100%" className={classes.projectImage} src={curProject.imageLink.image} />
                 <Title>{curProject.name}</Title>
-                <Text c="dimmed">{curProject.desc}</Text>
-                <Button bg="primary.1" fw="normal" fullWidth mt="xl" onClick={() => window.open(curProject.imageLink.link)}>Open</Button>
-              </Card>
-            )
-          })
+                <Text>{curProject.desc}</Text>
+              </Container>
+            </Container>
+          )
         }
-      </SimpleGrid>
-      </>
-    )
+      </div>
+      
+   )
   }

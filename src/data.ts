@@ -67,15 +67,15 @@ class project {
 }
 //type projectType=InstanceType<typeof project>
 export const projectData=[
-  new project("Buttons trail", gameImages.buttonsTrail, "Buttons trail description"),
-  new project("Doodle bullets", gameImages.doodleBullets, "Doodle bullets description"),
-  new project("Droid Vis Changer (forager)", gameImages.droidVisChanger, "Droid visibility changer description"),
-  new project("Dying switch", gameImages.dyingSwitch, "Dying switch description"),
-  new project("Forward adventure", gameImages.forwardAdventure, "Forward adventure description"),
-  new project("Idle particles", gameImages.idleParticles, "Idle particles description"),
-  new project("Lootbags (forager)", gameImages.lootbags, "Lootbags description"),
-  new project("Match 2048", gameImages.match2048, "Match 2048 description"),
-  new project("Quick civ", gameImages.quickCiv, "Quick civ description")
+  new project("Buttons trail", gameImages.buttonsTrail, "Embark on a classic Nokia-era puzzle adventure where you navigate through ever-shifting floors while activating buttons. Challenge yourself with four unique floor types and strategic gameplay as you progress through each level."),
+  new project("Doodle bullets", gameImages.doodleBullets, "Navigate intense bullet-filled rounds, strategically allocating your cash to purchase artifacts, hearts, and shields in a bid to survive."),
+  new project("Droid Vis Changer (forager)", gameImages.droidVisChanger, "Elevate your Forager experience with this mod, allowing you to adjust droid opacity through user-friendly keybinds."),
+  new project("Dying switch", gameImages.dyingSwitch, "Explore a brief yet engaging platformer game where each time you meet your demise, a switch is either activated or deactivated."),
+  new project("Forward adventure", gameImages.forwardAdventure, "Navigate challenging platform obstacles to reach the crown in this quick and straightforward game where your only option is to move forward."),
+  new project("Idle particles", gameImages.idleParticles, "Engage in an idle game featuring a vibrant 2D particle simulation, offering a visually captivating experience while you manage and progress through the game."),
+  new project("Lootbags (forager)", gameImages.lootbags, "Discover exciting LootBags in this Forager mod, obtainable through various in-game activities such as mining, killing, and more. Unveil their contents by subscribing to the mod and integrating it into your game for a thrilling surprise."),
+  new project("Match 2048", gameImages.match2048, "Combine Match-3 gameplay with 2048 mechanics in this engaging puzzle game. Use arrow keys to control and aim for victory by achieving 2048 points or more."),
+  new project("Quick civ", gameImages.quickCiv, "Take charge of a civilization of three individuals in Quick Civ, as you navigate the challenge of constructing a spaceship while facing moments of panic.")
 ]
 
 class section {
