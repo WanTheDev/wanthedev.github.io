@@ -20,7 +20,7 @@ export default function ProjectsPage() {
     return(
       <>
       <div>-</div>
-      hey this page is also in progress lol
+      This page is a work in progress
       
       <SimpleGrid cols={{md: 4, sm: 2, xs: 1}} spacing={{base: 'md', md: 'sm'}} p="xl" >
         {

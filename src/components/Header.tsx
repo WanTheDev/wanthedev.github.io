@@ -1,6 +1,6 @@
 import {Flex, Image, UnstyledButton, Group, rem} from '@mantine/core'
 import {Link} from 'react-router-dom'
-import classes from '../styles/headerStyles.module.css'
+import classes from './componentStyles/headerStyles.module.css'
 import {headerData} from '../data'
 import { useHeadroom, useMediaQuery } from '@mantine/hooks';
 import { useEffect, useRef, useState } from 'react';

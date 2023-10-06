@@ -1,4 +1,4 @@
-import classes from '../styles/footerStyles.module.css'
+import classes from './componentStyles/footerStyles.module.css'
 import {footerData} from '../data'
 import {Group, Text, Image, UnstyledButton} from '@mantine/core'
 import Shadow from './Shadow'

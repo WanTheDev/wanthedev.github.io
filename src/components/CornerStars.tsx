@@ -8,10 +8,13 @@ class StarClass {
     y: number
     animDelay: string 
     animDir: string
-
-    constructor() {
-        this.x=Math.round(Math.random()*80)
-        this.y=Math.round(Math.random()*80)
+    constructor(curCorner:number) {
+        // 0 = top left
+        // 1 = top right
+        // 2 = bottom left
+        // 3 = bottom right
+        this.x=Math.round(Math.random() * 5 + ((curCorner%2==0) ? 20 : 80))
+        this.y=Math.round(Math.random() * 5 + ((curCorner<2) ? 80 : 20))
         this.animDelay=Math.floor(Math.random()*-6500)+'ms'
         this.animDir=Math.random()>0.5 ? 'normal' : 'reverse'
     }
@@ -19,7 +22,7 @@ class StarClass {
 
 function Star({starClass, foreground=undefined}:{starClass: InstanceType<typeof StarClass>, foreground?: boolean}) {
     return(
-        <Container className={classes.wobble} style={{animationDelay: starClass.animDelay,  animationDirection: starClass.animDir}} data-foreground={foreground} left={`${starClass.x}%`} top={`${starClass.y}%`} pos="absolute" miw="1.5rem" h="10%">
+        <Container className={classes.wobble} style={{animationDelay: starClass.animDelay,  animationDirection: starClass.animDir}} data-foreground={foreground} left={`${starClass.x}%`} top={`${starClass.y}%`} pos="absolute" w="5%" h="5%">
         
           <Image pos="absolute" src={stars.shadow} className={classes.star} data-shadow/>
           <Image pos="absolute" src={stars.normal} className={classes.star} data-glow/>
@@ -28,22 +31,14 @@ function Star({starClass, foreground=undefined}:{starClass: InstanceType<typeof 
         </Container>
     )
 }
-export default function StarryArea({starAmount=3, backgroundStarAmount=3}:{starAmount?:number, backgroundStarAmount?:number}) {
-    const [stars, _setStars] = useState({
-      foreground: new Array(starAmount).fill(0).map(() => new StarClass()),
-      background: new Array(backgroundStarAmount).fill(0).map(() => new StarClass())
-    })
+export default function CornerStars() {
+    const [stars, _setStars] = useState([new StarClass(0), new StarClass(3)])
     
     return(
       <Container className={classes.starryArea}>
-        {stars.background.map((curStar, starIndex) => {
+        {stars.map((curStar, starIndex) => {
           return(
             <Star key={starIndex} starClass={curStar} />
-          )
-        })}
-        {stars.foreground.map((curStar, starIndex) => {
-          return(
-            <Star key={starIndex} starClass={curStar} foreground={true}/>
           )
         })}
       </Container>

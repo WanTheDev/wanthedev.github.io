@@ -1,58 +1,12 @@
-import { Box, Flex, Stack, Text, Title } from "@mantine/core";
+import { Flex, Stack, Text, Title } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-import classes from '../styles/homeStyles.module.css'
-import { miscImages, sectionData, showcase, aboutData } from "../data";
+import classes from './pageStyles/homeStyles.module.css'
+import { miscImages, sectionData, aboutData } from "../data";
 import HomeSection from "../components/HomeSection";
-import StarryArea from "../components/StarryArea";
+import Showcase from '../components/Showcase';
 import GlowingImage from "../components/GlowingImage";
 import Shadow from "../components/Shadow";
-
-function Showcase({showHalf, showcaseDir}:{showHalf:boolean, showcaseDir:boolean}) {
-  const imageSkewAmount = 25
-  return(
-      <Stack gap="0">
-        <Title c="text.0" ta="center">Showcase</Title>
-        <Flex h="100%" wrap="wrap" gap="md" direction={(showcaseDir && showHalf) ? "column" : "row"} justify="space-around" align="center" pos="relative">
-            {
-            new Array(showHalf ? showcase.length/2 : showcase.length).fill(0).map((_, curPic) => {
-                return(
-                <Box
-                  w={(showcaseDir && showHalf) ? "100%" : "45%"}
-                  style={(showHalf) ? {} : {marginTop: `${curPic*imageSkewAmount - (imageSkewAmount*3*(+(curPic>1)) + imageSkewAmount * 0.5)}%`}}
-                  
-                  className={classes.hoverContainer}
-                  key={curPic}
-
-                  component="a"
-                  href={showcase[curPic].link}
-                  target="_blank">
-                    <GlowingImage image={showcase[curPic].image} radius="xl"/>
-                </Box>
-                )
-            })
-            }
-            <StarryArea />
-        </Flex>
-      </Stack>
-  )
-}
-
-function GradientTitle({title, gradientColors}:{title:string, gradientColors: Array<string>}) {
-  return(
-    <div className={classes.gradientTitleContainer}>
-      <Title
-        className={classes.gradientTitle}
-        style={{backgroundImage: `linear-gradient(125deg, ${gradientColors[0]}, ${gradientColors[1]})`}}
-      >
-        {title}
-        <div
-          className={classes.gradientGlow}
-          style={{backgroundImage: `linear-gradient(125deg, ${gradientColors[0]}, ${gradientColors[1]})`}}>
-        </div>
-      </Title>
-    </div>
-  )
-}
+import GradientTitle from "../components/GradientTitle";
 
 function ItchBanner() {
   return(

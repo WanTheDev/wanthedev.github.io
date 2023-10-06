@@ -1,0 +1,8 @@
+.hoverContainer {
+    cursor: pointer;
+    transition: transform 0.25s ease;
+    z-index: 1;
+}
+.hoverContainer:hover {
+    transform: scale(1.05);
+}

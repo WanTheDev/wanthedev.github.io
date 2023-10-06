@@ -1,0 +1,26 @@
+.gradientTitleContainer {
+    margin: 0;
+    width: fit-content;
+}
+.gradientTitle {
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    width: 100%;
+    position: relative;
+}
+.gradientGlow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+    filter: blur(1.33em);
+    z-index:-1;
+}
+@media (max-width: 60em) {
+    .gradientTitleContainer {
+        margin: 0 auto
+    }
+}
