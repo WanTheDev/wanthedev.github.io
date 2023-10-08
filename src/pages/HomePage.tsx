@@ -1,12 +1,48 @@
-import { Flex, Stack, Text, Title } from "@mantine/core";
+import { Text, Title, Group } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
+
 import classes from './pageStyles/homeStyles.module.css'
 import { miscImages, sectionData, aboutData } from "../data";
-import HomeSection from "../components/HomeSection";
+//import HomeSection from "../components/HomeSection";
 import Showcase from '../components/Showcase';
 import GlowingImage from "../components/GlowingImage";
 import Shadow from "../components/Shadow";
 import GradientTitle from "../components/GradientTitle";
+import StarryArea from "../components/StarryArea";
+import React from "react";
+
+function HomeSection({icons, children, side=true}:{icons: Array<string>, children: Array<JSX.Element>, side?:boolean}) {
+  const largeScreen = useMediaQuery('(min-width: 60em)');
+  
+  const sectionElements = [
+      <Group className={classes.sectionImagesGroup} grow>
+        {
+            icons.map((curIcon:string, curIndex:number) => 
+            <div className={classes.sectionImageContainer} key={curIndex}>
+                <GlowingImage image={curIcon}/>
+                <StarryArea />
+            </div>
+            )
+        }
+      </Group>
+  ]
+
+  const textSection = 
+  <div className={classes.sectionTextContainer} >
+      {children.map((c:JSX.Element) => c)}
+  </div>
+
+  if (side || largeScreen==false) { sectionElements.push(textSection) }
+  else { sectionElements.unshift(textSection) }
+
+  return(
+      <div className={classes.sectionWrapper} >
+      {
+          sectionElements.map((curElement, curIndex) => <React.Fragment key={curIndex}>{curElement}</React.Fragment>)
+      }
+      </div>
+  )
+}
 
 function ItchBanner() {
   return(
@@ -19,25 +55,19 @@ function ItchBanner() {
 }
 
 export default function HomePage() {
-    //const largeScreen = useMediaQuery('(min-width: 60em)');
-    //const mediumScreen = useMediaQuery('(min-width: 100em)');
-    //const smallScreen = useMediaQuery('(max-width: 32em)');
-    //const curFontSize=smallScreen ? "sm" : "md"
-    const showHalf = useMediaQuery('(max-width: 85em)') || false
-    const showcaseDir = useMediaQuery('(min-width: 60em)') || false
     return(
-      <Stack p="xl" gap={"xl"}>
+      <div className={classes.homepageWrapper}>
         
-        <Flex gap="xl" pos="relative" direction={showcaseDir ? "row" : "column"}>
-          <Showcase showHalf={showHalf} showcaseDir={showcaseDir}/>
-          <Stack w={(showcaseDir && showHalf) ? "85%" : showcaseDir ? "140%" : "100%"} gap="sm">
+        <div className={classes.topSection}>
+          <Showcase />
+          <div className={classes.topTextSection} >
             <Title c="text.0">WanSou</Title>
             <Text c="text.0" className={classes.text}>{aboutData[0]}</Text>
             <ItchBanner />
             <Text c="text.0">{aboutData[1]}</Text>
-          </Stack>
+          </div>
           <Shadow />
-        </Flex>
+        </div>
         {
           sectionData.map((sectionData, sectionNum) => 
             <HomeSection icons={sectionData.icons} side={sectionNum % 2 == 1} key={sectionNum}>
@@ -51,6 +81,6 @@ export default function HomePage() {
             </HomeSection>
           )
         }
-      </Stack>
+      </div>
     )
   }

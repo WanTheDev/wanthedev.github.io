@@ -2,7 +2,28 @@
     cursor: pointer;
     transition: transform 0.25s ease;
     z-index: 1;
+    width: 45%;
 }
 .hoverContainer:hover {
     transform: scale(1.05);
+}
+
+.showcaseContainer {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    flex-wrap: wrap;
+    gap: var(--mantine-spacing-md);
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+@media (min-width: 60em) and (max-width: 85em) {
+    .showcaseContainer {
+        flex-direction: column;
+    }
+    .hoverContainer {
+        width: 100%;
+    }
 }

@@ -8,3 +8,70 @@
 .bannerContainer:hover {
     transform: scale(1.05);
 }
+
+.topSection {
+    display: flex;
+    gap: var(--mantine-spacing-xl);
+    position: relative;
+    flex-direction: column;
+}
+.topTextSection {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mantine-spacing-sm);
+    width: 100%;
+}
+
+.homepageWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mantine-spacing-xl);
+    padding: var(--mantine-spacing-xl);
+}
+
+.sectionImagesGroup {
+    display: flex;
+    width: 100%;
+    gap: var(--mantine-spacing-md);
+    flex-wrap: nowrap;
+}
+.sectionImageContainer {
+    position: relative;
+    width: 100%;
+    max-width: 30vh;
+    padding: 0;
+}
+.sectionTextContainer {
+    width: 100%;
+}
+
+.sectionWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    gap: var(--mantine-spacing-xl);
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+@media (min-width: 60em) {
+    .topSection {
+        flex-direction: row;
+    }
+    .topTextSection {
+        width: 140%;
+    }
+    .sectionTextContainer {
+        width: 40%;
+    }
+    .sectionWrapper {
+        flex-direction: column;
+        margin-top: var(--mantine-spacing-xl);
+    }
+}
+
+@media (max-width: 85em) {
+    .topTextSection {
+        width: 85%;
+    }
+}
