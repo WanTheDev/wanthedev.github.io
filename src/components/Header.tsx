@@ -1,4 +1,4 @@
-import {Flex, Image, UnstyledButton, Group, rem} from '@mantine/core'
+import {Flex, UnstyledButton, Group, rem} from '@mantine/core'
 import {Link} from 'react-router-dom'
 import classes from './componentStyles/headerStyles.module.css'
 import {headerData} from '../data'
@@ -24,7 +24,7 @@ export default function Header() {
             
             {/* Logo */}
             <Link to="/">
-                <Image src={headerData.logo} />
+                <UnstyledButton aria-label="Home" className={classes.logoButton}>WanTheDev</UnstyledButton>
             </Link>
 
             {/* Buttons */}

@@ -31,6 +31,8 @@
     &[data-blurry] {
         filter: blur(2rem);
     }
+    &[data-radius='xl'] { border-radius: var(--mantine-radius-xl); }
+    
 }
 
 .container {
@@ -38,4 +40,13 @@
     animation: fadeInAnimation ease 0.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    background-repeat: no-repeat;
+    background-size: cover;
+    aspect-ratio: inherit;
+    filter: blur(12.5px);
+    transition: filter 1s linear;
+    &[data-loaded] {
+        filter: none !important;
+        background-image: none !important;
+    }
 }

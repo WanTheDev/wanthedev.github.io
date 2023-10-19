@@ -1,0 +1,24 @@
+@keyframes shadowFadeIn {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 0.4
+    }
+}
+.shadow {
+
+    animation: shadowFadeIn ease-out 0.33s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    border: 1px solid red;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    filter: blur(1.5em);
+    z-index: -1;
+    opacity: 0;
+    outline: 1rem solid black
+}

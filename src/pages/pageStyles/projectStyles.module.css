@@ -1,3 +1,16 @@
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
 .allProjectsContainer {
     display: flex;
     margin-top: var(--mantine-spacing-xl);
@@ -21,19 +34,22 @@
 @media (max-width: 60em) {
     .outerContainer {
         width: 90%;
-        margin-top: 0;
     }
 }
 
 .projectContainer {
     position: relative;
-    z-index: 0;
+    z-index: 1;
 
     overflow: hidden;
     border-radius: var(--mantine-radius-md);
 
     padding: var(--mantine-spacing-md);
     cursor: pointer;
+
+    animation: fadeInAnimation ease 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 .projectContainer:hover .projectImage {
     filter: blur(5px) brightness(66%);

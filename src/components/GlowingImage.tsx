@@ -1,13 +1,13 @@
 import { Container, Image } from "@mantine/core";
 import classes from './componentStyles/imageStyles.module.css'
-//<Image left="0" top="0" fit="contain" w="auto" h="100%" pos="absolute" src={image} data-blurry className={classes.floating}/>
-export default function GlowingImage({image, radius=0}:{image:string, radius?: string | number}) {
-    const animDelay=Math.floor(Math.random()*-6500)
-    const intenseGlow=false // fit=cover increases glow, not sure if i like it
+import { useState } from "react";
+export default function GlowingImage({image, radius='', loading="lazy"}:{image:string, radius?: string, loading?: "lazy" | "eager"}) {
+    const [animDelay, _] = useState(Math.floor(Math.random()*-6500))
+    const animDir = (animDelay > -3250) ? 'normal' : 'reverse'
     return(
-        <Container pos="relative" className={classes.container} size="max">
-            <Image left="0" top="0%" h="100%" w="100%" fit={intenseGlow ? "cover" : "contain"} data-blurry pos="absolute" src={image} className={classes.floating}  style={{animationDelay: animDelay+'ms',  animationDirection: (animDelay > -3250) ? 'normal' : 'reverse'}}/>
-            <Image radius={radius} src={image} className={classes.floating} style={{animationDelay: animDelay+'ms'}}/>
+        <Container pos="relative" className={classes.container} data-loaded={true} size="max">
+            <Image loading={loading} height="100%" left="0" top="0" fit="cover" data-blurry aria-hidden pos="absolute" src={image} className={classes.floating} style={{animationDelay: animDelay+'ms', animationDirection: animDir}}/>
+            <Image loading={loading} data-radius={radius} src={image} className={classes.floating} aria-hidden style={{animationDelay: animDelay+'ms', animationDirection: animDir}}/>
         </Container>
     )
   }

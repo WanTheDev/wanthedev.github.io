@@ -1,0 +1,54 @@
+.contactWrapper {
+    display: flex;
+    padding: var(--mantine-spacing-xl);
+    width: 100%;
+    min-height: 100vh;
+    bottom: 0;
+    justify-content: center;
+    margin-top: var(--mantine-spacing-md)
+}
+
+.contactStackWrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: var(--mantine-spacing-md);
+    * {
+        border: none;
+        outline: none;
+    }
+}
+
+.contactForm {
+    width: 75%;
+}
+
+.formSizing {
+    font-size: var(--mantine-font-size-xl);
+    height: var(--input-height-xl, var(--button-height-xl));
+}
+
+.submitButton {
+    font-weight: normal;
+    transition: background 200ms ease;
+}
+
+@media (max-height: 75em) and (min-height: 50em) {
+    .formSizing {
+        font-size: var(--mantine-font-size-md);
+        height: var(--input-height-md, var(--button-height-md));
+    }
+}
+
+@media (max-height: 50em) {
+    .formSizing{
+        font-size: var(--mantine-font-size-sm);
+        height: var(--input-height-sm, var(--button-height-sm)) ;
+    }
+}
+
+@media (max-width: 50em) {
+    .contactForm {
+        width: 100%
+    }
+}

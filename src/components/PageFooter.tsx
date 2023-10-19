@@ -6,6 +6,7 @@ import Shadow from './Shadow'
 interface iconType {
     image: string
     link: string
+    ariaLabel: string
 }
 interface linkType {
     text: string
@@ -14,8 +15,8 @@ interface linkType {
 
 function FooterIcon({footerIcon}:{footerIcon: iconType}) {
     return(
-        <UnstyledButton className={classes.footerIcon} onClick={() => {window.open(footerIcon.link)}} >
-            <Image src={footerIcon.image}/>
+        <UnstyledButton className={classes.footerIcon} onClick={() => {window.open(footerIcon.link)}}>
+            <Image src={footerIcon.image} component='img' loading='lazy' aria-label={footerIcon.ariaLabel}/>
         </UnstyledButton>
     )
 }

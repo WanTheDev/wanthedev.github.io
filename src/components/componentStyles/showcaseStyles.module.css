@@ -2,28 +2,57 @@
     cursor: pointer;
     transition: transform 0.25s ease;
     z-index: 1;
-    width: 45%;
+    width: 100%;
+    aspect-ratio: 5/3;
 }
 .hoverContainer:hover {
     transform: scale(1.05);
 }
 
 .showcaseContainer {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    place-items: center;
+    
     height: 100%;
-    flex-wrap: wrap;
     gap: var(--mantine-spacing-md);
-    align-items: center;
     justify-content: space-around;
     position: relative;
+    width: 100%;
+}
+
+.showcaseWrapper {
+    width: 60%;
+    min-height: 37vw;
 }
 
 @media (min-width: 60em) and (max-width: 85em) {
-    .showcaseContainer {
-        flex-direction: column;
-    }
     .hoverContainer {
         width: 100%;
+    }
+    .showcaseWrapper {
+        width: 40%;
+    }
+}
+@media (max-width: 60em) {
+    .showcaseWrapper {
+        width: 100%;
+    }
+    .showcaseContainer {
+        grid-template-columns: 50% 50% !important;
+        grid-template-rows: 100% !important;
+    }
+}
+
+@media (max-width: 85em) {
+    .hoverContainer {
+        &[data-bottom-row] {
+            display: none;
+        }
+    }
+    .showcaseContainer {
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
     }
 }

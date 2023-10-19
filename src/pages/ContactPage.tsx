@@ -1,16 +1,16 @@
-import { Button, Flex, Input, Stack, Textarea } from "@mantine/core";
+import { Button, TextInput, Textarea } from "@mantine/core";
 import { useMediaQuery, useTimeout } from "@mantine/hooks"
 import { useForm } from '@mantine/form';
 import emailjs from 'emailjs-com';
 import { useEffect, useState } from "react";
 import Shadow from '../components/Shadow'
 import CornerStars from "../components/CornerStars";
+import classes from './pageStyles/contactStyles.module.css'
+import cx from 'clsx'
 
 export default function ContactPage() {
     const shortScreen = useMediaQuery('(max-height: 50em)') as (boolean & number);
     const longScreen = useMediaQuery('(min-height: 75em)') as (boolean & number);
-    const narrowScreen = useMediaQuery('(max-width: 50em)')
-    const sizing = longScreen ? "xl" : (shortScreen ? "sm" : "md")
     const [sentEmails, setSentEmails] = useState(0) 
     const maxEmailsSent=3
     const [emailState, setEmailState] = useState<number>(0)
@@ -66,23 +66,23 @@ export default function ContactPage() {
 
     return(
       <>
-      <Flex p="xl" w="100%" mih="100vh" bottom="0" justify="center" mt="md">
-        <form onSubmit={form.onSubmit((values) => contactSubmit(values.contact, values.message))} style={{width: narrowScreen ? "100%" : "75%"}}>
-          <Stack pos="relative">
-            <Input {...form.getInputProps('contact')} placeholder="Contact information" size={sizing}/>
-            <Textarea {...form.getInputProps('message')} placeholder="Message" size={sizing} minRows={longScreen * 3 + 17 - shortScreen * 5} multiline autosize/>
-            <Button style={{transition: 'background .2s ease'}} fw="normal" size={sizing} color={buttonStates[emailState].color} type={buttonStates[emailState].type} onClick={() => {
+      <div className={classes.contactWrapper}>
+        <form className={classes.contactForm} onSubmit={form.onSubmit((values) => contactSubmit(values.contact, values.message))}>
+          <div className={classes.contactStackWrapper}>
+            <TextInput classNames={{input: classes.formSizing}} {...form.getInputProps('contact')} placeholder="Contact information"/>
+            <Textarea classNames={{input: classes.formSizing}}  {...form.getInputProps('message')} placeholder="Message" minRows={longScreen * 3 + 17 - shortScreen * 5} multiline autosize/>
+            
+            <Button className={cx(classes.submitButton, classes.formSizing)} color={buttonStates[emailState].color} type={buttonStates[emailState].type} onClick={() => {
               if (emailState>1 && emailState<4) { buttonDelayStart() } // fallback for timeout
             }}>
               {buttonStates[emailState].text}
             </Button>
+
             <Shadow />
             <CornerStars starPreset={[0, 3]} />
-          </Stack>
-          
+          </div>
         </form>
-        
-      </Flex>
+      </div>
       </>
     )
   }

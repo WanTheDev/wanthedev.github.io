@@ -1,4 +1,4 @@
-import { Text, Title, Group } from "@mantine/core";
+import { Text, Title } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 
 import classes from './pageStyles/homeStyles.module.css'
@@ -15,7 +15,7 @@ function HomeSection({icons, children, side=true}:{icons: Array<string>, childre
   const largeScreen = useMediaQuery('(min-width: 60em)');
   
   const sectionElements = [
-      <Group className={classes.sectionImagesGroup} grow>
+      <div className={classes.sectionImagesGroup}>
         {
             icons.map((curIcon:string, curIndex:number) => 
             <div className={classes.sectionImageContainer} key={curIndex}>
@@ -24,7 +24,7 @@ function HomeSection({icons, children, side=true}:{icons: Array<string>, childre
             </div>
             )
         }
-      </Group>
+      </div>
   ]
 
   const textSection = 
@@ -47,8 +47,8 @@ function HomeSection({icons, children, side=true}:{icons: Array<string>, childre
 function ItchBanner() {
   return(
     <>
-    <a href={miscImages.itchBanner.link} target="_blank" className={classes.bannerContainer}>
-        <GlowingImage image={miscImages.itchBanner.image} radius="xl"/>
+    <a href={miscImages.itchBanner.link} target="_blank" className={classes.bannerContainer} aria-hidden>
+        <GlowingImage image={miscImages.itchBanner.image} radius="xl" loading="eager"/>
     </a>
     </>
   )
@@ -61,8 +61,8 @@ export default function HomePage() {
         <div className={classes.topSection}>
           <Showcase />
           <div className={classes.topTextSection} >
-            <Title c="text.0">WanSou</Title>
-            <Text c="text.0" className={classes.text}>{aboutData[0]}</Text>
+            <Title c="text.0" className={classes.textTitle}>WanSou</Title>
+            <Text c="text.0">{aboutData[0]}</Text>
             <ItchBanner />
             <Text c="text.0">{aboutData[1]}</Text>
           </div>

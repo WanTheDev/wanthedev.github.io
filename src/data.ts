@@ -26,27 +26,29 @@ export const stars={
 class imageLink {
   image: string
   link: string
-  constructor(image:string, link:string) {
-    this.image=image
+  ariaLabel: string
+  constructor(ariaLabel:string, image:string, link:string) {
+    this.image='/images/'+image
     this.link=link
+    this.ariaLabel=ariaLabel
   }
 }
 type imageLinkType = InstanceType<typeof imageLink>
 
 export const gameImages={
-  buttonsTrail: new imageLink('/images/buttonsTrail.png', 'https://wansou.itch.io/buttons-trail'),
-  doodleBullets: new imageLink('/images/doodleBullets.png','https://wansou.itch.io/doodle-bullets'),
-  droidVisChanger: new imageLink('/images/droidVisChanger.png','https://steamcommunity.com/sharedfiles/filedetails/?id=1970775475'),
-  dyingSwitch: new imageLink('/images/dyingSwitch.png','https://wansou.itch.io/dying-switch'),
-  forwardAdventure: new imageLink('/images/forwardAdventure.png','https://wansou.itch.io/forward-adventure'),
-  idleParticles: new imageLink('/images/idleParticles.png','https://wansou.itch.io/idle-particle-simulator'),
-  lootbags: new imageLink('/images/lootbags.png','https://steamcommunity.com/sharedfiles/filedetails/?id=1977502034'),
-  match2048: new imageLink('/images/match2048.png','https://wansou.itch.io/match-2048'),
-  quickCiv: new imageLink('/images/quickCiv.png','https://wansou.itch.io/quick-civ'),
+  buttonsTrail: new imageLink('buttons trail game','buttonsTrail.webp', 'https://wansou.itch.io/buttons-trail'),
+  doodleBullets: new imageLink('doodle bullets game','doodleBullets.webp','https://wansou.itch.io/doodle-bullets'),
+  droidVisChanger: new imageLink('forager droid visibility changer mod', 'droidVisChanger.webp','https://steamcommunity.com/sharedfiles/filedetails/?id=1970775475'),
+  dyingSwitch: new imageLink('dying switch game', 'dyingSwitch.webp','https://wansou.itch.io/dying-switch'),
+  forwardAdventure: new imageLink('forward adventure game', 'forwardAdventure.webp','https://wansou.itch.io/forward-adventure'),
+  idleParticles: new imageLink('idle particles game', 'idleParticles.webp','https://wansou.itch.io/idle-particle-simulator'),
+  lootbags: new imageLink('forager lootbags mod', 'lootbags.webp','https://steamcommunity.com/sharedfiles/filedetails/?id=1977502034'),
+  match2048: new imageLink('match 2048 game', 'match2048.webp','https://wansou.itch.io/match-2048'),
+  quickCiv: new imageLink('quick civ game', 'quickCiv.webp','https://wansou.itch.io/quick-civ'),
 }
 
 export const miscImages={
-  itchBanner: new imageLink('/images/itchBanner.png','https://wansou.itch.io'),
+  itchBanner: new imageLink('itch.io page', 'itchBanner.webp','https://wansou.itch.io'),
 }
 
 export const showcase=[
@@ -131,9 +133,11 @@ export const sectionData=[
 class footerIcon {
   image: string
   link: string
-  constructor(image:string, link:string) {
+  ariaLabel: string
+  constructor(image:string, link:string, ariaLabel:string) {
     this.image = image
     this.link = link
+    this.ariaLabel=ariaLabel
   }
 }
 class footerLink {
@@ -147,11 +151,11 @@ class footerLink {
 
 export const footerData={
   icons: [
-    new footerIcon(icons.github, "https://github.com/WanTheDev"),
-    new footerIcon(icons.x, "https://twitter.com/WanTheDev"),
-    new footerIcon(icons.youtube,"https://www.youtube.com/channel/UCYkk_vCc9g36VvVQEF6_NAg"),
-    new footerIcon(icons.itch,"https://wanthedev.itch.io"),
-    new footerIcon(icons.leetcode,"leetcode.com/WanTheDev")
+    new footerIcon(icons.github, "https://github.com/WanTheDev", "Github"),
+    new footerIcon(icons.x, "https://twitter.com/WanTheDev", "Twitter"),
+    new footerIcon(icons.youtube,"https://www.youtube.com/channel/UCYkk_vCc9g36VvVQEF6_NAg", "Youtube"),
+    new footerIcon(icons.itch,"https://wanthedev.itch.io", "Itch.io"),
+    new footerIcon(icons.leetcode,"leetcode.com/WanTheDev", "Leetcode")
   ],
   links: [
     new footerLink("Vite", "https://vitejs.dev"),

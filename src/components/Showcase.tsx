@@ -6,26 +6,32 @@ import classes from './componentStyles/showcaseStyles.module.css'
 import { useMediaQuery } from '@mantine/hooks'
 
 export default function Showcase() {
-    const imageSkewAmount = 25
-    const showHalf = useMediaQuery('(max-width: 85em)') || false
+    const imageSkewAmount = 50
+    const showHalf = useMediaQuery('(max-width: 85em)') || true
     return(
-        <Stack gap="0">
+        <Stack className={classes.showcaseWrapper}>
           <Title c="text.0" ta="center">Showcase</Title>
           <div className={classes.showcaseContainer}>
               {
-              new Array(showHalf ? showcase.length/2 : showcase.length).fill(0).map((_, curPic) => {
+              // array filled with 0s is used to
+              // show 4 of the showcase images
+              // (wrapping and allat is handled in the showcaseStyles)
+              [0,0,0,0].map((_, curPic) => {
                   return(
                   <a
-                    
+                  
+                    aria-label={showcase[curPic].ariaLabel}
+
                     style={(showHalf) ? {} : {marginTop: `${curPic*imageSkewAmount - (imageSkewAmount*3*(+(curPic>1)) + imageSkewAmount * 0.5)}%`}}
                     
                     className={classes.hoverContainer}
+                    data-bottom-row={curPic>=2 ? true : null}
                     key={curPic}
   
                     href={showcase[curPic].link}
                     target="_blank"
                   >
-                      <GlowingImage image={showcase[curPic].image} radius="xl"/>
+                      <GlowingImage image={showcase[curPic].image} radius="xl" loading="eager"/>
                   </a>
                   )
               })

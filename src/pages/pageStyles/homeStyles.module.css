@@ -14,6 +14,8 @@
     gap: var(--mantine-spacing-xl);
     position: relative;
     flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
 }
 .topTextSection {
     display: flex;
@@ -27,19 +29,25 @@
     flex-direction: column;
     gap: var(--mantine-spacing-xl);
     padding: var(--mantine-spacing-xl);
+    padding-top: var(--mantine-spacing-md);
 }
 
+.textTitle {
+    text-align: center;
+}
 .sectionImagesGroup {
     display: flex;
     width: 100%;
     gap: var(--mantine-spacing-md);
     flex-wrap: nowrap;
+    justify-content: center;
 }
 .sectionImageContainer {
     position: relative;
     width: 100%;
-    max-width: 30vh;
+    max-width: 40vh;
     padding: 0;
+    aspect-ratio: 1;
 }
 .sectionTextContainer {
     width: 100%;
@@ -53,25 +61,29 @@
     align-items: center;
     justify-content: space-evenly;
 }
-
+@media (max-width: 60em) {
+    .sectionImageContainer {
+        max-width: 30vh;
+    }
+}
 @media (min-width: 60em) {
     .topSection {
         flex-direction: row;
-    }
-    .topTextSection {
-        width: 140%;
     }
     .sectionTextContainer {
         width: 40%;
     }
     .sectionWrapper {
-        flex-direction: column;
+        flex-direction: row;
         margin-top: var(--mantine-spacing-xl);
+    }
+    .sectionImagesGroup {
+        width: 40%;
     }
 }
 
 @media (max-width: 85em) {
     .topTextSection {
-        width: 85%;
+        width: 100%;
     }
 }
