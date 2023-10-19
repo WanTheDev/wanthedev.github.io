@@ -15,7 +15,9 @@ export const icons={
   ts: '/icons/ts.svg',
   vite: '/icons/vite.svg',
   x: '/icons/x.svg',
-  youtube: '/icons/youtube.svg'
+  youtube: '/icons/youtube.svg',
+  tauri: './icons/tauri.svg',
+  electron: './icons/electron.svg'
 }
 
 export const stars={
@@ -124,6 +126,11 @@ export const sectionData=[
   new section(
     [icons.express],["white", "gray"],
     "Express","Later on, I decided to explore more Node.js and its applications in building web servers. I took a course that taught me important concepts like middleware and security. As I progressed, I made the choice to transition to Express.js, driven by its user-friendly nature and ease of implementation."),
+  
+  new section(
+    [icons.electron, icons.tauri], ["cyan", "#a1e463, orange"],
+    "Electron & Tauri", "I've picked up electron after realising how simple it is, it barely changed my workflow and only made development more interesting, although I really hated how big electron apps were so I decided to also learn Tauri which is an awesome alternative but the switch-up forced me to learn a bit of Rust which I don't regert but I am not yet experienced enough with it to even put it on this list."
+  ),
   
   new section(
     [icons.python,icons.cpp],["gold", "#e6bc5c 35%, #8e7ebe 45%, royalblue 50%"],
