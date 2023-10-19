@@ -7,7 +7,7 @@ import { useMediaQuery } from '@mantine/hooks'
 
 export default function Showcase() {
     const imageSkewAmount = 50
-    const showHalf = useMediaQuery('(max-width: 85em)') || true
+    const showHalf = useMediaQuery('(max-width: 85em)') ?? true
     return(
         <Stack className={classes.showcaseWrapper}>
           <Title c="text.0" ta="center">Showcase</Title>
