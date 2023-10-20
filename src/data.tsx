@@ -86,13 +86,15 @@ class section {
   icons: Array<string>
   gradientColors: Array<string>
   title: string
-  description: string
+  description: JSX.Element
+  spanData: string[] | undefined
 
-  constructor(icons:Array<string>, gradientColors:Array<string>, title:string, description:string) {
+  constructor(icons:Array<string>, gradientColors:Array<string>, title:string, description:JSX.Element, spanData?:string[]) {
     this.icons=icons 
     this.gradientColors=gradientColors
     this.title=title
     this.description=description
+    this.spanData=spanData
   }
 }
 //type sectionDataType=InstanceType<typeof section>
@@ -105,36 +107,36 @@ export const aboutData=[
 export const sectionData=[
   new section(
     [icons.gms2, icons.js], ["white 40%", "gold 70%"],
-    "GML & JS", "In web development, I've used my solid JavaScript skills to craft interactive and user-friendly web apps. This blend of game and web work has broadened my skill set and provided me with a unique perspective on merging gaming and web technologies. I'm excited about applying this mix of expertise to future projects and collaborations."),
+    "GML & JS",<>In web development, I've used my solid JavaScript skills to craft <span data-title='Utility manager' data-src='./videos/utilityManager.webp'>interactive</span> and <span data-title='CS:GO API Marketplace Browser' data-src='./videos/csSkinBrowser.webp'>user-friendly</span> web apps. This blend of game and web work has broadened my skill set and provided me with a unique perspective on merging <span data-title="Game made using pure HTML, CSS & JS" data-src="./videos/lootboxGame.webp">gaming and web</span> technologies. I'm excited about applying this mix of expertise to future projects and collaborations.</>),
   
   new section(
     [icons.nodejs], ["lawngreen", "limegreen"],
-    "Node.js", "Diving into Node.js backend development was quite a challenge. I decided to venture into creating a multiplayer game, which, on the surface, seemed simpler than it turned out to be. I started with a swift GML game prototype and then connected multiple clients to a Node.js server. This experience served as a valuable introduction to backend development, and it has proven to be a useful foundation as I delved further into web development."),
+    "Node.js", <>Diving into Node.js backend development was quite a challenge. I decided to venture into creating a multiplayer game, which, on the surface, seemed simpler than it turned out to be. I started with a quick GML game prototype and then connected multiple clients to a <span data-title='Locally hosted node server' data-src='./videos/multiplayerGame.webp'>Node.js server</span>. This experience served as a valuable introduction to backend development, and it has proven to be a useful foundation as I delved further into web development.</>),
   
   new section(
     [icons.html,icons.css,icons.react], ["orangered","#b15ba8 21%, royalblue 42%, #2bcbf2 63%, cyan"],
-    "HTML, CSS & React","Then, I made the shift to web development, beginning with the basics of HTML and CSS before exploring various frameworks. Among them, React caught my attention because I found the concept of components incredibly appealing. The availability of component libraries made the process of creating web applications both smooth and efficient."),
+    "HTML, CSS & React",<>Then, I made the shift to web development, beginning with the basics of <span data-title='Basic website animations & transitions' data-src='./videos/basics.webp'>HTML and CSS</span> before exploring various frameworks. Among them, React caught my attention because I found the concept of components incredibly appealing. The availability of component libraries made the process of creating web applications both smooth and efficient.</>),
   
   new section(
     [icons.vite,icons.ts],["darkorchid 30%", "royalblue 60%"],
-    "Vite & Typescript","Later on, I found Vite, a tool that made setting up projects much faster. While using Vite, I also learned about Typescript. Despite my preference for JavaScript, I started using Typescript because it makes code safer and easier to understand. It's become a valuable part of my development toolkit."),
+    "Vite & Typescript",<>Later on, I found Vite, a tool that made setting up projects much faster. While using Vite, I also learned about Typescript. Despite my preference for JavaScript, I started using Typescript because it makes code safer and easier to understand. It's become a valuable part of my development toolkit.</>),
   
   new section(
     [icons.firebase],["orange", "gold 40%"],
-    "Firebase","At that moment, I realized I was getting close to becoming a full-stack developer. So, I decided to use Firebase as a starting point for managing databases and backend development. I took on the challenge of creating a web store app with an admin panel, and to my pleasant surprise, it all went much smoother than I expected."),
+    "Firebase",<>At that moment, I realized I was getting close to becoming a full-stack developer. So, I decided to use Firebase as a starting point for managing databases and backend development. I took on the challenge of creating a <span data-title='Webstore made in react' data-src='./videos/webstore.webp'>web store</span> app with an <span data-title='Admin panel connected with firebase' data-src='./videos/adminPanel.webp'>admin panel</span>, and to my pleasant surprise, it all went much smoother than I expected.</>),
   
   new section(
     [icons.express],["white", "gray"],
-    "Express","Later on, I decided to explore more Node.js and its applications in building web servers. I took a course that taught me important concepts like middleware and security. As I progressed, I made the choice to transition to Express.js, driven by its user-friendly nature and ease of implementation."),
+    "Express",<>Later on, I decided to explore more Node.js and its applications in building web servers. I took a course that taught me important concepts like middleware and security. As I progressed, I made the choice to transition to Express.js, driven by its user-friendly nature and ease of implementation.</>),
   
   new section(
     [icons.electron, icons.tauri], ["cyan", "#a1e463, orange"],
-    "Electron & Tauri", "I've picked up electron after realising how simple it is, it barely changed my workflow and only made development more interesting, although I really hated how big electron apps were so I decided to also learn Tauri which is an awesome alternative but the switch-up forced me to learn a bit of Rust which I don't regert but I am not yet experienced enough with it to even put it on this list."
+    "Electron & Tauri", <>I've picked up electron after realising how simple it is, it barely changed my workflow and only made development more interesting, I made a simple <span data-title='Task tracker made with Electron' data-src='./videos/electron-tasktracker.webp'>task tracker</span> in around a day and then I realised how big a simple app like that can become in disk size, so I decided to also learn Tauri and remake the task tracker app with even <span data-title='Task tracker made with Tauri' data-src='./videos/tauri-tasktracker.webp'>more features</span> which allowed me to make the app lightweight and blazing fast; Tauri also taught me a bit on Rust but I wouldn't call myself experienced in it.</>
   ),
   
   new section(
     [icons.python,icons.cpp],["gold", "#e6bc5c 35%, #8e7ebe 45%, royalblue 50%"],
-    "Python & C++","Before diving into web development, I learned Python and C++. While I haven't used them in my recent projects, it's important to note that I still possess a solid grasp of these languages. Although some time has passed since my last hands-on experience with Python and C++, my proficiency in both languages remains intact. I may not have had the chance to showcase them in recent work, but they are valuable tools that I can readily bring to the table when the need arises.")
+    "Python & C++",<>Before diving into web development, I learned Python and C++. While I haven't used them in my recent projects, it's important to note that I still possess a <span data-title='A* Lightning pathfinding made using Python' data-src='./images/pythonLightning.webp'>solid grasp</span> of these languages. Although some time has passed since my last hands-on experience with Python and C++, my proficiency in both languages remains intact. I may not have had the chance to showcase them in recent work, but they are valuable tools that I can readily bring to the table when the need arises.</>)
 ]
 
 class footerIcon {
@@ -182,7 +184,7 @@ class headerButton {
 }
 export const headerData={
   buttons: [
-    new headerButton('About', '/'),
+    new headerButton('About', '/about'),
     new headerButton('Contact', '/contact'),
     new headerButton('Projects', '/projects')
   ],

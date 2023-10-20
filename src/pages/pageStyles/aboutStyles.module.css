@@ -3,41 +3,66 @@
     cursor: pointer;
     aspect-ratio: 5/1;
     transition: transform 0.25s ease;
-    margin: var(--mantine-spacing-sm) 0px;
-    padding: 0px var(--mantine-spacing-xl);
+    margin: 2% 0px;
 }
 .bannerContainer:hover {
-    transform: scale(1.025);
+    transform: scale(1.05);
 }
 
-.topSection {
+.homepageWrapper {
     display: flex;
     gap: var(--mantine-spacing-xl);
     position: relative;
     flex-direction: column;
-    width: 100%;
-    min-height: 100vh;
+    width: 100vw;
     justify-content: space-between;
-    padding: var(--mantine-spacing-md);
+    padding: var(--mantine-spacing-xl);
+    margin-top: var(--mantine-spacing-xl)
 }
 .topTextSection {
-    font-size: calc(0.5vw + var(--mantine-font-size-md));
     display: flex;
     flex-direction: column;
     gap: var(--mantine-spacing-sm);
     width: 100%;
 }
+
 .text {
-    position: relative;
-    font-size: calc(0.62vw + var(--mantine-font-size-xs));
-    color: var(--mantine-color-text-0);
+    font-size: calc(0.5vw + var(--mantine-font-size-md));
+    span {
+        text-decoration-line: underline;
+        color: var(--mantine-color-text-2);
+        cursor: pointer;
+    }
+}
+.popover {
+    background: var(--mantine-color-primary-5);
+    border-color: var(--mantine-color-primary-1);
+    box-shadow: 0 0 99px rgba(0, 0, 0, 1);
+    overflow: hidden;
+    max-width: 100vw;
+}
+.homepageInfo {
+    width: 100%;
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: center;
+    margin-bottom: var(--mantine-spacing-sm);
+    font-size: calc(0.5vw + var(--mantine-font-size-md));
+}
+.popoverTitle {
+    text-align: center;
+    font-size: calc(0.5vw + var(--mantine-font-size-sm));
+}
+.popoverSrc {
+    max-width: 50vw;
+    max-height: 50vh;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    border-radius: var(--mantine-radius-md)
 }
 
 .textTitle {
-    font-weight: bold;
     text-align: center;
-    color: var(--mantine-color-text-0);
-    font-size: calc(1vw + var(--mantine-font-size-xl));
 }
 .sectionImagesGroup {
     display: flex;
@@ -69,14 +94,14 @@
     .sectionImageContainer {
         max-width: 30vh;
     }
-    .bannerContainer {
-        padding: 0 !important;
+    .popoverSrc {
+        max-width: 80vw;
+    }
+    .homepageInfo {
+        padding: 0;
     }
 }
 @media (min-width: 60em) {
-    .topSection {
-        flex-direction: row;
-    }
     .sectionTextContainer {
         width: 40%;
     }
@@ -92,8 +117,5 @@
 @media (max-width: 85em) {
     .topTextSection {
         width: 100%;
-    }
-    .bannerContainer {
-        padding: var(--mantine-spacing-sm) 0px;
     }
 }

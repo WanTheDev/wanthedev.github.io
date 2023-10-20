@@ -38,6 +38,7 @@ body {
     background-size: 8rem 8rem;
     background-origin: right;
     transition: background-size 0.5s ease-in-out;
+    overflow-x: hidden;
 }
 
 .mantine-Textarea-input, .mantine-Input-input, 	.mantine-Card-root {

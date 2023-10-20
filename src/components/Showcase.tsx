@@ -1,7 +1,7 @@
 import {showcase} from '../data'
 import StarryArea from './StarryArea'
 import GlowingImage from './GlowingImage'
-import {Stack, Title} from '@mantine/core'
+import {Stack } from '@mantine/core'
 import classes from './componentStyles/showcaseStyles.module.css'
 import { useMediaQuery } from '@mantine/hooks'
 
@@ -10,7 +10,7 @@ export default function Showcase() {
     const showHalf = useMediaQuery('(max-width: 85em)') ?? true
     return(
         <Stack className={classes.showcaseWrapper}>
-          <Title c="text.0" ta="center">Showcase</Title>
+          <div className={classes.titleText}>Showcase</div>
           <div className={classes.showcaseContainer}>
               {
               // array filled with 0s is used to

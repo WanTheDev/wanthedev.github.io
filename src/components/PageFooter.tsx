@@ -34,11 +34,12 @@ return(
 
 export default function PageFooter() {
     return(
-        <div style={{position: "relative"}}>
+        <div className={classes.footerWrapper}>
         <Shadow />
         <Group justify="space-between" p="md" w="100%">
           <div>
-            <Text c="text.0">Website made using</Text>
+            <Text c="text.0" size="md">Website made using</Text>
+            <div className={classes.linkDisclaimer}>(These links open a new tab)</div>
             {footerData.links.map((curLink:linkType, i:number) => <div style={{display: "inline"}} key={i}><TextLink linkData={curLink}/></div>)}
           </div>
           <Group>

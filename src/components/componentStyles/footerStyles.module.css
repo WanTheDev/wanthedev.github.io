@@ -4,4 +4,15 @@
 }
 .link {
     color: var(--mantine-color-text-1);
+    font-size: var(--mantine-font-size-md);
+}
+
+.linkDisclaimer {
+    color: var(--mantine-color-text-1);
+    font-size: var(--mantine-font-size-sm);
+    font-weight: bold;
+}
+
+.footerWrapper {
+    position: relative;
 }

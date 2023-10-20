@@ -19,7 +19,6 @@ export default function Header() {
 
     return(
         <>
-        
         <Flex ref={ref} direction={largeScreen ? "row" : "column"} className={classes.headerClass} style={{transform: `translateY(${headerPinned ? 0 : rem(-headerHeight)})`}} justify={largeScreen ? "space-between" : "center"} >
             
             {/* Logo */}
@@ -46,7 +45,7 @@ export default function Header() {
         </Flex>
         {/* Header spacer */}
         {/* without this the page content would overlap with the header due to the header having position set to fixed */}
-        <div style={{height: `${headerHeight*0.8}px`}}></div>
+        <div style={{height: `${headerHeight}px`}}></div>
         </>
     )
 }

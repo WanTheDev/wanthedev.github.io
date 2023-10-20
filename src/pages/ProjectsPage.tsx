@@ -1,5 +1,5 @@
 import { Title, Image, Container, Text } from "@mantine/core"
-import { projectData } from '../data.ts'
+import { projectData } from '../data'
 import Shadow from "../components/Shadow.tsx"
 import classes from './pageStyles/projectStyles.module.css'
 import CornerStars from "../components/CornerStars.tsx"
