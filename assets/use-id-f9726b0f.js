@@ -1,1 +1,0 @@
-import{R as o,r as s,e as u}from"./index-fe32c12e.js";function i(){return`mantine-${Math.random().toString(36).slice(2,11)}`}const a=o["useId".toString()]||(()=>{});function c(){const t=a();return t?`mantine-${t.replace(/:/g,"")}`:""}function f(t){const e=c(),[n,r]=s.useState(e);return u(()=>{r(i())},[]),typeof t=="string"?t:typeof window>"u"?e:n}export{i as r,f as u};
