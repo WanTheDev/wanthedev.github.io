@@ -1,0 +1,1 @@
+import{r as e,m as a}from"./index-2709bd81.js";import{S as n,c as m,a as p}from"./Star-52e4c195.js";const u=(r=Math.round(Math.random()))=>[3-r,r];function S({starPreset:r}){const[t,c]=e.useState((r??u()).map(s=>new n(s)));return a.jsx("p",{className:m.starryArea,children:t.map((s,o)=>a.jsx(p,{starClass:s,foreground:!0},o))})}export{S as C};
