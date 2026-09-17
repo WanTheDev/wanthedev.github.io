@@ -2,15 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="preload" as="font" type="font/woff" href="/fonts/RobotoMono-Medium.woff2" crossorigin>
-    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="WanTheDev — game and software developer."
+    />
+    <meta name="theme-color" content="#050608" />
     <title>WanTheDev</title>
-    <script type="module" crossorigin src="/assets/index-6c49bf94.js"></script>
-    <link rel="stylesheet" href="/assets/index-ed292d19.css">
   </head>
   <body>
-    <div id="root"></div>
-    
+    <canvas id="ascii-background" aria-hidden="true"></canvas>
+
+    <main>
+      <h1>WanTheDev</h1>
+      <nav aria-label="Portfolio links">
+        <a href="https://github.com/WanTheDev">GitHub</a>
+        <a href="https://wanthedev.itch.io">itch.io</a>
+      </nav>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
