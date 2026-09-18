@@ -1,0 +1,435 @@
+{
+  "generatedAt": "2026-09-18T12:07:27.698Z",
+  "viewports": [
+    {
+      "viewport": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aggregated": {
+        "knotBBoxCenter": {
+          "cx": 0.5011682242990654,
+          "cy": 0.3821428571428571
+        },
+        "knotBBoxSpan": {
+          "sx": 0.1261682242990654,
+          "sy": 0.38095238095238093
+        },
+        "knotBBoxSpanMin": {
+          "sx": 0.02336448598130841,
+          "sy": 0.08571428571428572
+        },
+        "knotPixelsMin": 30,
+        "knotPixelsMax": 388,
+        "secondLargestPixelsMin": 26,
+        "secondLargestPixelsMax": 44,
+        "cameraDistanceMin": 10.5,
+        "cameraDistanceMax": 10.5,
+        "cameraFarMin": 40,
+        "cameraFarMax": 40,
+        "inkPixelFractionMin": 0.019542341820987654,
+        "inkPixelFractionMax": 0.024360050154320988
+      },
+      "screenshot": ".shots/final-1920x1080.png"
+    },
+    {
+      "viewport": "1366x768",
+      "width": 1366,
+      "height": 768,
+      "aggregated": {
+        "knotBBoxCenter": {
+          "cx": 0.5268640350877193,
+          "cy": 0.3755555555555555
+        },
+        "knotBBoxSpan": {
+          "sx": 0.21052631578947367,
+          "sy": 0.21333333333333335
+        },
+        "knotBBoxSpanMin": {
+          "sx": 0.02631578947368421,
+          "sy": 0.08
+        },
+        "knotPixelsMin": 19,
+        "knotPixelsMax": 127,
+        "secondLargestPixelsMin": 16,
+        "secondLargestPixelsMax": 115,
+        "cameraDistanceMin": 10.5,
+        "cameraDistanceMax": 10.5,
+        "cameraFarMin": 40,
+        "cameraFarMax": 40,
+        "inkPixelFractionMin": 0.02290656265251342,
+        "inkPixelFractionMax": 0.029564726695949242
+      },
+      "screenshot": ".shots/final-1366x768.png"
+    },
+    {
+      "viewport": "2560x1440",
+      "width": 2560,
+      "height": 1440,
+      "aggregated": {
+        "knotBBoxCenter": {
+          "cx": 0.5059941520467837,
+          "cy": 0.3104166666666667
+        },
+        "knotBBoxSpan": {
+          "sx": 0.14736842105263157,
+          "sy": 0.3142857142857143
+        },
+        "knotBBoxSpanMin": {
+          "sx": 0.017543859649122806,
+          "sy": 0.06428571428571428
+        },
+        "knotPixelsMin": 36,
+        "knotPixelsMax": 775,
+        "secondLargestPixelsMin": 25,
+        "secondLargestPixelsMax": 52,
+        "cameraDistanceMin": 10.5,
+        "cameraDistanceMax": 10.5,
+        "cameraFarMin": 40,
+        "cameraFarMax": 40,
+        "inkPixelFractionMin": 0.020040961371527777,
+        "inkPixelFractionMax": 0.02316867404513889
+      },
+      "screenshot": ".shots/final-2560x1440.png"
+    },
+    {
+      "viewport": "1280x800",
+      "width": 1280,
+      "height": 800,
+      "aggregated": {
+        "knotBBoxCenter": {
+          "cx": 0.5308857808857809,
+          "cy": 0.2932692307692308
+        },
+        "knotBBoxSpan": {
+          "sx": 0.04195804195804196,
+          "sy": 0.16666666666666666
+        },
+        "knotBBoxSpanMin": {
+          "sx": 0.006993006993006993,
+          "sy": 0.01282051282051282
+        },
+        "knotPixelsMin": 1,
+        "knotPixelsMax": 49,
+        "secondLargestPixelsMin": 1,
+        "secondLargestPixelsMax": 36,
+        "cameraDistanceMin": 10.5,
+        "cameraDistanceMax": 10.5,
+        "cameraFarMin": 40,
+        "cameraFarMax": 40,
+        "inkPixelFractionMin": 0.023853515625,
+        "inkPixelFractionMax": 0.0338173828125
+      },
+      "screenshot": ".shots/final-1280x800.png"
+    },
+    {
+      "viewport": "1600x500",
+      "width": 1600,
+      "height": 500,
+      "aggregated": {
+        "knotBBoxCenter": {
+          "cx": 0.5056179775280899,
+          "cy": 0.40986394557823136
+        },
+        "knotBBoxSpan": {
+          "sx": 0.15168539325842698,
+          "sy": 0.32653061224489793
+        },
+        "knotBBoxSpanMin": {
+          "sx": 0.028089887640449437,
+          "sy": 0.12244897959183673
+        },
+        "knotPixelsMin": 24,
+        "knotPixelsMax": 175,
+        "secondLargestPixelsMin": 12,
+        "secondLargestPixelsMax": 33,
+        "cameraDistanceMin": 10.5,
+        "cameraDistanceMax": 10.5,
+        "cameraFarMin": 40,
+        "cameraFarMax": 40,
+        "inkPixelFractionMin": 0.01323625,
+        "inkPixelFractionMax": 0.014955
+      },
+      "screenshot": ".shots/final-1600x500.png"
+    },
+    {
+      "viewport": "1024x768",
+      "width": 1024,
+      "height": 768,
+      "aggregated": {
+        "knotBBoxCenter": {
+          "cx": 0.5211988304093567,
+          "cy": 0.35555555555555557
+        },
+        "knotBBoxSpan": {
+          "sx": 0.21052631578947367,
+          "sy": 0.29333333333333333
+        },
+        "knotBBoxSpanMin": {
+          "sx": 0.043859649122807015,
+          "sy": 0.06666666666666667
+        },
+        "knotPixelsMin": 22,
+        "knotPixelsMax": 251,
+        "secondLargestPixelsMin": 11,
+        "secondLargestPixelsMax": 31,
+        "cameraDistanceMin": 10.5,
+        "cameraDistanceMax": 10.5,
+        "cameraFarMin": 40,
+        "cameraFarMax": 40,
+        "inkPixelFractionMin": 0.026162465413411457,
+        "inkPixelFractionMax": 0.03941472371419271
+      },
+      "screenshot": ".shots/final-1024x768.png"
+    },
+    {
+      "viewport": "800x600",
+      "width": 800,
+      "height": 600,
+      "aggregated": {
+        "knotBBoxCenter": {
+          "cx": 0.5088951310861424,
+          "cy": 0.48706896551724155
+        },
+        "knotBBoxSpan": {
+          "sx": 0.30337078651685395,
+          "sy": 0.6724137931034483
+        },
+        "knotBBoxSpanMin": {
+          "sx": 0.056179775280898875,
+          "sy": 0.15517241379310345
+        },
+        "knotPixelsMin": 27,
+        "knotPixelsMax": 656,
+        "secondLargestPixelsMin": 1,
+        "secondLargestPixelsMax": 37,
+        "cameraDistanceMin": 10.5,
+        "cameraDistanceMax": 10.5,
+        "cameraFarMin": 40,
+        "cameraFarMax": 40,
+        "inkPixelFractionMin": 0.025870833333333332,
+        "inkPixelFractionMax": 0.031939583333333334
+      },
+      "screenshot": ".shots/final-800x600.png"
+    },
+    {
+      "viewport": "390x844",
+      "width": 390,
+      "height": 844,
+      "aggregated": {
+        "knotBBoxCenter": {
+          "cx": 0.46401515151515155,
+          "cy": 0.5147357723577235
+        },
+        "knotBBoxSpan": {
+          "sx": 0.4318181818181818,
+          "sy": 0.2073170731707317
+        },
+        "knotBBoxSpanMin": {
+          "sx": 0.09090909090909091,
+          "sy": 0.07317073170731707
+        },
+        "knotPixelsMin": 23,
+        "knotPixelsMax": 177,
+        "secondLargestPixelsMin": 1,
+        "secondLargestPixelsMax": 31,
+        "cameraDistanceMin": 15.942676188961663,
+        "cameraDistanceMax": 15.942676188961663,
+        "cameraFarMin": 40,
+        "cameraFarMax": 40,
+        "inkPixelFractionMin": 0.033141937051889656,
+        "inkPixelFractionMax": 0.038540527403086645
+      },
+      "screenshot": ".shots/final-390x844.png"
+    },
+    {
+      "viewport": "360x740",
+      "width": 360,
+      "height": 740,
+      "aggregated": {
+        "knotBBoxCenter": {
+          "cx": 0.5270833333333332,
+          "cy": 0.5625000000000001
+        },
+        "knotBBoxSpan": {
+          "sx": 0.275,
+          "sy": 0.16666666666666666
+        },
+        "knotBBoxSpanMin": {
+          "sx": 0.1,
+          "sy": 0.1111111111111111
+        },
+        "knotPixelsMin": 26,
+        "knotPixelsMax": 49,
+        "secondLargestPixelsMin": 21,
+        "secondLargestPixelsMax": 33,
+        "cameraDistanceMin": 15.425591120451655,
+        "cameraDistanceMax": 15.425591120451655,
+        "cameraFarMin": 40,
+        "cameraFarMax": 40,
+        "inkPixelFractionMin": 0.04012387387387387,
+        "inkPixelFractionMax": 0.05177177177177177
+      },
+      "screenshot": ".shots/final-360x740.png"
+    },
+    {
+      "viewport": "414x896",
+      "width": 414,
+      "height": 896,
+      "aggregated": {
+        "knotBBoxCenter": {
+          "cx": 0.49365942028985504,
+          "cy": 0.45641762452107276
+        },
+        "knotBBoxSpan": {
+          "sx": 0.17391304347826086,
+          "sy": 0.14942528735632185
+        },
+        "knotBBoxSpanMin": {
+          "sx": 0.10869565217391304,
+          "sy": 0.06896551724137931
+        },
+        "knotPixelsMin": 23,
+        "knotPixelsMax": 50,
+        "secondLargestPixelsMin": 17,
+        "secondLargestPixelsMax": 47,
+        "cameraDistanceMin": 16.16777284106653,
+        "cameraDistanceMax": 16.16777284106653,
+        "cameraFarMin": 40,
+        "cameraFarMax": 40,
+        "inkPixelFractionMin": 0.02995061249137336,
+        "inkPixelFractionMax": 0.04154265873015873
+      },
+      "screenshot": ".shots/final-414x896.png"
+    },
+    {
+      "viewport": "320x480",
+      "width": 320,
+      "height": 480,
+      "aggregated": {
+        "knotBBoxCenter": {
+          "cx": 0.4710648148148149,
+          "cy": 0.40425531914893614
+        },
+        "knotBBoxSpan": {
+          "sx": 0.4444444444444444,
+          "sy": 0.5106382978723404
+        },
+        "knotBBoxSpanMin": {
+          "sx": 0.1388888888888889,
+          "sy": 0.1276595744680851
+        },
+        "knotPixelsMin": 20,
+        "knotPixelsMax": 212,
+        "secondLargestPixelsMin": 1,
+        "secondLargestPixelsMax": 22,
+        "cameraDistanceMin": 11.45073177038933,
+        "cameraDistanceMax": 11.45073177038933,
+        "cameraFarMin": 40,
+        "cameraFarMax": 40,
+        "inkPixelFractionMin": 0.049114583333333336,
+        "inkPixelFractionMax": 0.06614583333333333
+      },
+      "screenshot": ".shots/final-320x480.png"
+    },
+    {
+      "viewport": "400x3000",
+      "width": 400,
+      "height": 3000,
+      "aggregated": {
+        "knotBBoxCenter": {
+          "cx": 0.5185185185185185,
+          "cy": 0.4954022988505747
+        },
+        "knotBBoxSpan": {
+          "sx": 0.5111111111111111,
+          "sy": 0.12758620689655173
+        },
+        "knotBBoxSpanMin": {
+          "sx": 0.1111111111111111,
+          "sy": 0.020689655172413793
+        },
+        "knotPixelsMin": 24,
+        "knotPixelsMax": 349,
+        "secondLargestPixelsMin": 6,
+        "secondLargestPixelsMax": 32,
+        "cameraDistanceMin": 53.86949830933965,
+        "cameraDistanceMax": 53.86949830933965,
+        "cameraFarMin": 60.95057552834031,
+        "cameraFarMax": 60.95057552834031,
+        "inkPixelFractionMin": 0.0112975,
+        "inkPixelFractionMax": 0.015776666666666668
+      },
+      "screenshot": ".shots/final-400x3000.png"
+    }
+  ],
+  "summary": {
+    "cxSpreadAll12": 0.06687062937062932,
+    "cySpreadAll12": 0.26923076923076933,
+    "cxSpreadRealistic8": 0.06687062937062932,
+    "cySpreadRealistic8": 0.26923076923076933,
+    "minSx": 0.04195804195804196,
+    "minSxViewport": "1280x800",
+    "maxSx": 0.5111111111111111,
+    "maxSxViewport": "400x3000",
+    "minSy": 0.12758620689655173,
+    "minSyViewport": "400x3000",
+    "maxSy": 0.6724137931034483,
+    "maxSyViewport": "800x600"
+  },
+  "questions": {
+    "Q1": {
+      "description": "Is knotBBoxSpan.sx <= 0.97 and .sy <= 0.97 at EVERY viewport?",
+      "violations": [],
+      "realisticViolations": [],
+      "verdict": "PASS"
+    },
+    "Q2": {
+      "description": "cx/cy spread across all 12 and across 8 realistic viewports.",
+      "all12": {
+        "cxSpread": 0.06687062937062932,
+        "cySpread": 0.26923076923076933,
+        "cxPct": "6.69%",
+        "cyPct": "26.92%"
+      },
+      "realistic8": {
+        "cxSpread": 0.06687062937062932,
+        "cySpread": 0.26923076923076933,
+        "cxPct": "6.69%",
+        "cyPct": "26.92%",
+        "note": "Task says 8 but excluding 400x3000/1600x500/320x480 leaves 9; reporting those 9"
+      },
+      "under2pct": false,
+      "realistic8_alt": {
+        "viewports": [
+          "1920x1080",
+          "1366x768",
+          "2560x1440",
+          "1280x800",
+          "1024x768",
+          "800x600",
+          "390x844",
+          "414x896"
+        ],
+        "cxSpread": 0.06687062937062932,
+        "cySpread": 0.22146654158849272,
+        "cxPct": "6.69%",
+        "cyPct": "22.15%"
+      },
+      "verdict_2pct": "NO",
+      "note_detail": "cxSpread=6.69% cySpread=26.92%; both far exceed 2%"
+    },
+    "Q3": {
+      "description": "Does Q1 fail among mainstream shapes?",
+      "violations": [],
+      "verdict": "PASS"
+    },
+    "Q4": {
+      "description": "Every viewport has knotPixels > 0?",
+      "allHaveKnot": true,
+      "smallestKnotPixels": 1,
+      "smallestKnotViewport": "1280x800",
+      "verdict": "PASS"
+    }
+  },
+  "errors": []
+}

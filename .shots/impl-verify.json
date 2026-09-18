@@ -1,0 +1,390 @@
+{
+  "t1_centre_spread": {
+    "cx_min": 0.48727883319242205,
+    "cx_max": 0.49996512129921994,
+    "cx_spread": 0.012686288106797894,
+    "cy_min": 0.5078447073722568,
+    "cy_max": 0.5217544709720792,
+    "cy_spread": 0.013909763599822322,
+    "target_spread_pct": "< 2%",
+    "actual_cx_spread_pct": "1.27%",
+    "actual_cy_spread_pct": "1.39%"
+  },
+  "t1_viewports": [
+    {
+      "label": "1920x1080",
+      "canvas": {
+        "width": 1920,
+        "height": 1080
+      },
+      "centralMassCenter": {
+        "cx": 0.5010416666666667,
+        "cy": 0.4986111111111111
+      },
+      "centralMassSpan": {
+        "sx": 0.2947916666666667,
+        "sy": 0.6620370370370371
+      },
+      "energyCentroid": {
+        "cx": 0.4895373708454611,
+        "cy": 0.5201434063919446
+      },
+      "span": {
+        "sx": 0.9395833333333333,
+        "sy": 0.9481481481481482
+      }
+    },
+    {
+      "label": "2560x1440",
+      "canvas": {
+        "width": 2560,
+        "height": 1440
+      },
+      "centralMassCenter": {
+        "cx": 0.5017578125,
+        "cy": 0.5
+      },
+      "centralMassSpan": {
+        "sx": 0.291796875,
+        "sy": 0.6611111111111111
+      },
+      "energyCentroid": {
+        "cx": 0.48938377646604614,
+        "cy": 0.5217544709720792
+      },
+      "span": {
+        "sx": 0.93671875,
+        "sy": 0.9375
+      }
+    },
+    {
+      "label": "1280x800",
+      "canvas": {
+        "width": 1280,
+        "height": 800
+      },
+      "centralMassCenter": {
+        "cx": 0.50234375,
+        "cy": 0.49875
+      },
+      "centralMassSpan": {
+        "sx": 0.3359375,
+        "sy": 0.6725
+      },
+      "energyCentroid": {
+        "cx": 0.4890762985362901,
+        "cy": 0.5213681083560685
+      },
+      "span": {
+        "sx": 0.9875,
+        "sy": 0.94875
+      }
+    },
+    {
+      "label": "1024x768",
+      "canvas": {
+        "width": 1024,
+        "height": 768
+      },
+      "centralMassCenter": {
+        "cx": 0.5126953125,
+        "cy": 0.4954427083333333
+      },
+      "centralMassSpan": {
+        "sx": 0.369140625,
+        "sy": 0.5794270833333334
+      },
+      "energyCentroid": {
+        "cx": 0.48727883319242205,
+        "cy": 0.5132860090059611
+      },
+      "span": {
+        "sx": 0.98828125,
+        "sy": 0.9752604166666666
+      }
+    },
+    {
+      "label": "800x600",
+      "canvas": {
+        "width": 800,
+        "height": 600
+      },
+      "centralMassCenter": {
+        "cx": 0.478125,
+        "cy": 0.4691666666666667
+      },
+      "centralMassSpan": {
+        "sx": 0.56625,
+        "sy": 0.6383333333333333
+      },
+      "energyCentroid": {
+        "cx": 0.4877500661593913,
+        "cy": 0.5078447073722568
+      },
+      "span": {
+        "sx": 0.995,
+        "sy": 0.9716666666666667
+      }
+    },
+    {
+      "label": "1600x500",
+      "canvas": {
+        "width": 1600,
+        "height": 500
+      },
+      "centralMassCenter": {
+        "cx": 0.460625,
+        "cy": 0.468
+      },
+      "centralMassSpan": {
+        "sx": 0.45625,
+        "sy": 0.744
+      },
+      "energyCentroid": {
+        "cx": 0.49446948733273594,
+        "cy": 0.5179292056028248
+      },
+      "span": {
+        "sx": 0.88,
+        "sy": 0.938
+      }
+    },
+    {
+      "label": "1366x768",
+      "canvas": {
+        "width": 1366,
+        "height": 768
+      },
+      "centralMassCenter": {
+        "cx": 0.503294289897511,
+        "cy": 0.5013020833333334
+      },
+      "centralMassSpan": {
+        "sx": 0.30380673499267935,
+        "sy": 0.6744791666666666
+      },
+      "energyCentroid": {
+        "cx": 0.48984375095171784,
+        "cy": 0.5199579712059348
+      },
+      "span": {
+        "sx": 0.958272327964861,
+        "sy": 0.9479166666666666
+      }
+    },
+    {
+      "label": "390x844",
+      "canvas": {
+        "width": 390,
+        "height": 844
+      },
+      "centralMassCenter": {
+        "cx": null,
+        "cy": null
+      },
+      "centralMassSpan": {
+        "sx": null,
+        "sy": null
+      },
+      "energyCentroid": {
+        "cx": 0.5,
+        "cy": 0.5
+      },
+      "span": {
+        "sx": 0,
+        "sy": 0
+      }
+    },
+    {
+      "label": "320x480",
+      "canvas": {
+        "width": 320,
+        "height": 480
+      },
+      "centralMassCenter": {
+        "cx": 0.5046875,
+        "cy": 0.48541666666666666
+      },
+      "centralMassSpan": {
+        "sx": 0.265625,
+        "sy": 0.22083333333333333
+      },
+      "energyCentroid": {
+        "cx": 0.46739296906725747,
+        "cy": 0.4543844059832669
+      },
+      "span": {
+        "sx": 0.265625,
+        "sy": 0.22083333333333333
+      }
+    },
+    {
+      "label": "3000x400",
+      "canvas": {
+        "width": 3000,
+        "height": 400
+      },
+      "centralMassCenter": {
+        "cx": 0.48733333333333334,
+        "cy": 0.47625
+      },
+      "centralMassSpan": {
+        "sx": 0.24466666666666667,
+        "sy": 0.7725
+      },
+      "energyCentroid": {
+        "cx": 0.49996512129921994,
+        "cy": 0.5159839605845015
+      },
+      "span": {
+        "sx": 0.5653333333333334,
+        "sy": 0.9625
+      }
+    },
+    {
+      "label": "400x3000",
+      "canvas": {
+        "width": 400,
+        "height": 3000
+      },
+      "centralMassCenter": {
+        "cx": null,
+        "cy": null
+      },
+      "centralMassSpan": {
+        "sx": null,
+        "sy": null
+      },
+      "energyCentroid": {
+        "cx": 0.5,
+        "cy": 0.5
+      },
+      "span": {
+        "sx": 0,
+        "sy": 0
+      }
+    }
+  ],
+  "t2_regression_1080p": {
+    "pre_fix": {
+      "energyCentroid": {
+        "cx": 0.4435,
+        "cy": 0.455
+      },
+      "span": {
+        "sx": 0.841,
+        "sy": 0.996
+      }
+    },
+    "post_fix_energy_centroid": {
+      "cx": 0.4895373708454611,
+      "cy": 0.5201434063919446
+    },
+    "post_fix_central_mass_center": {
+      "cx": 0.5010416666666667,
+      "cy": 0.4986111111111111
+    },
+    "post_fix_span": {
+      "sx": 0.9395833333333333,
+      "sy": 0.9481481481481482
+    },
+    "centred_at_1080p": {
+      "cx": "0.5010",
+      "cy": "0.4986",
+      "within_tolerance": true
+    }
+  },
+  "t3_resize_storm": {
+    "storm_calls": 120,
+    "ascii_resize_calls": 1,
+    "composite_setSize_calls": 1,
+    "is_animating": false,
+    "size_after_storm": {
+      "attrW": 1920,
+      "attrH": 1080,
+      "cssW": 1920,
+      "cssH": 1080,
+      "expectedW": 1920,
+      "expectedH": 1080,
+      "windowW": 1920,
+      "windowH": 1080,
+      "asciiColumns": 214,
+      "asciiRows": 105
+    }
+  },
+  "t4_dpr_change": [
+    {
+      "dprInput": 2,
+      "cssW": 1920,
+      "cssH": 1200,
+      "attrW": 1920,
+      "attrH": 1200,
+      "windowW": 1280,
+      "windowH": 800,
+      "dpr": 2
+    },
+    {
+      "dprInput": 0.75,
+      "cssW": 960,
+      "cssH": 600,
+      "attrW": 960,
+      "attrH": 600,
+      "windowW": 1280,
+      "windowH": 800,
+      "dpr": 0.75
+    }
+  ],
+  "t5_degenerate": [
+    {
+      "viewport": "200x120",
+      "canvasAttrW": 200,
+      "canvasAttrH": 120,
+      "cameraAspect": 1.9166666666666667,
+      "asciiCols": 23,
+      "asciiRows": 12
+    },
+    {
+      "viewport": "100x100",
+      "canvasAttrW": 100,
+      "canvasAttrH": 100,
+      "cameraAspect": 1.2,
+      "asciiCols": 12,
+      "asciiRows": 10
+    },
+    {
+      "viewport": "3000x400",
+      "canvasAttrW": 3000,
+      "canvasAttrH": 400,
+      "cameraAspect": 8.564102564102564,
+      "asciiCols": 334,
+      "asciiRows": 39
+    },
+    {
+      "viewport": "400x3000",
+      "canvasAttrW": 400,
+      "canvasAttrH": 3000,
+      "cameraAspect": 0.15517241379310345,
+      "asciiCols": 45,
+      "asciiRows": 290
+    }
+  ],
+  "errors": [],
+  "consoleMessages": [
+    "debug: [vite] connecting...",
+    "debug: [vite] connected.",
+    "debug: [vite] connecting...",
+    "debug: [vite] connected.",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "warning: [.WebGL-0x13d400c10600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions.",
+    "warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+    "warning: [.WebGL-0x13d400c10600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions.",
+    "warning: [.WebGL-0x13d400c10600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions.",
+    "warning: [.WebGL-0x13d400c10600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions.",
+    "warning: [.WebGL-0x13d400c10600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions.",
+    "warning: [.WebGL-0x13d400c10600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions.",
+    "warning: [.WebGL-0x13d400c10600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions.",
+    "warning: [.WebGL-0x13d400c10600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions.",
+    "warning: [.WebGL-0x13d400c10600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions.",
+    "warning: [.WebGL-0x13d400c10600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+  ]
+}

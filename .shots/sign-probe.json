@@ -1,0 +1,212 @@
+{
+  "1920x1080": {
+    "methodA": {
+      "offset_0_0": {
+        "meanCx": 0.502046156766935,
+        "meanCy": 0.5013899517383646,
+        "samples": 36
+      },
+      "offset_px002": {
+        "meanCx": 0.5220461567669351,
+        "meanCy": 0.5013899517383646,
+        "samples": 36
+      },
+      "offset_mx002": {
+        "meanCx": 0.48204615676693474,
+        "meanCy": 0.5013899517383646,
+        "samples": 36
+      },
+      "offset_y002": {
+        "meanCx": 0.502046156766935,
+        "meanCy": 0.5213899517383648,
+        "samples": 36
+      },
+      "offset_my002": {
+        "meanCx": 0.502046156766935,
+        "meanCy": 0.48138995173836463,
+        "samples": 36
+      }
+    },
+    "methodB": {
+      "offset_0_0": {
+        "cx": 0.4823599763027396,
+        "cy": 0.49149504145394146,
+        "count": 40753,
+        "total": 2073600,
+        "frac": 0.0196532600308642
+      },
+      "offset_px002": {
+        "cx": 0.4823599763027396,
+        "cy": 0.49149504145394146,
+        "count": 40753,
+        "total": 2073600,
+        "frac": 0.0196532600308642
+      },
+      "offset_y002": {
+        "cx": 0.4823599763027396,
+        "cy": 0.49149504145394146,
+        "count": 40753,
+        "total": 2073600,
+        "frac": 0.0196532600308642
+      }
+    },
+    "deltasA": {
+      "offset_px002": {
+        "dCx": 0.02000000000000013,
+        "dCy": 0,
+        "absCx": 0.5220461567669351,
+        "absCy": 0.5013899517383646
+      },
+      "offset_mx002": {
+        "dCx": -0.02000000000000024,
+        "dCy": 0,
+        "absCx": 0.48204615676693474,
+        "absCy": 0.5013899517383646
+      },
+      "offset_y002": {
+        "dCx": 0,
+        "dCy": 0.02000000000000013,
+        "absCx": 0.502046156766935,
+        "absCy": 0.5213899517383648
+      },
+      "offset_my002": {
+        "dCx": 0,
+        "dCy": -0.020000000000000018,
+        "absCx": 0.502046156766935,
+        "absCy": 0.48138995173836463
+      }
+    },
+    "deltasB": {
+      "offset_px002": {
+        "dCx": 0,
+        "dCy": 0,
+        "absCx": 0.4823599763027396,
+        "absCy": 0.49149504145394146,
+        "fracLit": 0.0196532600308642,
+        "litCount": 40753
+      },
+      "offset_y002": {
+        "dCx": 0,
+        "dCy": 0,
+        "absCx": 0.4823599763027396,
+        "absCy": 0.49149504145394146,
+        "fracLit": 0.0196532600308642,
+        "litCount": 40753
+      }
+    }
+  },
+  "390x844": {
+    "methodA": {
+      "offset_0_0": {
+        "meanCx": 0.5021386213911966,
+        "meanCy": 0.5015522592237174,
+        "samples": 36
+      },
+      "offset_px002": {
+        "meanCx": 0.5221386213911964,
+        "meanCy": 0.5015522592237174,
+        "samples": 36
+      },
+      "offset_mx002": {
+        "meanCx": 0.48213862139119645,
+        "meanCy": 0.5015522592237174,
+        "samples": 36
+      },
+      "offset_y002": {
+        "meanCx": 0.5021386213911966,
+        "meanCy": 0.5215522592237174,
+        "samples": 36
+      },
+      "offset_my002": {
+        "meanCx": 0.5021386213911966,
+        "meanCy": 0.4815522592237176,
+        "samples": 36
+      }
+    },
+    "methodB": {},
+    "deltasA": {
+      "offset_px002": {
+        "dCx": 0.019999999999999796,
+        "dCy": 0,
+        "absCx": 0.5221386213911964,
+        "absCy": 0.5015522592237174
+      },
+      "offset_mx002": {
+        "dCx": -0.02000000000000013,
+        "dCy": 0,
+        "absCx": 0.48213862139119645,
+        "absCy": 0.5015522592237174
+      },
+      "offset_y002": {
+        "dCx": 0,
+        "dCy": 0.020000000000000018,
+        "absCx": 0.5021386213911966,
+        "absCy": 0.5215522592237174
+      },
+      "offset_my002": {
+        "dCx": 0,
+        "dCy": -0.019999999999999796,
+        "absCx": 0.5021386213911966,
+        "absCy": 0.4815522592237176
+      }
+    },
+    "deltasB": {}
+  },
+  "answers": {
+    "Q1": {
+      "question": "If framingOffset.x is POSITIVE, does the knot move LEFT or RIGHT?",
+      "measured_dCx_at_offset_002": 0.02000000000000013,
+      "direction": "RIGHT",
+      "delta": "dCx = 0.020000  (positive x → knot moves right)"
+    },
+    "Q2": {
+      "question": "If framingOffset.y is POSITIVE, does the knot move UP or DOWN on screen?",
+      "measured_dCy_at_offset_002": 0.02000000000000013,
+      "direction": "DOWN",
+      "note": "cy measured from TOP; larger cy = lower on screen",
+      "delta": "dCy = 0.020000  (positive y → knot moves down)"
+    },
+    "Q3": {
+      "question": "To move knot LEFT 1.5% and DOWN 1.5%, what {x,y}? ",
+      "dx_per_unit": 1.0000000000000064,
+      "dy_per_unit": 1.0000000000000064,
+      "suggested_offset": {
+        "x": -0.014999999999999902,
+        "y": 0.014999999999999902
+      },
+      "reasoning": "dx_per_unit=1.000000 dCx/unit, dy_per_unit=1.000000 dCy/unit. To get dCx=-0.015: x=-0.015000. To get dCy=+0.015: y=0.015000."
+    },
+    "Q4": {
+      "question": "Did (A) and (B) agree in sign at 1920x1080?",
+      "A_dCx_px002": 0.02000000000000013,
+      "B_dCx_px002": 0,
+      "A_dCy_y002": 0.02000000000000013,
+      "B_dCy_y002": 0,
+      "signs_agree_x": false,
+      "signs_agree_y": false,
+      "overall": "NO"
+    },
+    "Q5": {
+      "question": "Does the needed correction differ between 1920x1080 and 390x844?",
+      "baseline_1920": {
+        "meanCx": 0.502046156766935,
+        "meanCy": 0.5013899517383646,
+        "samples": 36
+      },
+      "baseline_390": {
+        "meanCx": 0.5021386213911966,
+        "meanCy": 0.5015522592237174,
+        "samples": 36
+      },
+      "bias_1920": {
+        "cx": 0.002046156766934981,
+        "cy": 0.0013899517383646476
+      },
+      "bias_390": {
+        "cx": 0.0021386213911965823,
+        "cy": 0.0015522592237173782
+      },
+      "same_bias": true
+    }
+  }
+}

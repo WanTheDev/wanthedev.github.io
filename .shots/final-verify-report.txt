@@ -1,0 +1,75 @@
+==============================================================================
+  FINAL VERIFICATION REPORT — ASCII Torus Knot Framing
+  Generated: 2026-09-18T12:07:27.698Z
+==============================================================================
+
+METHOD: Largest 4-connected component on downsampled glyph grid (ascii.columns x ascii.rows),
+        threshold luminance > 30. ~12 samples per viewport at ~500ms spacing.
+
+TABLE — Aggregated per-viewport metrics:
+------------------------------------------------------------------------------
+Viewport      cx       cy       sx       sy       knot[min..max]  2nd[min..max]  inkFr  camDist
+------------------------------------------------------------------------------
+1920x1080      0.5012  0.3821  0.1262  0.3810      k30..388       226..44 0.0195   10.50
+1366x768       0.5269  0.3756  0.2105  0.2133      k19..127      216..115 0.0229   10.50
+2560x1440      0.5060  0.3104  0.1474  0.3143      k36..775       225..52 0.0200   10.50
+1280x800       0.5309  0.2933  0.0420  0.1667        k1..49        21..36 0.0239   10.50
+1600x500       0.5056  0.4099  0.1517  0.3265      k24..175       212..33 0.0132   10.50
+1024x768       0.5212  0.3556  0.2105  0.2933      k22..251       211..31 0.0262   10.50
+800x600        0.5089  0.4871  0.3034  0.6724      k27..656        21..37 0.0259   10.50
+390x844        0.4640  0.5147  0.4318  0.2073      k23..177        21..31 0.0331   15.94
+360x740        0.5271  0.5625  0.2750  0.1667       k26..49       221..33 0.0401   15.43
+414x896        0.4937  0.4564  0.1739  0.1494       k23..50       217..47 0.0300   16.17
+320x480        0.4711  0.4043  0.4444  0.5106      k20..212        21..22 0.0491   11.45
+400x3000       0.5185  0.4954  0.5111  0.1276      k24..349        26..32 0.0113   53.87
+------------------------------------------------------------------------------
+
+Q1 -- knotBBoxSpan <= 0.97 at every viewport?
+  PASS -- no violations among any of the 12 viewports.
+  Max sx = 0.5111 (400x3000)
+  Max sy = 0.6724 (800x600)
+  All spans comfortably below the 0.97 threshold -- the knot is never cropped or touching an edge.
+
+Q2 -- cx/cy spread across all 12 and realistic subset?
+  All 12:   cx spread = 6.69%,  cy spread = 26.92%
+  Real 9 (excl 400x3000/1600x500/320x480): cx = 6.69%, cy = 26.92%
+  Real 8 (addtl excl 360x740): cx = 6.69%, cy = 22.15%
+  Under 2%? NO. Both cx and cy spreads far exceed 2%.
+  The cy spread (22-27%) is driven by a systematic offset between landscape and portrait viewports:
+    Landscape (aspect >= 1): cy ranges 0.293 (1280x800) -> 0.487 (800x600)
+    Portrait  (aspect <  1): cy ranges 0.456 (414x896) -> 0.563 (360x740)
+  This is likely caused by the torus knot asymmetric bounding volume combined with the
+  aspect-ratio-dependent camera pull-back, which shifts the projected silhouette vertically.
+
+Q3 -- Does Q1 fail among mainstream shapes?
+  PASS -- none of the 7 mainstream shapes (1920x1080, 1366x768, 1280x800, 1024x768,
+  800x600, 390x844, 414x896) violate the 0.97 span bound.
+
+Q4 -- Every viewport has knotPixels > 0?
+  PASS -- all 12 viewports render the knot (knotPixelsMin >= 1).
+  Smallest knotPixels = 1 at 1280x800 (sample s0).
+  NOTE: at several viewports (1366x768, 1280x800, 360x740, 414x896) the knot/2nd-ratio
+  drops to ~1.1-1.5, meaning the largest connected component is not clearly separated
+  from background/starfield fragments at all rotation phases.
+
+ISOLATION QUALITY (knotMax / 2ndMax ratio):
+------------------------------------------------------------------------------
+  1920x1080  ratio=8.8 [OK]  knotMax=388  2ndMax=44
+  1366x768  ratio=1.1 [WEAK]  knotMax=127  2ndMax=115
+  2560x1440  ratio=14.9 [OK]  knotMax=775  2ndMax=52
+  1280x800  ratio=1.4 [WEAK]  knotMax=49  2ndMax=36
+  1600x500  ratio=5.3 [OK]  knotMax=175  2ndMax=33
+  1024x768  ratio=8.1 [OK]  knotMax=251  2ndMax=31
+  800x600  ratio=17.7 [OK]  knotMax=656  2ndMax=37
+  390x844  ratio=5.7 [OK]  knotMax=177  2ndMax=31
+  360x740  ratio=1.5 [WEAK]  knotMax=49  2ndMax=33
+  414x896  ratio=1.1 [WEAK]  knotMax=50  2ndMax=47
+  320x480  ratio=9.6 [OK]  knotMax=212  2ndMax=22
+  400x3000  ratio=10.9 [OK]  knotMax=349  2ndMax=32
+
+ARTIFACTS:
+  12 per-viewport PNGs: .shots/final-<W>x<H>.png (all present, correct dimensions)
+  Report: .shots/final-verify.json
+  Contact sheet: not produced (would require off-screen compositing)
+
+==============================================================================

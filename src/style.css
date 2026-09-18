@@ -20,9 +20,16 @@ body {
   background: #050608;
 }
 
+/* A canvas is a replaced element: with no width/height it is laid out at its
+   INTRINSIC size - the drawing buffer, which is `viewport x devicePixelRatio`.
+   On any display where that ratio is not exactly 1 the canvas would then be
+   drawn oversized and cropped, which reads as the image being "stretched".
+   Pinning the CSS box to the viewport keeps the two independent. */
 #ascii-background {
   position: fixed;
   inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
   display: block;
   pointer-events: none;

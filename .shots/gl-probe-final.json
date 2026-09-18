@@ -1,0 +1,78 @@
+[
+  {
+    "F1": {
+      "viewport": "1280x800 steady",
+      "warnings": 0,
+      "ink": {
+        "inkPixels": 28858,
+        "total": 1024000,
+        "canvas": "1280x800",
+        "inner": "1280x800"
+      }
+    }
+  },
+  {
+    "F2": [
+      {
+        "phase": "grow#1 100->1280",
+        "warnings": 12
+      },
+      {
+        "phase": "shrink 1280->100",
+        "warnings": 3
+      },
+      {
+        "phase": "grow#2 100->1280",
+        "warnings": 21
+      }
+    ]
+  },
+  {
+    "F3": [
+      {
+        "to": "600x500",
+        "warnings": 33
+      },
+      {
+        "to": "800x600",
+        "warnings": 26
+      },
+      {
+        "to": "1100x700",
+        "warnings": 14
+      },
+      {
+        "to": "1280x800",
+        "warnings": 12
+      },
+      {
+        "to": "1600x900",
+        "warnings": 9
+      }
+    ]
+  },
+  {
+    "F4": {
+      "inkAt1x1": {
+        "inkPixels": 0,
+        "total": 1,
+        "canvas": "1x1",
+        "inner": "1x1"
+      },
+      "aliveAt1x1": {
+        "measurable": false
+      },
+      "inkAfterRecovery": {
+        "inkPixels": 29113,
+        "total": 1024000,
+        "canvas": "1280x800",
+        "inner": "1280x800"
+      },
+      "aliveAfterRecovery": {
+        "measurable": true,
+        "differingFraction": 0.020016357421875,
+        "isFrozen": false
+      }
+    }
+  }
+]

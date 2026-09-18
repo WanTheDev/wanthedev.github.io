@@ -1,0 +1,548 @@
+{
+  "results": [
+    {
+      "viewport": "1920x1080",
+      "canvasW": 1920,
+      "canvasH": 1080,
+      "inkCount": 71954,
+      "totalPixels": 2073600,
+      "inkPixelFraction": 0.034700038580246916,
+      "inkBbox": {
+        "x0": 0.06197916666666667,
+        "y0": 0.05092592592592592,
+        "x1": 0.9645833333333333,
+        "y1": 1,
+        "x0m": 0.06197916666666667,
+        "y0m": 0.05092592592592592,
+        "x1m": 0.9645833333333333,
+        "y1m": 0.9805555555555555,
+        "marginApplied": true
+      },
+      "inkCentroid": {
+        "cx": 0.48284446486644245,
+        "cy": 0.49237933906333164
+      },
+      "inkFillX": 0.9026041666666667,
+      "inkFillY": 0.9490740740740741,
+      "camera": {
+        "far": 40,
+        "aspect": 2.038095238095238,
+        "fov": 46,
+        "position": [
+          0,
+          0,
+          10.5
+        ],
+        "worldDir": [
+          0,
+          0,
+          -1
+        ]
+      }
+    },
+    {
+      "viewport": "2560x1440",
+      "canvasW": 2560,
+      "canvasH": 1440,
+      "inkCount": 126083,
+      "totalPixels": 3686400,
+      "inkPixelFraction": 0.034202202690972225,
+      "inkBbox": {
+        "x0": 0.060546875,
+        "y0": 0.052083333333333336,
+        "x1": 0.966015625,
+        "y1": 0.9972222222222222,
+        "x0m": 0.060546875,
+        "y0m": 0.052083333333333336,
+        "x1m": 0.966015625,
+        "y1m": 0.9805555555555555,
+        "marginApplied": true
+      },
+      "inkCentroid": {
+        "cx": 0.4815351172441963,
+        "cy": 0.4926950456797859
+      },
+      "inkFillX": 0.90546875,
+      "inkFillY": 0.9451388888888889,
+      "camera": {
+        "far": 40,
+        "aspect": 2.0357142857142856,
+        "fov": 46,
+        "position": [
+          0,
+          0,
+          10.5
+        ],
+        "worldDir": [
+          0,
+          0,
+          -1
+        ]
+      }
+    },
+    {
+      "viewport": "1366x768",
+      "canvasW": 1366,
+      "canvasH": 768,
+      "inkCount": 37455,
+      "totalPixels": 1049088,
+      "inkPixelFraction": 0.03570243868960468,
+      "inkBbox": {
+        "x0": 0.014641288433382138,
+        "y0": 0.03125,
+        "x1": 0.9670571010248902,
+        "y1": 0.9934895833333334,
+        "x0m": 0.019765739385065886,
+        "y0m": 0.03125,
+        "x1m": 0.9670571010248902,
+        "y1m": 0.98046875,
+        "marginApplied": true
+      },
+      "inkCentroid": {
+        "cx": 0.48145430934886624,
+        "cy": 0.49320375422729495
+      },
+      "inkFillX": 0.9524158125915081,
+      "inkFillY": 0.9622395833333334,
+      "camera": {
+        "far": 40,
+        "aspect": 2.026666666666667,
+        "fov": 46,
+        "position": [
+          0,
+          0,
+          10.5
+        ],
+        "worldDir": [
+          0,
+          0,
+          -1
+        ]
+      }
+    },
+    {
+      "viewport": "1280x800",
+      "canvasW": 1280,
+      "canvasH": 800,
+      "inkCount": 40260,
+      "totalPixels": 1024000,
+      "inkPixelFraction": 0.03931640625,
+      "inkBbox": {
+        "x0": 0.00859375,
+        "y0": 0.0425,
+        "x1": 0.96171875,
+        "y1": 0.9925,
+        "x0m": 0.01953125,
+        "y0m": 0.0425,
+        "x1m": 0.96171875,
+        "y1m": 0.98,
+        "marginApplied": true
+      },
+      "inkCentroid": {
+        "cx": 0.4809109343951813,
+        "cy": 0.49226484103328366
+      },
+      "inkFillX": 0.953125,
+      "inkFillY": 0.95,
+      "camera": {
+        "far": 40,
+        "aspect": 1.8333333333333333,
+        "fov": 46,
+        "position": [
+          0,
+          0,
+          10.5
+        ],
+        "worldDir": [
+          0,
+          0,
+          -1
+        ]
+      }
+    },
+    {
+      "viewport": "1600x500",
+      "canvasW": 1600,
+      "canvasH": 500,
+      "inkCount": 17021,
+      "totalPixels": 800000,
+      "inkPixelFraction": 0.02127625,
+      "inkBbox": {
+        "x0": 0.035,
+        "y0": 0.026,
+        "x1": 0.915625,
+        "y1": 0.988,
+        "x0m": 0.035,
+        "y0m": 0.026,
+        "x1m": 0.915625,
+        "y1m": 0.98,
+        "marginApplied": true
+      },
+      "inkCentroid": {
+        "cx": 0.48957559779096405,
+        "cy": 0.4903748310910052
+      },
+      "inkFillX": 0.880625,
+      "inkFillY": 0.962,
+      "camera": {
+        "far": 40,
+        "aspect": 3.63265306122449,
+        "fov": 46,
+        "position": [
+          0,
+          0,
+          10.5
+        ],
+        "worldDir": [
+          0,
+          0,
+          -1
+        ]
+      }
+    },
+    {
+      "viewport": "1024x768",
+      "canvasW": 1024,
+      "canvasH": 768,
+      "inkCount": 37212,
+      "totalPixels": 786432,
+      "inkPixelFraction": 0.0473175048828125,
+      "inkBbox": {
+        "x0": 0.001953125,
+        "y0": 0.03125,
+        "x1": 0.9736328125,
+        "y1": 0.9934895833333334,
+        "x0m": 0.01953125,
+        "y0m": 0.03125,
+        "x1m": 0.9736328125,
+        "y1m": 0.98046875,
+        "marginApplied": true
+      },
+      "inkCentroid": {
+        "cx": 0.47419853747615015,
+        "cy": 0.49351169761546454
+      },
+      "inkFillX": 0.9716796875,
+      "inkFillY": 0.9622395833333334,
+      "camera": {
+        "far": 40,
+        "aspect": 1.52,
+        "fov": 46,
+        "position": [
+          0,
+          0,
+          10.5
+        ],
+        "worldDir": [
+          0,
+          0,
+          -1
+        ]
+      }
+    },
+    {
+      "viewport": "800x600",
+      "canvasW": 800,
+      "canvasH": 600,
+      "inkCount": 22863,
+      "totalPixels": 480000,
+      "inkPixelFraction": 0.04763125,
+      "inkBbox": {
+        "x0": 0.0025,
+        "y0": 0.04,
+        "x1": 0.98875,
+        "y1": 0.9966666666666667,
+        "x0m": 0.02,
+        "y0m": 0.04,
+        "x1m": 0.98,
+        "y1m": 0.98,
+        "marginApplied": true
+      },
+      "inkCentroid": {
+        "cx": 0.47526221405764774,
+        "cy": 0.4871117088746009
+      },
+      "inkFillX": 0.98625,
+      "inkFillY": 0.9566666666666667,
+      "camera": {
+        "far": 40,
+        "aspect": 1.5344827586206897,
+        "fov": 46,
+        "position": [
+          0,
+          0,
+          10.5
+        ],
+        "worldDir": [
+          0,
+          0,
+          -1
+        ]
+      }
+    },
+    {
+      "viewport": "390x844",
+      "canvasW": 390,
+      "canvasH": 844,
+      "inkCount": 19014,
+      "totalPixels": 329160,
+      "inkPixelFraction": 0.05776522056142909,
+      "inkBbox": {
+        "x0": 0.005128205128205128,
+        "y0": 0.0035545023696682463,
+        "x1": 1,
+        "y1": 0.990521327014218,
+        "x0m": 0.017948717948717947,
+        "y0m": 0.018957345971563982,
+        "x1m": 0.982051282051282,
+        "y1m": 0.981042654028436,
+        "marginApplied": true
+      },
+      "inkCentroid": {
+        "cx": 0.4708343110204896,
+        "cy": 0.4868833241856711
+      },
+      "inkFillX": 0.9948717948717949,
+      "inkFillY": 0.9869668246445498,
+      "camera": {
+        "far": 40,
+        "aspect": 0.5365853658536586,
+        "fov": 46,
+        "position": [
+          0,
+          0,
+          15.942676188961663
+        ],
+        "worldDir": [
+          0,
+          0,
+          -1
+        ]
+      }
+    },
+    {
+      "viewport": "360x740",
+      "canvasW": 360,
+      "canvasH": 740,
+      "inkCount": 15714,
+      "totalPixels": 266400,
+      "inkPixelFraction": 0.05898648648648649,
+      "inkBbox": {
+        "x0": 0.005555555555555556,
+        "y0": 0.004054054054054054,
+        "x1": 0.9972222222222222,
+        "y1": 1,
+        "x0m": 0.019444444444444445,
+        "y0m": 0.01891891891891892,
+        "x1m": 0.9805555555555555,
+        "y1m": 0.981081081081081,
+        "marginApplied": true
+      },
+      "inkCentroid": {
+        "cx": 0.4594789854765037,
+        "cy": 0.48861240966051966
+      },
+      "inkFillX": 0.9916666666666667,
+      "inkFillY": 0.995945945945946,
+      "camera": {
+        "far": 40,
+        "aspect": 0.5555555555555556,
+        "fov": 46,
+        "position": [
+          0,
+          0,
+          15.425591120451655
+        ],
+        "worldDir": [
+          0,
+          0,
+          -1
+        ]
+      }
+    },
+    {
+      "viewport": "320x480",
+      "canvasW": 320,
+      "canvasH": 480,
+      "inkCount": 12611,
+      "totalPixels": 153600,
+      "inkPixelFraction": 0.08210286458333334,
+      "inkBbox": {
+        "x0": 0.00625,
+        "y0": 0.00625,
+        "x1": 1,
+        "y1": 1,
+        "x0m": 0.01875,
+        "y0m": 0.01875,
+        "x1m": 0.98125,
+        "y1m": 0.98125,
+        "marginApplied": true
+      },
+      "inkCentroid": {
+        "cx": 0.4553395844897312,
+        "cy": 0.4939938347474427
+      },
+      "inkFillX": 0.99375,
+      "inkFillY": 0.99375,
+      "camera": {
+        "far": 40,
+        "aspect": 0.7659574468085106,
+        "fov": 46,
+        "position": [
+          0,
+          0,
+          11.45073177038933
+        ],
+        "worldDir": [
+          0,
+          0,
+          -1
+        ]
+      }
+    },
+    {
+      "viewport": "414x896",
+      "canvasW": 414,
+      "canvasH": 896,
+      "inkCount": 20840,
+      "totalPixels": 370944,
+      "inkPixelFraction": 0.056180986887508624,
+      "inkBbox": {
+        "x0": 0.004830917874396135,
+        "y0": 0.014508928571428572,
+        "x1": 0.9951690821256038,
+        "y1": 0.9787946428571429,
+        "x0m": 0.01932367149758454,
+        "y0m": 0.018973214285714284,
+        "x1m": 0.9806763285024155,
+        "y1m": 0.9787946428571429,
+        "marginApplied": true
+      },
+      "inkCentroid": {
+        "cx": 0.45946468144686453,
+        "cy": 0.48865404142103097
+      },
+      "inkFillX": 0.9903381642512077,
+      "inkFillY": 0.9642857142857143,
+      "camera": {
+        "far": 40,
+        "aspect": 0.5287356321839081,
+        "fov": 46,
+        "position": [
+          0,
+          0,
+          16.16777284106653
+        ],
+        "worldDir": [
+          0,
+          0,
+          -1
+        ]
+      }
+    },
+    {
+      "viewport": "400x3000",
+      "canvasW": 400,
+      "canvasH": 3000,
+      "inkCount": 21119,
+      "totalPixels": 1200000,
+      "inkPixelFraction": 0.017599166666666666,
+      "inkBbox": {
+        "x0": 0.005,
+        "y0": 0.22866666666666666,
+        "x1": 1,
+        "y1": 0.7373333333333333,
+        "x0m": 0.02,
+        "y0m": 0.22866666666666666,
+        "x1m": 0.98,
+        "y1m": 0.7373333333333333,
+        "marginApplied": true
+      },
+      "inkCentroid": {
+        "cx": 0.485597921303092,
+        "cy": 0.47545254667992487
+      },
+      "inkFillX": 0.995,
+      "inkFillY": 0.5086666666666667,
+      "camera": {
+        "far": 60.95057552834031,
+        "aspect": 0.15517241379310345,
+        "fov": 46,
+        "position": [
+          0,
+          0,
+          53.86949830933965
+        ],
+        "worldDir": [
+          0,
+          0,
+          -1
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "spreadCx": 0.034236,
+    "spreadCy": 0.018541,
+    "minCx": 0.45534,
+    "maxCx": 0.489576,
+    "minCxViewport": "320x480",
+    "maxCxViewport": "1600x500",
+    "minCy": 0.475453,
+    "maxCy": 0.493994,
+    "minCyViewport": "400x3000",
+    "maxCyViewport": "320x480",
+    "minFillX": 0.880625,
+    "maxFillX": 0.995,
+    "minFillXViewport": "1600x500",
+    "maxFillXViewport": "400x3000",
+    "minFillY": 0.508667,
+    "maxFillY": 0.995946,
+    "minFillYViewport": "400x3000",
+    "maxFillYViewport": "360x740"
+  },
+  "questions": {
+    "Q1_outOfFrame": [],
+    "Q2_portraitVisibility": [
+      {
+        "viewport": "390x844",
+        "inkPixelFraction": 0.05776522056142909,
+        "visible": true
+      },
+      {
+        "viewport": "360x740",
+        "inkPixelFraction": 0.05898648648648649,
+        "visible": true
+      },
+      {
+        "viewport": "320x480",
+        "inkPixelFraction": 0.08210286458333334,
+        "visible": true
+      },
+      {
+        "viewport": "414x896",
+        "inkPixelFraction": 0.056180986887508624,
+        "visible": true
+      },
+      {
+        "viewport": "400x3000",
+        "inkPixelFraction": 0.017599166666666666,
+        "visible": true
+      }
+    ],
+    "Q3_centroidInFrame": {
+      "min": 0.45534,
+      "max": 0.489576,
+      "minViewport": "320x480",
+      "maxViewport": "1600x500",
+      "pass": false
+    },
+    "Q4_fillXRange": {
+      "min": 0.880625,
+      "max": 0.995,
+      "minViewport": "1600x500",
+      "maxViewport": "400x3000",
+      "pass": false
+    }
+  }
+}

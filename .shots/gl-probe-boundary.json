@@ -1,0 +1,102 @@
+[
+  {
+    "test": "grow",
+    "from": "100x800",
+    "to": "1280x800",
+    "warningsBefore": 0,
+    "warnings": 27
+  },
+  {
+    "test": "grow",
+    "from": "200x800",
+    "to": "1280x800",
+    "warningsBefore": 0,
+    "warnings": 29
+  },
+  {
+    "test": "grow",
+    "from": "300x800",
+    "to": "1280x800",
+    "warningsBefore": 0,
+    "warnings": 34
+  },
+  {
+    "test": "grow",
+    "from": "400x800",
+    "to": "1280x800",
+    "warningsBefore": 0,
+    "warnings": 33
+  },
+  {
+    "test": "grow",
+    "from": "500x800",
+    "to": "1280x800",
+    "warningsBefore": 0,
+    "warnings": 30
+  },
+  {
+    "test": "grow",
+    "from": "700x800",
+    "to": "1280x800",
+    "warningsBefore": 0,
+    "warnings": 24
+  },
+  {
+    "test": "grow",
+    "from": "900x800",
+    "to": "1280x800",
+    "warningsBefore": 0,
+    "warnings": 22
+  },
+  {
+    "test": "grow",
+    "from": "1100x800",
+    "to": "1280x800",
+    "warningsBefore": 0,
+    "warnings": 22
+  },
+  {
+    "test": "grow",
+    "from": "1279x800",
+    "to": "1280x800",
+    "warningsBefore": 0,
+    "warnings": 22
+  },
+  {
+    "test": "repeat-grow-same-page",
+    "cycles": [
+      {
+        "cycle": 0,
+        "warnings": 0
+      },
+      {
+        "cycle": 1,
+        "warnings": 0
+      },
+      {
+        "cycle": 2,
+        "warnings": 0
+      },
+      {
+        "cycle": 3,
+        "warnings": 0
+      },
+      {
+        "cycle": 4,
+        "warnings": 0
+      }
+    ]
+  },
+  {
+    "test": "grow-height",
+    "from": "1280x400",
+    "to": "1280x800",
+    "warnings": 28
+  },
+  {
+    "test": "grow-dpr2",
+    "from": "700x800@dpr2",
+    "to": "1280x800@dpr2",
+    "warnings": 13
+  }
+]

@@ -86,9 +86,17 @@ export class AsciiRenderer {
   }
 
   resize(width, height, devicePixelRatio = 1) {
-    this.width = Math.max(1, Math.floor(width));
-    this.height = Math.max(1, Math.floor(height));
-    this.devicePixelRatio = Math.max(1, devicePixelRatio);
+    // Coerce to numbers and clamp to sane minimums; NaN inputs must not
+    // produce a NaN backing store that breaks the next draw.
+    width = Number(width);
+    height = Number(height);
+    devicePixelRatio = Number(devicePixelRatio);
+    if (!Number.isFinite(width) || width < 1) width = 1;
+    if (!Number.isFinite(height) || height < 1) height = 1;
+    // Allow sub-1 DPR so low-DPR displays do not upscale the backing store.
+    this.width = Math.floor(width);
+    this.height = Math.floor(height);
+    this.devicePixelRatio = devicePixelRatio;
 
     const cellWidth = this.options.cellSize;
     const cellHeight = this.options.cellSize * this.options.lineHeight;
@@ -117,6 +125,18 @@ export class AsciiRenderer {
     const brightness = clamp(contrasted);
     return this.options.invert ? 1 - brightness : brightness;
   }
+  /**
+   * Glyph coverage already encodes brightness, so the sampled colour is
+   * normalised to full saturation and only mildly darkened. That keeps the hue
+   * of a bright pixel visible without washing the glyphs out to white.
+   */
+  sourceColor(red, green, blue, brightness) {
+    const peak = Math.max(red, green, blue, 1);
+    const value = (0.4 + 0.6 * brightness) / peak;
+    return `rgb(${Math.round(red * value * 255)},${Math.round(
+      green * value * 255,
+    )},${Math.round(blue * value * 255)})`;
+  }
 
   render(sourceCanvas) {
     const { context, sampleContext, columns, rows, options } = this;
@@ -139,7 +159,10 @@ export class AsciiRenderer {
 
     context.textAlign = "center";
     context.textBaseline = "middle";
-    context.font = `${options.fontWeight} ${options.cellSize}px ${options.fontFamily}`;
+    context.font = `${options.cellSize}px ${options.fontFamily}`;
+    // In `source` mode the glyph takes the sampled scene colour, so the
+    // post-processing hues (ramp, aberration, bloom) survive the ASCII pass.
+    const tint = options.colors.mode === "source";
 
     for (let row = 0; row < rows; row += 1) {
       for (let column = 0; column < columns; column += 1) {
@@ -175,7 +198,14 @@ export class AsciiRenderer {
             context.drawImage(glyph.image, ...destination);
           }
         } else if (glyph && !/^\s+$/u.test(glyph)) {
-          context.fillStyle = this.palette[Math.round(brightness * 63)];
+          context.fillStyle = tint
+            ? this.sourceColor(
+                pixels[offset],
+                pixels[offset + 1],
+                pixels[offset + 2],
+                brightness,
+              )
+            : this.palette[Math.round(brightness * 63)];
           context.fillText(glyph, x, y);
         }
       }
