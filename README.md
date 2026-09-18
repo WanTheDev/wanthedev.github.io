@@ -25,6 +25,9 @@ All normal tuning lives in [`src/config.js`](src/config.js). Glyphs must be orde
 - Change `glyphs.values` to any string, such as `" WanTheDv"`, or an array of Unicode glyphs such as the included moon-phase preset.
 - Increase `cellSize` for fewer, larger glyphs and better performance; decrease it for more detail.
 - Adjust the contrast, inversion, and FPS in `config.ascii`.
+- `ascii.voidLuminance` leaves near-black source pixels empty even when the
+  character set starts with a visible glyph. The ASCII canvas itself defaults
+  to black, so an empty cell is black rather than a dark blue character.
 - `ascii.colors.mode` picks how glyphs are coloured: `"palette"` interpolates `low` -> `high` (the original greyscale look), while `"source"` gives each glyph the colour the scene rendered there. Use `"source"` to actually see the post-processing hues.
 - Edit [`src/scene.js`](src/scene.js) to replace the default Three.js scene. The ASCII layer only samples its output canvas, so meshes, shaders, or a different composer chain can replace it without changing the page content.
 
@@ -91,6 +94,7 @@ Settings can also be changed without recreating the renderer from the browser co
 
 ```js
 await asciiPortfolio.set({ cellSize: 12, contrast: 1.7, fps: 20 });
+await asciiPortfolio.set({ voidLuminance: 0.01 });
 await asciiPortfolio.setGlyphs(" WanTheDv");
 await asciiPortfolio.setGlyphs([" ", "🌑", "🌓", "🌕"]);
 ```
@@ -109,6 +113,10 @@ await asciiPortfolio.setGlyphs([" ", "🌑", "🌓", "🌕"]);
 - `framingOffset` — off-centre compositions only (`{ x: 0.1, y: 0 }` shifts the
   object right by a tenth of the width). Screen-space, so identical at every
   window size. Left at zero: the framing above is already centred.
+- `scene.fog` — live `enabled`, `color` (hex), and `density` controls for the
+  exponential fog. Density is adjusted with camera distance to preserve the
+  same haze when narrow windows pull the camera back. For example,
+  `asciiPortfolio.config.scene.fog.density = 0.12` updates while the page runs.
 
 Resizes are coalesced to one pass per animation frame (a drag storm costs a
 single GPU re-allocation instead of hundreds), and `devicePixelRatio` changes

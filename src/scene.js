@@ -53,9 +53,7 @@ export function createScene(
 
   const scene = new Scene();
   scene.background = new Color(sceneOptions.background);
-  scene.fog = new FogExp2(sceneOptions.background, 0.075);
-  // Captured so `resize` can rescale the haze with the framing pull-back.
-  const fogDensity = scene.fog.density;
+  scene.fog = null;
 
   const camera = new PerspectiveCamera(46, 1, 0.1, 40);
 
@@ -151,6 +149,17 @@ export function createScene(
   const sinHalfFov = tanHalfFov / Math.sqrt(1 + tanHalfFov * tanHalfFov);
   let framingDistance = sceneOptions.cameraZ;
 
+  function syncFog() {
+    const fog = sceneOptions.fog;
+    if (!fog?.enabled) {
+      scene.fog = null;
+      return;
+    }
+    if (!scene.fog) scene.fog = new FogExp2(fog.color, 0);
+    scene.fog.color.set(fog.color);
+    scene.fog.density = Math.max(0, fog.density) * (sceneOptions.cameraZ / framingDistance);
+  }
+
   function frameDistance(aspect) {
     // A sphere of radius R fits inside a cone of half-angle θ only when the eye
     // is at least R / sin(θ) away — the tangent form R / tan(θ) is the distance
@@ -238,7 +247,7 @@ export function createScene(
     // and the fog scales with it, so the knot keeps the haze level it has at the
     // reference aspect.
     camera.far = Math.max(40, framingDistance + framingRadius * 2);
-    scene.fog.density = fogDensity * (sceneOptions.cameraZ / framingDistance);
+    syncFog();
     camera.updateProjectionMatrix();
     fx.setSize(width, height);
   }
@@ -250,6 +259,7 @@ export function createScene(
   function update(time, delta = 0) {
     const settings = interactOptions;
     const enabled = settings.enabled;
+    syncFog();
 
     for (const light of lights)
       light.intensity = light.baseIntensity * sceneOptions.lightScale;

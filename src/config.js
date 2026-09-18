@@ -26,7 +26,7 @@ export const config = {
     fontFamily:
       'ui-monospace, "Cascadia Mono", "SFMono-Regular", Consolas, monospace',
     colors: {
-      background: "#050608",
+      background: "#000000",
       low: "#313741",
       high: "#dce7f2",
       // `palette`: glyphs interpolate `low` -> `high`. `source`: glyphs take the
@@ -35,6 +35,9 @@ export const config = {
       mode: "source",
     },
     contrast: 1.15,
+    // Samples at or below this source luminance are empty, even if the first
+    // glyph is a visible character. Raise it if the scene/grade lifts the void.
+    voidLuminance: 0.004,
     invert: false,
     fps: 30,
     spriteScale: 0.9,
@@ -42,6 +45,10 @@ export const config = {
 
   scene: {
     background: 0x050608,
+    // Exponential scene fog. The effective density follows the camera's
+    // framing distance so portrait windows keep the same haze as landscape.
+    // These values are read live from asciiPortfolio.config.scene.fog.
+    fog: { enabled: true, color: 0x050608, density: 0.075 },
     objectColor: 0xdde7f0,
     particleColor: 0x69727f,
     particleCount: 250,

@@ -64,6 +64,9 @@ export class AsciiRenderer {
     this.options.cellSize = Math.max(4, Number(this.options.cellSize) || 9);
     this.options.lineHeight = Math.max(0.8, Number(this.options.lineHeight) || 1.15);
     this.options.fps = Math.max(1, Number(this.options.fps) || 30);
+    const voidLuminance = Number(this.options.voidLuminance);
+    this.options.voidLuminance = Number.isFinite(voidLuminance)
+      ? clamp(voidLuminance) : 0.004;
     this.updatePalette();
 
     const version = ++this.loadVersion;
@@ -177,6 +180,9 @@ export class AsciiRenderer {
           + pixels[offset + 1] * 0.7152
           + pixels[offset + 2] * 0.0722
         ) / 255 * alpha;
+        // Darkness is empty space, independent of the first glyph. Otherwise
+        // a character set without a leading space paints the whole background.
+        if (luminance <= options.voidLuminance) continue;
         const brightness = this.processBrightness(luminance);
         const glyphIndex = Math.min(
           glyphs.length - 1,
