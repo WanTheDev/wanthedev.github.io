@@ -204,11 +204,21 @@ export function createBloomComposite(canvas, sourceCanvas, options) {
   let width = 1;
   let height = 1;
   let pixelRatio = 1;
+  let sourceWidth = sourceCanvas.width;
+  let sourceHeight = sourceCanvas.height;
 
   function setSize(w, h, pr) {
     width = Math.max(1, w);
     height = Math.max(1, h);
     pixelRatio = pr || 1;
+    // CanvasTexture.needsUpdate uploads pixels but does not reallocate the
+    // immutable WebGL texture storage when the canvas changes dimensions.
+    // Release that allocation so Three creates one matching the new canvas.
+    if (sourceCanvas.width !== sourceWidth || sourceCanvas.height !== sourceHeight) {
+      texture.dispose();
+      sourceWidth = sourceCanvas.width;
+      sourceHeight = sourceCanvas.height;
+    }
     renderer.setPixelRatio(pixelRatio);
     renderer.setSize(width, height, false);
     composer.setPixelRatio(pixelRatio);
