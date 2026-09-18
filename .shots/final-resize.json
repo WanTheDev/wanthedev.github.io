@@ -1,0 +1,1546 @@
+{
+  "test1A": {
+    "description": "200 synchronous resize events from inside one evaluate; coalescing should limit real passes",
+    "eventsFired": 200,
+    "asciiResizeCalls": 0,
+    "bloomSetSizeCalls": 0,
+    "compositeSetSizeCalls": 0,
+    "compositeRenderCalls": 10,
+    "fxSetSizeCalls": 0,
+    "resizePassCount": 0,
+    "resizePassTimes": [],
+    "stateAfter": {
+      "innerW": 1280,
+      "innerH": 800,
+      "dpr": 1,
+      "asciiW": 1280,
+      "asciiH": 800,
+      "columns": 143,
+      "rows": 78,
+      "cssW": 1280,
+      "cssH": 800,
+      "attrW": 1280,
+      "attrH": 800
+    },
+    "finalPassOccurred": false,
+    "canvasMatchesViewport": true,
+    "pass": true,
+    "notes": "Coalescing working: 0 real resize passes for 200 events"
+  },
+  "test1B": {
+    "description": "Viewport changed to 900x1000, then 50 synchronous resize events fired",
+    "eventsFired": 50,
+    "finalViewport": {
+      "w": 900,
+      "h": 1000
+    },
+    "asciiResizeCalls": 2,
+    "bloomSetSizeCalls": 4,
+    "compositeSetSizeCalls": 2,
+    "compositeRenderCalls": 28,
+    "fxSetSizeCalls": 2,
+    "resizePassCount": 2,
+    "resizePassTimes": [
+      4793.399999976158,
+      4793.5,
+      4793.5
+    ],
+    "stateAfter": {
+      "innerW": 900,
+      "innerH": 1000,
+      "dpr": 1,
+      "asciiW": 900,
+      "asciiH": 1000,
+      "columns": 100,
+      "rows": 97,
+      "cssW": 900,
+      "cssH": 1000,
+      "attrW": 900,
+      "attrH": 1000
+    },
+    "canvasMatchesViewport": true,
+    "pass": true,
+    "notes": "Coalescing OK: 2 passes for 50 events at 900x1000"
+  },
+  "test1C": {
+    "description": "DPR override 0.75/1/1.25/1.5/2 with 1280x800 CSS viewport; check CSS box = viewport, buffer = viewport*dpr, ratio ≈ 1.0",
+    "results": [
+      {
+        "dprSetting": 0.75,
+        "windowDpr": 0.75,
+        "effectiveDpr": 0.75,
+        "cssW": 1280,
+        "cssH": 800,
+        "attrW": 960,
+        "attrH": 600,
+        "expectedAttrW": 960,
+        "expectedAttrH": 600,
+        "expectedCSSW": 1280,
+        "expectedCSSH": 800,
+        "ratioW": 1,
+        "ratioH": 1,
+        "stretchBug": false,
+        "pass": true,
+        "errors": []
+      },
+      {
+        "dprSetting": 1,
+        "windowDpr": 1,
+        "effectiveDpr": 1,
+        "cssW": 1280,
+        "cssH": 800,
+        "attrW": 1280,
+        "attrH": 800,
+        "expectedAttrW": 1280,
+        "expectedAttrH": 800,
+        "expectedCSSW": 1280,
+        "expectedCSSH": 800,
+        "ratioW": 1,
+        "ratioH": 1,
+        "stretchBug": false,
+        "pass": true,
+        "errors": []
+      },
+      {
+        "dprSetting": 1.25,
+        "windowDpr": 1.25,
+        "effectiveDpr": 1.25,
+        "cssW": 1280,
+        "cssH": 800,
+        "attrW": 1600,
+        "attrH": 1000,
+        "expectedAttrW": 1600,
+        "expectedAttrH": 1000,
+        "expectedCSSW": 1280,
+        "expectedCSSH": 800,
+        "ratioW": 1,
+        "ratioH": 1,
+        "stretchBug": false,
+        "pass": true,
+        "errors": []
+      },
+      {
+        "dprSetting": 1.5,
+        "windowDpr": 1.5,
+        "effectiveDpr": 1.5,
+        "cssW": 1280,
+        "cssH": 800,
+        "attrW": 1920,
+        "attrH": 1200,
+        "expectedAttrW": 1920,
+        "expectedAttrH": 1200,
+        "expectedCSSW": 1280,
+        "expectedCSSH": 800,
+        "ratioW": 1,
+        "ratioH": 1,
+        "stretchBug": false,
+        "pass": true,
+        "errors": []
+      },
+      {
+        "dprSetting": 2,
+        "windowDpr": 2,
+        "effectiveDpr": 1.5,
+        "cssW": 1280,
+        "cssH": 800,
+        "attrW": 1920,
+        "attrH": 1200,
+        "expectedAttrW": 1920,
+        "expectedAttrH": 1200,
+        "expectedCSSW": 1280,
+        "expectedCSSH": 800,
+        "ratioW": 1,
+        "ratioH": 1,
+        "stretchBug": false,
+        "pass": true,
+        "errors": []
+      }
+    ],
+    "overallPass": true,
+    "notes": "All DPR settings: CSS box matches viewport, buffer matches viewport*dpr, ratio ≈ 1.0 — no stretch bug"
+  },
+  "test1D": {
+    "description": "After 1280→900→1280 resize cycle, sample glyph canvas twice ~700ms apart; zero differing pixels = frozen renderer",
+    "samples": [
+      {
+        "label": "1280x800",
+        "viewport": {
+          "w": 1280,
+          "h": 800
+        },
+        "totalPixels": 1024000,
+        "differingPixels": 100562,
+        "differingFraction": 0.02455126953125,
+        "isFrozen": false
+      },
+      {
+        "label": "900x1000",
+        "viewport": {
+          "w": 900,
+          "h": 1000
+        },
+        "totalPixels": 900000,
+        "differingPixels": 181795,
+        "differingFraction": 0.05049861111111111,
+        "isFrozen": false
+      },
+      {
+        "label": "back-1280x800",
+        "viewport": {
+          "w": 1280,
+          "h": 800
+        },
+        "totalPixels": 1024000,
+        "differingPixels": 134847,
+        "differingFraction": 0.032921630859375,
+        "isFrozen": false
+      },
+      {
+        "label": "back-1280x800-second",
+        "viewport": {
+          "w": 1280,
+          "h": 800
+        },
+        "totalPixels": 1024000,
+        "differingPixels": 126295,
+        "differingFraction": 0.030833740234375,
+        "isFrozen": false
+      }
+    ],
+    "pass": true,
+    "notes": "Render loop stays alive after resize cycle"
+  },
+  "test2": {
+    "description": "Knot centring via largest 4-connected component on downscaled glyph grid; ~12 samples at 500ms intervals; cx must be in [0.48, 0.52]",
+    "results": [
+      {
+        "viewport": "1920x1080",
+        "cssWidth": 1920,
+        "cssHeight": 1080,
+        "avgCx": 0.5040364583333333,
+        "avgCy": 0.5052083333333334,
+        "minCx": 0.4778645833333333,
+        "maxCx": 0.5270833333333333,
+        "minCy": 0.4787037037037037,
+        "maxCy": 0.5259259259259259,
+        "cxRange": 0.04921875000000003,
+        "cyRange": 0.04722222222222222,
+        "avgPixels": 167051.41666666666,
+        "avgPixels2": 63.916666666666664,
+        "dominant": 2613.5814863102996,
+        "samples": [
+          {
+            "L60_cx": 0.4778645833333333,
+            "L60_cy": 0.4787037037037037,
+            "L60_pixels": 203897,
+            "L60_secondPixels": 113
+          },
+          {
+            "L60_cx": 0.4825520833333333,
+            "L60_cy": 0.4935185185185185,
+            "L60_pixels": 183391,
+            "L60_secondPixels": 22
+          },
+          {
+            "L60_cx": 0.48723958333333334,
+            "L60_cy": 0.49722222222222223,
+            "L60_pixels": 169650,
+            "L60_secondPixels": 108
+          },
+          {
+            "L60_cx": 0.49895833333333334,
+            "L60_cy": 0.5064814814814815,
+            "L60_pixels": 160427,
+            "L60_secondPixels": 46
+          },
+          {
+            "L60_cx": 0.5083333333333333,
+            "L60_cy": 0.5111111111111111,
+            "L60_pixels": 159185,
+            "L60_secondPixels": 81
+          },
+          {
+            "L60_cx": 0.5130208333333334,
+            "L60_cy": 0.5069444444444444,
+            "L60_pixels": 162089,
+            "L60_secondPixels": 87
+          },
+          {
+            "L60_cx": 0.5223958333333333,
+            "L60_cy": 0.49675925925925923,
+            "L60_pixels": 171906,
+            "L60_secondPixels": 51
+          },
+          {
+            "L60_cx": 0.5270833333333333,
+            "L60_cy": 0.5064814814814815,
+            "L60_pixels": 175798,
+            "L60_secondPixels": 78
+          },
+          {
+            "L60_cx": 0.5177083333333333,
+            "L60_cy": 0.5259259259259259,
+            "L60_pixels": 165968,
+            "L60_secondPixels": 55
+          },
+          {
+            "L60_cx": 0.5106770833333333,
+            "L60_cy": 0.5208333333333334,
+            "L60_pixels": 164924,
+            "L60_secondPixels": 22
+          },
+          {
+            "L60_cx": 0.5036458333333333,
+            "L60_cy": 0.5115740740740741,
+            "L60_pixels": 150584,
+            "L60_secondPixels": 53
+          },
+          {
+            "L60_cx": 0.49895833333333334,
+            "L60_cy": 0.5069444444444444,
+            "L60_pixels": 136798,
+            "L60_secondPixels": 51
+          }
+        ],
+        "cyInBounds": true,
+        "pass": true,
+        "notes": "cx=0.5040 within [0.48, 0.52], range=0.0492"
+      },
+      {
+        "viewport": "390x844",
+        "cssWidth": 390,
+        "cssHeight": 844,
+        "avgCx": 0.5244658119658119,
+        "avgCy": 0.5165383096366509,
+        "minCx": 0.4948717948717949,
+        "maxCx": 0.541025641025641,
+        "minCy": 0.5077014218009479,
+        "maxCy": 0.5260663507109005,
+        "cxRange": 0.0461538461538461,
+        "cyRange": 0.01836492890995256,
+        "avgPixels": 49778.583333333336,
+        "avgPixels2": 54.166666666666664,
+        "dominant": 918.9892307692309,
+        "samples": [
+          {
+            "L60_cx": 0.4948717948717949,
+            "L60_cy": 0.5077014218009479,
+            "L60_pixels": 39424,
+            "L60_secondPixels": 98
+          },
+          {
+            "L60_cx": 0.5064102564102564,
+            "L60_cy": 0.5136255924170616,
+            "L60_pixels": 43321,
+            "L60_secondPixels": 22
+          },
+          {
+            "L60_cx": 0.5166666666666667,
+            "L60_cy": 0.5136255924170616,
+            "L60_pixels": 47465,
+            "L60_secondPixels": 54
+          },
+          {
+            "L60_cx": 0.5282051282051282,
+            "L60_cy": 0.5136255924170616,
+            "L60_pixels": 48541,
+            "L60_secondPixels": 38
+          },
+          {
+            "L60_cx": 0.517948717948718,
+            "L60_cy": 0.5130331753554502,
+            "L60_pixels": 49812,
+            "L60_secondPixels": 38
+          },
+          {
+            "L60_cx": 0.5294871794871795,
+            "L60_cy": 0.5171800947867299,
+            "L60_pixels": 51630,
+            "L60_secondPixels": 38
+          },
+          {
+            "L60_cx": 0.517948717948718,
+            "L60_cy": 0.5195497630331753,
+            "L60_pixels": 52640,
+            "L60_secondPixels": 38
+          },
+          {
+            "L60_cx": 0.5294871794871795,
+            "L60_cy": 0.5201421800947867,
+            "L60_pixels": 54593,
+            "L60_secondPixels": 38
+          },
+          {
+            "L60_cx": 0.5294871794871795,
+            "L60_cy": 0.5201421800947867,
+            "L60_pixels": 55142,
+            "L60_secondPixels": 63
+          },
+          {
+            "L60_cx": 0.541025641025641,
+            "L60_cy": 0.5260663507109005,
+            "L60_pixels": 53790,
+            "L60_secondPixels": 43
+          },
+          {
+            "L60_cx": 0.541025641025641,
+            "L60_cy": 0.5201421800947867,
+            "L60_pixels": 51119,
+            "L60_secondPixels": 112
+          },
+          {
+            "L60_cx": 0.541025641025641,
+            "L60_cy": 0.5136255924170616,
+            "L60_pixels": 49866,
+            "L60_secondPixels": 68
+          }
+        ],
+        "cyInBounds": true,
+        "pass": false,
+        "notes": "cx=0.5245 OUTSIDE [0.48, 0.52] — centring bug"
+      },
+      {
+        "viewport": "1600x500",
+        "cssWidth": 1600,
+        "cssHeight": 500,
+        "avgCx": 0.5024479166666668,
+        "avgCy": 0.4968333333333333,
+        "minCx": 0.491875,
+        "maxCx": 0.5115625,
+        "minCy": 0.473,
+        "maxCy": 0.515,
+        "cxRange": 0.019687500000000024,
+        "cyRange": 0.04200000000000004,
+        "avgPixels": 34087.333333333336,
+        "avgPixels2": 42.416666666666664,
+        "dominant": 803.630648330059,
+        "samples": [
+          {
+            "L60_cx": 0.5115625,
+            "L60_cy": 0.515,
+            "L60_pixels": 40634,
+            "L60_secondPixels": 22
+          },
+          {
+            "L60_cx": 0.5115625,
+            "L60_cy": 0.505,
+            "L60_pixels": 39601,
+            "L60_secondPixels": 22
+          },
+          {
+            "L60_cx": 0.50875,
+            "L60_cy": 0.484,
+            "L60_pixels": 37618,
+            "L60_secondPixels": 22
+          },
+          {
+            "L60_cx": 0.5059375,
+            "L60_cy": 0.473,
+            "L60_pixels": 32562,
+            "L60_secondPixels": 41
+          },
+          {
+            "L60_cx": 0.5059375,
+            "L60_cy": 0.484,
+            "L60_pixels": 30649,
+            "L60_secondPixels": 70
+          },
+          {
+            "L60_cx": 0.5059375,
+            "L60_cy": 0.494,
+            "L60_pixels": 30551,
+            "L60_secondPixels": 22
+          },
+          {
+            "L60_cx": 0.5028125,
+            "L60_cy": 0.504,
+            "L60_pixels": 31658,
+            "L60_secondPixels": 56
+          },
+          {
+            "L60_cx": 0.5,
+            "L60_cy": 0.504,
+            "L60_pixels": 33172,
+            "L60_secondPixels": 22
+          },
+          {
+            "L60_cx": 0.495625,
+            "L60_cy": 0.505,
+            "L60_pixels": 33050,
+            "L60_secondPixels": 51
+          },
+          {
+            "L60_cx": 0.4946875,
+            "L60_cy": 0.494,
+            "L60_pixels": 33458,
+            "L60_secondPixels": 79
+          },
+          {
+            "L60_cx": 0.4946875,
+            "L60_cy": 0.496,
+            "L60_pixels": 33134,
+            "L60_secondPixels": 51
+          },
+          {
+            "L60_cx": 0.491875,
+            "L60_cy": 0.504,
+            "L60_pixels": 32961,
+            "L60_secondPixels": 51
+          }
+        ],
+        "cyInBounds": true,
+        "pass": true,
+        "notes": "cx=0.5024 within [0.48, 0.52], range=0.0197"
+      }
+    ],
+    "overallPass": false,
+    "notes": "Centring bug detected at one or more viewports"
+  },
+  "consoleMessages": [
+    {
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x17f400174000] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    },
+    {
+      "type": "warning",
+      "text": "WebGL: too many errors, no more errors will be reported to the console for this context."
+    },
+    {
+      "type": "warning",
+      "text": "Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently"
+    }
+  ],
+  "errors": []
+}

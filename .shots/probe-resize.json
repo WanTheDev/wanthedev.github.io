@@ -1,0 +1,908 @@
+{
+  "phaseA": [
+    {
+      "label": "1920x1080",
+      "win": [
+        1920,
+        1080,
+        1
+      ],
+      "ascii": {
+        "canvasW": 1920,
+        "canvasH": 1080,
+        "cssW": "1920px",
+        "cssH": "1080px",
+        "clientW": 0,
+        "clientH": 0,
+        "columns": 214,
+        "rows": 105
+      },
+      "sceneRenderer": {
+        "size": {
+          "x": 214,
+          "y": 105
+        },
+        "drawingBuffer": {
+          "x": 214,
+          "y": 105
+        }
+      },
+      "composite": {
+        "attrW": 1920,
+        "attrH": 1080,
+        "cssInlineW": "",
+        "cssInlineH": "",
+        "clientW": 1920,
+        "clientH": 1080
+      },
+      "cameraPos": [
+        0,
+        0,
+        10.5
+      ],
+      "asciiBBox12": {
+        "minX": 119,
+        "minY": 3,
+        "maxX": 1734,
+        "maxY": 1079,
+        "threshold": 12,
+        "litPixels": 72257,
+        "fracCenterX": 0.4825520833333333,
+        "fracCenterY": 0.5009259259259259,
+        "fracSpanX": 0.8411458333333334,
+        "fracSpanY": 0.9962962962962963
+      },
+      "asciiBBox30": {
+        "minX": 119,
+        "minY": 3,
+        "maxX": 1734,
+        "maxY": 1079,
+        "threshold": 30,
+        "litPixels": 60492,
+        "fracCenterX": 0.4825520833333333,
+        "fracCenterY": 0.5009259259259259,
+        "fracSpanX": 0.8411458333333334,
+        "fracSpanY": 0.9962962962962963
+      }
+    },
+    {
+      "label": "2560x1440",
+      "win": [
+        2560,
+        1440,
+        1
+      ],
+      "ascii": {
+        "canvasW": 2560,
+        "canvasH": 1440,
+        "cssW": "2560px",
+        "cssH": "1440px",
+        "clientW": 0,
+        "clientH": 0,
+        "columns": 285,
+        "rows": 140
+      },
+      "sceneRenderer": {
+        "size": {
+          "x": 285,
+          "y": 140
+        },
+        "drawingBuffer": {
+          "x": 285,
+          "y": 140
+        }
+      },
+      "composite": {
+        "attrW": 2560,
+        "attrH": 1440,
+        "cssInlineW": "",
+        "cssInlineH": "",
+        "clientW": 2560,
+        "clientH": 1440
+      },
+      "cameraPos": [
+        0,
+        0,
+        10.5
+      ],
+      "asciiBBox12": {
+        "minX": 164,
+        "minY": 3,
+        "maxX": 2310,
+        "maxY": 1404,
+        "threshold": 12,
+        "litPixels": 126718,
+        "fracCenterX": 0.483203125,
+        "fracCenterY": 0.48854166666666665,
+        "fracSpanX": 0.83828125,
+        "fracSpanY": 0.9729166666666667
+      },
+      "asciiBBox30": {
+        "minX": 164,
+        "minY": 3,
+        "maxX": 2310,
+        "maxY": 1404,
+        "threshold": 30,
+        "litPixels": 106068,
+        "fracCenterX": 0.483203125,
+        "fracCenterY": 0.48854166666666665,
+        "fracSpanX": 0.83828125,
+        "fracSpanY": 0.9729166666666667
+      }
+    },
+    {
+      "label": "1280x800",
+      "win": [
+        1280,
+        800,
+        1
+      ],
+      "ascii": {
+        "canvasW": 1280,
+        "canvasH": 800,
+        "cssW": "1280px",
+        "cssH": "800px",
+        "clientW": 0,
+        "clientH": 0,
+        "columns": 143,
+        "rows": 78
+      },
+      "sceneRenderer": {
+        "size": {
+          "x": 143,
+          "y": 78
+        },
+        "drawingBuffer": {
+          "x": 143,
+          "y": 78
+        }
+      },
+      "composite": {
+        "attrW": 1280,
+        "attrH": 800,
+        "cssInlineW": "",
+        "cssInlineH": "",
+        "clientW": 1280,
+        "clientH": 800
+      },
+      "cameraPos": [
+        0,
+        0,
+        10.5
+      ],
+      "asciiBBox12": {
+        "minX": 20,
+        "minY": 3,
+        "maxX": 1221,
+        "maxY": 783,
+        "threshold": 12,
+        "litPixels": 40729,
+        "fracCenterX": 0.484765625,
+        "fracCenterY": 0.49125,
+        "fracSpanX": 0.93828125,
+        "fracSpanY": 0.975
+      },
+      "asciiBBox30": {
+        "minX": 20,
+        "minY": 3,
+        "maxX": 1221,
+        "maxY": 783,
+        "threshold": 30,
+        "litPixels": 34107,
+        "fracCenterX": 0.484765625,
+        "fracCenterY": 0.49125,
+        "fracSpanX": 0.93828125,
+        "fracSpanY": 0.975
+      }
+    },
+    {
+      "label": "1024x768",
+      "win": [
+        1024,
+        768,
+        1
+      ],
+      "ascii": {
+        "canvasW": 1024,
+        "canvasH": 768,
+        "cssW": "1024px",
+        "cssH": "768px",
+        "clientW": 0,
+        "clientH": 0,
+        "columns": 114,
+        "rows": 75
+      },
+      "sceneRenderer": {
+        "size": {
+          "x": 114,
+          "y": 75
+        },
+        "drawingBuffer": {
+          "x": 114,
+          "y": 75
+        }
+      },
+      "composite": {
+        "attrW": 1024,
+        "attrH": 768,
+        "cssInlineW": "",
+        "cssInlineH": "",
+        "clientW": 1024,
+        "clientH": 768
+      },
+      "cameraPos": [
+        0,
+        0,
+        10.5
+      ],
+      "asciiBBox12": {
+        "minX": 47,
+        "minY": 3,
+        "maxX": 978,
+        "maxY": 752,
+        "threshold": 12,
+        "litPixels": 36954,
+        "fracCenterX": 0.50048828125,
+        "fracCenterY": 0.4915364583333333,
+        "fracSpanX": 0.9091796875,
+        "fracSpanY": 0.9752604166666666
+      },
+      "asciiBBox30": {
+        "minX": 47,
+        "minY": 3,
+        "maxX": 978,
+        "maxY": 752,
+        "threshold": 30,
+        "litPixels": 30968,
+        "fracCenterX": 0.50048828125,
+        "fracCenterY": 0.4915364583333333,
+        "fracSpanX": 0.9091796875,
+        "fracSpanY": 0.9752604166666666
+      }
+    },
+    {
+      "label": "800x600",
+      "win": [
+        800,
+        600,
+        1
+      ],
+      "ascii": {
+        "canvasW": 800,
+        "canvasH": 600,
+        "cssW": "800px",
+        "cssH": "600px",
+        "clientW": 0,
+        "clientH": 0,
+        "columns": 89,
+        "rows": 58
+      },
+      "sceneRenderer": {
+        "size": {
+          "x": 89,
+          "y": 58
+        },
+        "drawingBuffer": {
+          "x": 89,
+          "y": 58
+        }
+      },
+      "composite": {
+        "attrW": 800,
+        "attrH": 600,
+        "cssInlineW": "",
+        "cssInlineH": "",
+        "clientW": 800,
+        "clientH": 600
+      },
+      "cameraPos": [
+        0,
+        0,
+        10.5
+      ],
+      "asciiBBox12": {
+        "minX": 2,
+        "minY": 3,
+        "maxX": 798,
+        "maxY": 597,
+        "threshold": 12,
+        "litPixels": 22828,
+        "fracCenterX": 0.5,
+        "fracCenterY": 0.5,
+        "fracSpanX": 0.995,
+        "fracSpanY": 0.99
+      },
+      "asciiBBox30": {
+        "minX": 2,
+        "minY": 3,
+        "maxX": 798,
+        "maxY": 597,
+        "threshold": 30,
+        "litPixels": 19085,
+        "fracCenterX": 0.5,
+        "fracCenterY": 0.5,
+        "fracSpanX": 0.995,
+        "fracSpanY": 0.99
+      }
+    },
+    {
+      "label": "1600x500",
+      "win": [
+        1600,
+        500,
+        1
+      ],
+      "ascii": {
+        "canvasW": 1600,
+        "canvasH": 500,
+        "cssW": "1600px",
+        "cssH": "500px",
+        "clientW": 0,
+        "clientH": 0,
+        "columns": 178,
+        "rows": 49
+      },
+      "sceneRenderer": {
+        "size": {
+          "x": 178,
+          "y": 49
+        },
+        "drawingBuffer": {
+          "x": 178,
+          "y": 49
+        }
+      },
+      "composite": {
+        "attrW": 1600,
+        "attrH": 500,
+        "cssInlineW": "",
+        "cssInlineH": "",
+        "clientW": 1600,
+        "clientH": 500
+      },
+      "cameraPos": [
+        0,
+        0,
+        10.5
+      ],
+      "asciiBBox12": {
+        "minX": 146,
+        "minY": 3,
+        "maxX": 1590,
+        "maxY": 493,
+        "threshold": 12,
+        "litPixels": 17083,
+        "fracCenterX": 0.5425,
+        "fracCenterY": 0.496,
+        "fracSpanX": 0.9025,
+        "fracSpanY": 0.98
+      },
+      "asciiBBox30": {
+        "minX": 146,
+        "minY": 3,
+        "maxX": 1590,
+        "maxY": 493,
+        "threshold": 30,
+        "litPixels": 14354,
+        "fracCenterX": 0.5425,
+        "fracCenterY": 0.496,
+        "fracSpanX": 0.9025,
+        "fracSpanY": 0.98
+      }
+    },
+    {
+      "label": "390x844",
+      "win": [
+        390,
+        844,
+        1
+      ],
+      "ascii": {
+        "canvasW": 390,
+        "canvasH": 844,
+        "cssW": "390px",
+        "cssH": "844px",
+        "clientW": 0,
+        "clientH": 0,
+        "columns": 44,
+        "rows": 82
+      },
+      "sceneRenderer": {
+        "size": {
+          "x": 44,
+          "y": 82
+        },
+        "drawingBuffer": {
+          "x": 44,
+          "y": 82
+        }
+      },
+      "composite": {
+        "attrW": 390,
+        "attrH": 844,
+        "cssInlineW": "",
+        "cssInlineH": "",
+        "clientW": 390,
+        "clientH": 844
+      },
+      "cameraPos": [
+        0,
+        0,
+        10.5
+      ],
+      "asciiBBox12": {
+        "minX": 2,
+        "minY": 3,
+        "maxX": 375,
+        "maxY": 793,
+        "threshold": 12,
+        "litPixels": 31992,
+        "fracCenterX": 0.48333333333333334,
+        "fracCenterY": 0.471563981042654,
+        "fracSpanX": 0.9564102564102565,
+        "fracSpanY": 0.9360189573459715
+      },
+      "asciiBBox30": {
+        "minX": 2,
+        "minY": 3,
+        "maxX": 375,
+        "maxY": 793,
+        "threshold": 30,
+        "litPixels": 26725,
+        "fracCenterX": 0.48333333333333334,
+        "fracCenterY": 0.471563981042654,
+        "fracSpanX": 0.9564102564102565,
+        "fracSpanY": 0.9360189573459715
+      }
+    },
+    {
+      "label": "320x480",
+      "win": [
+        320,
+        480,
+        1
+      ],
+      "ascii": {
+        "canvasW": 320,
+        "canvasH": 480,
+        "cssW": "320px",
+        "cssH": "480px",
+        "clientW": 0,
+        "clientH": 0,
+        "columns": 36,
+        "rows": 47
+      },
+      "sceneRenderer": {
+        "size": {
+          "x": 36,
+          "y": 47
+        },
+        "drawingBuffer": {
+          "x": 36,
+          "y": 47
+        }
+      },
+      "composite": {
+        "attrW": 320,
+        "attrH": 480,
+        "cssInlineW": "",
+        "cssInlineH": "",
+        "clientW": 320,
+        "clientH": 480
+      },
+      "cameraPos": [
+        0,
+        0,
+        10.5
+      ],
+      "asciiBBox12": {
+        "minX": 2,
+        "minY": 3,
+        "maxX": 319,
+        "maxY": 479,
+        "threshold": 12,
+        "litPixels": 14584,
+        "fracCenterX": 0.5015625,
+        "fracCenterY": 0.5020833333333333,
+        "fracSpanX": 0.990625,
+        "fracSpanY": 0.9916666666666667
+      },
+      "asciiBBox30": {
+        "minX": 2,
+        "minY": 3,
+        "maxX": 319,
+        "maxY": 479,
+        "threshold": 30,
+        "litPixels": 12189,
+        "fracCenterX": 0.5015625,
+        "fracCenterY": 0.5020833333333333,
+        "fracSpanX": 0.990625,
+        "fracSpanY": 0.9916666666666667
+      }
+    }
+  ],
+  "phaseB": {
+    "preResize": {
+      "viewport": "1920x1080",
+      "rafCount": 14,
+      "hash": 2343392,
+      "animating": true,
+      "asciiBBox": {
+        "minX": 2,
+        "minY": 3,
+        "maxX": 1806,
+        "maxY": 1079,
+        "threshold": 12,
+        "litPixels": 52773,
+        "fracCenterX": 0.4708333333333333,
+        "fracCenterY": 0.5009259259259259,
+        "fracSpanX": 0.9395833333333333,
+        "fracSpanY": 0.9962962962962963
+      },
+      "asciiCanvasSize": "1920x1080",
+      "compositeSize": "1920x1080"
+    },
+    "postResize": {
+      "viewport": "1280x800",
+      "rafCount": 43,
+      "hash": 1162206,
+      "animating": true,
+      "rafDelta": 18,
+      "hashDelta": 208,
+      "asciiBBox": {
+        "minX": 83,
+        "minY": 13,
+        "maxX": 1275,
+        "maxY": 762,
+        "threshold": 12,
+        "litPixels": 30326,
+        "fracCenterX": 0.53046875,
+        "fracCenterY": 0.484375,
+        "fracSpanX": 0.93125,
+        "fracSpanY": 0.93625
+      },
+      "asciiCanvasSize": "1280x800",
+      "compositeSize": "1280x800",
+      "compositeClientSize": "1280x800"
+    },
+    "errors": [
+      "[warning] [.WebGL-0x650c00c1a400] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions.",
+      "[warning] [.WebGL-0x650c00c1a400] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions.",
+      "[warning] [.WebGL-0x650c00c1a400] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions.",
+      "[warning] [.WebGL-0x650c00c1a400] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions.",
+      "[warning] [.WebGL-0x650c00c1a400] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions.",
+      "[warning] [.WebGL-0x650c00c1a400] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions.",
+      "[warning] [.WebGL-0x650c00c1a400] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+    ],
+    "pointerHeld": {
+      "before": {
+        "label": "held-before-resize",
+        "win": [
+          1280,
+          800,
+          1
+        ],
+        "ascii": {
+          "canvasW": 1280,
+          "canvasH": 800,
+          "cssW": "1280px",
+          "cssH": "800px",
+          "clientW": 0,
+          "clientH": 0,
+          "columns": 143,
+          "rows": 78
+        },
+        "sceneRenderer": {
+          "size": {
+            "x": 143,
+            "y": 78
+          },
+          "drawingBuffer": {
+            "x": 143,
+            "y": 78
+          }
+        },
+        "composite": {
+          "attrW": 1280,
+          "attrH": 800,
+          "cssInlineW": "",
+          "cssInlineH": "",
+          "clientW": 1280,
+          "clientH": 800
+        },
+        "cameraPos": [
+          0,
+          0,
+          10.5
+        ],
+        "asciiBBox12": {
+          "minX": 92,
+          "minY": 13,
+          "maxX": 1212,
+          "maxY": 762,
+          "threshold": 12,
+          "litPixels": 33900,
+          "fracCenterX": 0.509375,
+          "fracCenterY": 0.484375,
+          "fracSpanX": 0.875,
+          "fracSpanY": 0.93625
+        },
+        "asciiBBox30": {
+          "minX": 92,
+          "minY": 13,
+          "maxX": 1212,
+          "maxY": 762,
+          "threshold": 30,
+          "litPixels": 27854,
+          "fracCenterX": 0.509375,
+          "fracCenterY": 0.484375,
+          "fracSpanX": 0.875,
+          "fracSpanY": 0.93625
+        }
+      },
+      "after": {
+        "label": "held-after-resize",
+        "win": [
+          800,
+          600,
+          1
+        ],
+        "ascii": {
+          "canvasW": 800,
+          "canvasH": 600,
+          "cssW": "800px",
+          "cssH": "600px",
+          "clientW": 0,
+          "clientH": 0,
+          "columns": 89,
+          "rows": 58
+        },
+        "sceneRenderer": {
+          "size": {
+            "x": 89,
+            "y": 58
+          },
+          "drawingBuffer": {
+            "x": 89,
+            "y": 58
+          }
+        },
+        "composite": {
+          "attrW": 800,
+          "attrH": 600,
+          "cssInlineW": "",
+          "cssInlineH": "",
+          "clientW": 800,
+          "clientH": 600
+        },
+        "cameraPos": [
+          -1.2512641203266097,
+          1.1197695308121587,
+          9.943826083073414
+        ],
+        "asciiBBox12": {
+          "minX": 2,
+          "minY": 3,
+          "maxX": 798,
+          "maxY": 586,
+          "threshold": 12,
+          "litPixels": 24355,
+          "fracCenterX": 0.5,
+          "fracCenterY": 0.49083333333333334,
+          "fracSpanX": 0.995,
+          "fracSpanY": 0.9716666666666667
+        },
+        "asciiBBox30": {
+          "minX": 2,
+          "minY": 3,
+          "maxX": 798,
+          "maxY": 586,
+          "threshold": 30,
+          "litPixels": 20280,
+          "fracCenterX": 0.5,
+          "fracCenterY": 0.49083333333333334,
+          "fracSpanX": 0.995,
+          "fracSpanY": 0.9716666666666667
+        }
+      }
+    }
+  },
+  "phaseC": {
+    "1920x1080": {
+      "label": "prod-1920x1080",
+      "win": [
+        1920,
+        1080,
+        1
+      ],
+      "ascii": {
+        "canvasW": 1920,
+        "canvasH": 1080,
+        "cssW": "1920px",
+        "cssH": "1080px",
+        "clientW": 0,
+        "clientH": 0,
+        "columns": 214,
+        "rows": 105
+      },
+      "sceneRenderer": {
+        "size": {
+          "x": 214,
+          "y": 105
+        },
+        "drawingBuffer": {
+          "x": 214,
+          "y": 105
+        }
+      },
+      "composite": {
+        "attrW": 1920,
+        "attrH": 1080,
+        "cssInlineW": "",
+        "cssInlineH": "",
+        "clientW": 1920,
+        "clientH": 1080
+      },
+      "cameraPos": [
+        0,
+        0,
+        10.5
+      ],
+      "asciiBBox12": {
+        "minX": 119,
+        "minY": 3,
+        "maxX": 1734,
+        "maxY": 1079,
+        "threshold": 12,
+        "litPixels": 72257,
+        "fracCenterX": 0.4825520833333333,
+        "fracCenterY": 0.5009259259259259,
+        "fracSpanX": 0.8411458333333334,
+        "fracSpanY": 0.9962962962962963
+      },
+      "asciiBBox30": {
+        "minX": 119,
+        "minY": 3,
+        "maxX": 1734,
+        "maxY": 1079,
+        "threshold": 30,
+        "litPixels": 60492,
+        "fracCenterX": 0.4825520833333333,
+        "fracCenterY": 0.5009259259259259,
+        "fracSpanX": 0.8411458333333334,
+        "fracSpanY": 0.9962962962962963
+      }
+    },
+    "1280x800": {
+      "label": "prod-1280x800",
+      "win": [
+        1280,
+        800,
+        1
+      ],
+      "ascii": {
+        "canvasW": 1280,
+        "canvasH": 800,
+        "cssW": "1280px",
+        "cssH": "800px",
+        "clientW": 0,
+        "clientH": 0,
+        "columns": 143,
+        "rows": 78
+      },
+      "sceneRenderer": {
+        "size": {
+          "x": 143,
+          "y": 78
+        },
+        "drawingBuffer": {
+          "x": 143,
+          "y": 78
+        }
+      },
+      "composite": {
+        "attrW": 1280,
+        "attrH": 800,
+        "cssInlineW": "",
+        "cssInlineH": "",
+        "clientW": 1280,
+        "clientH": 800
+      },
+      "cameraPos": [
+        0,
+        0,
+        10.5
+      ],
+      "asciiBBox12": {
+        "minX": 20,
+        "minY": 3,
+        "maxX": 1221,
+        "maxY": 783,
+        "threshold": 12,
+        "litPixels": 40729,
+        "fracCenterX": 0.484765625,
+        "fracCenterY": 0.49125,
+        "fracSpanX": 0.93828125,
+        "fracSpanY": 0.975
+      },
+      "asciiBBox30": {
+        "minX": 20,
+        "minY": 3,
+        "maxX": 1221,
+        "maxY": 783,
+        "threshold": 30,
+        "litPixels": 34107,
+        "fracCenterX": 0.484765625,
+        "fracCenterY": 0.49125,
+        "fracSpanX": 0.93828125,
+        "fracSpanY": 0.975
+      }
+    },
+    "800x600": {
+      "label": "prod-800x600",
+      "win": [
+        800,
+        600,
+        1
+      ],
+      "ascii": {
+        "canvasW": 800,
+        "canvasH": 600,
+        "cssW": "800px",
+        "cssH": "600px",
+        "clientW": 0,
+        "clientH": 0,
+        "columns": 89,
+        "rows": 58
+      },
+      "sceneRenderer": {
+        "size": {
+          "x": 89,
+          "y": 58
+        },
+        "drawingBuffer": {
+          "x": 89,
+          "y": 58
+        }
+      },
+      "composite": {
+        "attrW": 800,
+        "attrH": 600,
+        "cssInlineW": "",
+        "cssInlineH": "",
+        "clientW": 800,
+        "clientH": 600
+      },
+      "cameraPos": [
+        0,
+        0,
+        10.5
+      ],
+      "asciiBBox12": {
+        "minX": 2,
+        "minY": 3,
+        "maxX": 798,
+        "maxY": 597,
+        "threshold": 12,
+        "litPixels": 22828,
+        "fracCenterX": 0.5,
+        "fracCenterY": 0.5,
+        "fracSpanX": 0.995,
+        "fracSpanY": 0.99
+      },
+      "asciiBBox30": {
+        "minX": 2,
+        "minY": 3,
+        "maxX": 798,
+        "maxY": 597,
+        "threshold": 30,
+        "litPixels": 19085,
+        "fracCenterX": 0.5,
+        "fracCenterY": 0.5,
+        "fracSpanX": 0.995,
+        "fracSpanY": 0.99
+      }
+    }
+  },
+  "errors": []
+}

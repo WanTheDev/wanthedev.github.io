@@ -1,0 +1,54 @@
+
+> wanthedev-portfolio@1.0.0 dev
+> vite --port 5199 --strictPort
+
+[2m23:35:18[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m Re-optimizing dependencies because vite config has changed
+
+  [32m[1mVITE[22m v8.3.0[39m  [2mready in [0m[1m237[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5199[22m/[39m
+[2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
+[2m23:37:19[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:37:19[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:37:27[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:37:27[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:37:40[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:37:40[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:37:48[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:37:48[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:37:55[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:37:55[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:37:56[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:37:56[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:38:05[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:38:05[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:38:05[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:38:05[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:38:32[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Could not create a WebGL context, VENDOR = 0xffff, DEVICE = 0xffff, GL_VENDOR = Disabled, GL_RENDERER = Disabled, Sandboxed = no, Optimus = no, AMD switchable = no, Reset notification strategy = 0x0000, ErrorMessage = BindToCurrentSequence failed: .
+[2m23:38:32[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Could not create a WebGL context, VENDOR = 0xffff, DEVICE = 0xffff, GL_VENDOR = Disabled, GL_RENDERER = Disabled, Sandboxed = no, Optimus = no, AMD switchable = no, Reset notification strategy = 0x0000, ErrorMessage = BindToCurrentSequence failed: .
+[2m23:38:32[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.
+[2m23:38:32[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mError[22m: THREE.WebGLRenderer: Error creating WebGL context.
+[39m > new WebGLRenderer node_modules/three/build/three.module.js:16458:12
+ > createScene src/scene.js:37:20
+    35 |  
+    36 |  export function createScene(canvas, sceneOptions, postOptions, interactOptions) {
+    37 |    const renderer = new WebGLRenderer({
+       |                      ^
+    38 |      canvas,
+    39 |      antialias: false,
+ > src/main.js:15:15
+
+[2m23:38:36[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:38:54[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:39:26[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:39:36[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:39:39[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:40:10[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:40:28[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:40:28[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:41:04[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:41:04[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:45:11[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:45:28[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTHREE.WebGLRenderer: A WebGL context could not be created. Reason:  Canvas has an existing context of a different type
+[2m23:49:03[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/main.js[22m
+[2m23:56:02[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mindex.html[22m

@@ -1,0 +1,83 @@
+[
+  {
+    "E1": [
+      {
+        "phase": "shrink 1280->100",
+        "warnings": 0
+      },
+      {
+        "phase": "grow 100->1280",
+        "warnings": 0
+      }
+    ]
+  },
+  {
+    "E2": [
+      {
+        "cycle": 0,
+        "phase": "grow",
+        "warnings": 14
+      },
+      {
+        "cycle": 0,
+        "phase": "shrink",
+        "warnings": 3
+      },
+      {
+        "cycle": 1,
+        "phase": "grow",
+        "warnings": 15
+      },
+      {
+        "cycle": 1,
+        "phase": "shrink",
+        "warnings": 3
+      },
+      {
+        "cycle": 2,
+        "phase": "grow",
+        "warnings": 14
+      },
+      {
+        "cycle": 2,
+        "phase": "shrink",
+        "warnings": 3
+      }
+    ]
+  },
+  {
+    "E3": {
+      "syncResize": true,
+      "warnings": 32
+    }
+  },
+  {
+    "E3b": {
+      "syncResize": false,
+      "warnings": 32
+    }
+  },
+  {
+    "E4": {
+      "count": 26,
+      "spanMs": 2678,
+      "medianGapMs": 109,
+      "minGapMs": 0,
+      "maxGapMs": 212,
+      "firstGaps": [
+        118,
+        110,
+        0,
+        212,
+        102,
+        109,
+        109,
+        102,
+        113,
+        88,
+        119,
+        113
+      ]
+    }
+  }
+]

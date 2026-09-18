@@ -1,0 +1,615 @@
+{
+  "summary": [
+    {
+      "scenario": "S1",
+      "label": "1920x1080 steady 6s",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "warnings": 0,
+      "otherWarnings": 0,
+      "errors": 0,
+      "inkPixels": 59004,
+      "totalPixels": 2073600,
+      "hasInk": true
+    },
+    {
+      "scenario": "S2",
+      "label": "1280x800 steady 6s",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "warnings": 0,
+      "otherWarnings": 0,
+      "errors": 0,
+      "inkPixels": 32287,
+      "totalPixels": 1024000,
+      "hasInk": true
+    },
+    {
+      "scenario": "S3",
+      "label": "1280x800 resize storm 30 steps",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "warnings": 0,
+      "otherWarnings": 0,
+      "errors": 0,
+      "inkPixels": 33259,
+      "totalPixels": 1024000,
+      "hasInk": true
+    },
+    {
+      "scenario": "S4",
+      "label": "400x3000 extreme portrait",
+      "viewport": {
+        "width": 400,
+        "height": 3000
+      },
+      "warnings": 0,
+      "otherWarnings": 0,
+      "errors": 0,
+      "inkPixels": 17611,
+      "totalPixels": 1200000,
+      "hasInk": true
+    },
+    {
+      "scenario": "S5",
+      "label": "3000x400 extreme landscape",
+      "viewport": {
+        "width": 3000,
+        "height": 400
+      },
+      "warnings": 0,
+      "otherWarnings": 0,
+      "errors": 0,
+      "inkPixels": 9406,
+      "totalPixels": 1200000,
+      "hasInk": true
+    },
+    {
+      "scenario": "S6",
+      "label": "1x1 -> 1280x800",
+      "viewport": {
+        "width": 1,
+        "height": 1
+      },
+      "warnings": 39,
+      "otherWarnings": 0,
+      "errors": 0,
+      "inkPixels": 32099,
+      "totalPixels": 1024000,
+      "hasInk": true
+    },
+    {
+      "scenario": "S7",
+      "label": "1280x800 DPR=2 via CDP",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "warnings": 0,
+      "otherWarnings": 0,
+      "errors": 0,
+      "inkPixels": 62966,
+      "totalPixels": 2304000,
+      "hasInk": true
+    }
+  ],
+  "details": [
+    {
+      "scenario": "S1",
+      "label": "1920x1080 steady 6s",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "warnings": 0,
+      "warningDetails": [],
+      "otherWarnings": 0,
+      "errors": 0,
+      "inkPixels": 59004,
+      "totalPixels": 2073600,
+      "hasInk": true,
+      "state": {
+        "innerW": 1920,
+        "innerH": 1080,
+        "dpr": 1,
+        "asciiW": 1920,
+        "asciiH": 1080,
+        "asciiColumns": 214,
+        "asciiRows": 105,
+        "bloomPassExists": true,
+        "bloomRendererPixelRatio": 1,
+        "compositeRendererPixelRatio": 1,
+        "fxComposerReadW": 214,
+        "fxComposerReadH": 105,
+        "compositeComposerReadW": 1920,
+        "compositeComposerReadH": 1080,
+        "compositeComposerWidth": null,
+        "compositeComposerHeight": null,
+        "sceneFxW": null,
+        "sceneFxH": null,
+        "rendererDrawingBufferW": 214,
+        "rendererDrawingBufferH": 105,
+        "bloomOutputW": 1920,
+        "bloomOutputH": 1080,
+        "bloomTextureW": 1920,
+        "bloomTextureH": 1080,
+        "inkPixels": 59004,
+        "totalPixels": 2073600
+      },
+      "s7Dpr": null,
+      "s7CanvasW": null
+    },
+    {
+      "scenario": "S2",
+      "label": "1280x800 steady 6s",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "warnings": 0,
+      "warningDetails": [],
+      "otherWarnings": 0,
+      "errors": 0,
+      "inkPixels": 32287,
+      "totalPixels": 1024000,
+      "hasInk": true,
+      "state": {
+        "innerW": 1280,
+        "innerH": 800,
+        "dpr": 1,
+        "asciiW": 1280,
+        "asciiH": 800,
+        "asciiColumns": 143,
+        "asciiRows": 78,
+        "bloomPassExists": true,
+        "bloomRendererPixelRatio": 1,
+        "compositeRendererPixelRatio": 1,
+        "fxComposerReadW": 143,
+        "fxComposerReadH": 78,
+        "compositeComposerReadW": 1280,
+        "compositeComposerReadH": 800,
+        "compositeComposerWidth": null,
+        "compositeComposerHeight": null,
+        "sceneFxW": null,
+        "sceneFxH": null,
+        "rendererDrawingBufferW": 143,
+        "rendererDrawingBufferH": 78,
+        "bloomOutputW": 1280,
+        "bloomOutputH": 800,
+        "bloomTextureW": 1280,
+        "bloomTextureH": 800,
+        "inkPixels": 32287,
+        "totalPixels": 1024000
+      },
+      "s7Dpr": null,
+      "s7CanvasW": null
+    },
+    {
+      "scenario": "S3",
+      "label": "1280x800 resize storm 30 steps",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "warnings": 0,
+      "warningDetails": [],
+      "otherWarnings": 0,
+      "errors": 0,
+      "inkPixels": 33259,
+      "totalPixels": 1024000,
+      "hasInk": true,
+      "state": {
+        "innerW": 1280,
+        "innerH": 800,
+        "dpr": 1,
+        "asciiW": 1280,
+        "asciiH": 800,
+        "asciiColumns": 143,
+        "asciiRows": 78,
+        "bloomPassExists": true,
+        "bloomRendererPixelRatio": 1,
+        "compositeRendererPixelRatio": 1,
+        "fxComposerReadW": 143,
+        "fxComposerReadH": 78,
+        "compositeComposerReadW": 1280,
+        "compositeComposerReadH": 800,
+        "compositeComposerWidth": null,
+        "compositeComposerHeight": null,
+        "sceneFxW": null,
+        "sceneFxH": null,
+        "rendererDrawingBufferW": 143,
+        "rendererDrawingBufferH": 78,
+        "bloomOutputW": 1280,
+        "bloomOutputH": 800,
+        "bloomTextureW": 1280,
+        "bloomTextureH": 800,
+        "inkPixels": 33259,
+        "totalPixels": 1024000
+      },
+      "s7Dpr": null,
+      "s7CanvasW": null
+    },
+    {
+      "scenario": "S4",
+      "label": "400x3000 extreme portrait",
+      "viewport": {
+        "width": 400,
+        "height": 3000
+      },
+      "warnings": 0,
+      "warningDetails": [],
+      "otherWarnings": 0,
+      "errors": 0,
+      "inkPixels": 17611,
+      "totalPixels": 1200000,
+      "hasInk": true,
+      "state": {
+        "innerW": 400,
+        "innerH": 3000,
+        "dpr": 1,
+        "asciiW": 400,
+        "asciiH": 3000,
+        "asciiColumns": 45,
+        "asciiRows": 290,
+        "bloomPassExists": true,
+        "bloomRendererPixelRatio": 1,
+        "compositeRendererPixelRatio": 1,
+        "fxComposerReadW": 45,
+        "fxComposerReadH": 290,
+        "compositeComposerReadW": 400,
+        "compositeComposerReadH": 3000,
+        "compositeComposerWidth": null,
+        "compositeComposerHeight": null,
+        "sceneFxW": null,
+        "sceneFxH": null,
+        "rendererDrawingBufferW": 45,
+        "rendererDrawingBufferH": 290,
+        "bloomOutputW": 400,
+        "bloomOutputH": 3000,
+        "bloomTextureW": 400,
+        "bloomTextureH": 3000,
+        "inkPixels": 17611,
+        "totalPixels": 1200000
+      },
+      "s7Dpr": null,
+      "s7CanvasW": null
+    },
+    {
+      "scenario": "S5",
+      "label": "3000x400 extreme landscape",
+      "viewport": {
+        "width": 3000,
+        "height": 400
+      },
+      "warnings": 0,
+      "warningDetails": [],
+      "otherWarnings": 0,
+      "errors": 0,
+      "inkPixels": 9406,
+      "totalPixels": 1200000,
+      "hasInk": true,
+      "state": {
+        "innerW": 3000,
+        "innerH": 400,
+        "dpr": 1,
+        "asciiW": 3000,
+        "asciiH": 400,
+        "asciiColumns": 334,
+        "asciiRows": 39,
+        "bloomPassExists": true,
+        "bloomRendererPixelRatio": 1,
+        "compositeRendererPixelRatio": 1,
+        "fxComposerReadW": 334,
+        "fxComposerReadH": 39,
+        "compositeComposerReadW": 3000,
+        "compositeComposerReadH": 400,
+        "compositeComposerWidth": null,
+        "compositeComposerHeight": null,
+        "sceneFxW": null,
+        "sceneFxH": null,
+        "rendererDrawingBufferW": 334,
+        "rendererDrawingBufferH": 39,
+        "bloomOutputW": 3000,
+        "bloomOutputH": 400,
+        "bloomTextureW": 3000,
+        "bloomTextureH": 400,
+        "inkPixels": 9406,
+        "totalPixels": 1200000
+      },
+      "s7Dpr": null,
+      "s7CanvasW": null
+    },
+    {
+      "scenario": "S6",
+      "label": "1x1 -> 1280x800",
+      "viewport": {
+        "width": 1,
+        "height": 1
+      },
+      "warnings": 39,
+      "warningDetails": [
+        {
+          "ts": 1789731843593,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731843688,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731843773,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731843849,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731843920,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731843991,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731844065,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731844138,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731844209,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731844283,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731844359,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731844429,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731844502,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731844574,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731844647,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731844722,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731844795,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731844872,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731844945,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731845020,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731845096,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731845172,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731845249,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731845326,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731845403,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731845481,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731845558,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731845637,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731845715,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731845801,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731845884,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731845974,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731846058,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731846144,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731846231,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731846313,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731846396,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731846475,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        },
+        {
+          "ts": 1789731846555,
+          "type": "warning",
+          "text": "[.WebGL-0x1e640018e600] GL_INVALID_VALUE: glCopySubTextureCHROMIUM: Offset overflows texture dimensions."
+        }
+      ],
+      "otherWarnings": 0,
+      "errors": 0,
+      "inkPixels": 32099,
+      "totalPixels": 1024000,
+      "hasInk": true,
+      "state": {
+        "innerW": 1280,
+        "innerH": 800,
+        "dpr": 1,
+        "asciiW": 1280,
+        "asciiH": 800,
+        "asciiColumns": 143,
+        "asciiRows": 78,
+        "bloomPassExists": true,
+        "bloomRendererPixelRatio": 1,
+        "compositeRendererPixelRatio": 1,
+        "fxComposerReadW": 143,
+        "fxComposerReadH": 78,
+        "compositeComposerReadW": 1280,
+        "compositeComposerReadH": 800,
+        "compositeComposerWidth": null,
+        "compositeComposerHeight": null,
+        "sceneFxW": null,
+        "sceneFxH": null,
+        "rendererDrawingBufferW": 143,
+        "rendererDrawingBufferH": 78,
+        "bloomOutputW": 1280,
+        "bloomOutputH": 800,
+        "bloomTextureW": 1280,
+        "bloomTextureH": 800,
+        "inkPixels": 32099,
+        "totalPixels": 1024000
+      },
+      "s7Dpr": null,
+      "s7CanvasW": null
+    },
+    {
+      "scenario": "S7",
+      "label": "1280x800 DPR=2 via CDP",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "warnings": 0,
+      "warningDetails": [],
+      "otherWarnings": 0,
+      "errors": 0,
+      "inkPixels": 62966,
+      "totalPixels": 2304000,
+      "hasInk": true,
+      "state": {
+        "innerW": 1280,
+        "innerH": 800,
+        "dpr": 2,
+        "asciiW": 1920,
+        "asciiH": 1200,
+        "asciiColumns": 143,
+        "asciiRows": 78,
+        "bloomPassExists": true,
+        "bloomRendererPixelRatio": 1.5,
+        "compositeRendererPixelRatio": 1.5,
+        "fxComposerReadW": 143,
+        "fxComposerReadH": 78,
+        "compositeComposerReadW": 1920,
+        "compositeComposerReadH": 1200,
+        "compositeComposerWidth": null,
+        "compositeComposerHeight": null,
+        "sceneFxW": null,
+        "sceneFxH": null,
+        "rendererDrawingBufferW": 143,
+        "rendererDrawingBufferH": 78,
+        "bloomOutputW": 1920,
+        "bloomOutputH": 1200,
+        "bloomTextureW": 1920,
+        "bloomTextureH": 1200,
+        "inkPixels": 62966,
+        "totalPixels": 2304000
+      },
+      "s7Dpr": 2,
+      "s7CanvasW": 1920
+    }
+  ]
+}

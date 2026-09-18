@@ -1,0 +1,122 @@
+{
+  "results": [
+    {
+      "name": "S1: texture.image === ascii.canvas",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "S2: toneMapping is 0 (NoToneMapping)",
+      "pass": true,
+      "detail": "toneMapping = 0"
+    },
+    {
+      "name": "S3: renderer.domElement === #ascii-background",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "S4: passes are [TexturePass,UnrealBloomPass,ShaderPass]",
+      "pass": true,
+      "detail": "got [\"TexturePass\",\"UnrealBloomPass\",\"ShaderPass\"]"
+    },
+    {
+      "name": "S4b: composer.passes[1] === composite.bloom",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "C1: Buffer is non-zero",
+      "pass": true,
+      "detail": "maxVal=1.06640625"
+    },
+    {
+      "name": "C2: ASCII canvas SAD=0",
+      "pass": true,
+      "detail": "SAD=0"
+    },
+    {
+      "name": "C3: Composer stable (FP noise OK)",
+      "pass": true,
+      "detail": "stabDiff=31439 tolPct=0.00768"
+    },
+    {
+      "name": "C4: Sanity >8 pixels",
+      "pass": true,
+      "detail": "brighterBy8=20814"
+    }
+  ],
+  "consoleMessages": [
+    {
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "warning",
+      "text": "Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently"
+    }
+  ],
+  "pageErrors": [],
+  "core": {
+    "W": 1280,
+    "H": 800,
+    "count": 1024000,
+    "asciiSAD": 0,
+    "asciiIdentical": true,
+    "maxVal": 1.06640625,
+    "meanA": 13.097081868812403,
+    "meanB": 12.21991238844113,
+    "darkCountB": 955455,
+    "darkMeanB": 5.9450841488360595,
+    "darkMeanDelta": 0.7098535202998988,
+    "brightCountB": 26991,
+    "brightMeanB": 169.7902333138558,
+    "brightMeanDelta": 3.931001296019364,
+    "brighterBy2": 108070,
+    "brighterBy8": 20814,
+    "brighterBy24": 0,
+    "darkerBy2": 0,
+    "stabDiff": 31439,
+    "stabilityOk": false,
+    "nonZeroBuf": true,
+    "hist": {
+      "0": 972266,
+      "4": 29247,
+      "8": 9753,
+      "12": 7633,
+      "16": 4287,
+      "20": 814
+    }
+  },
+  "structural": {
+    "texImageSame": true,
+    "toneMapping": 0,
+    "noToneMapping": true,
+    "domElementSame": true,
+    "passes": [
+      "TexturePass",
+      "UnrealBloomPass",
+      "ShaderPass"
+    ],
+    "bloomIdentity": true,
+    "rtW": 1280,
+    "rtH": 800,
+    "texType": 1016,
+    "asciiCanvasW": 1280,
+    "asciiCanvasH": 800,
+    "configBloom": {
+      "enabled": true,
+      "strength": 0.8,
+      "radius": 0.45,
+      "threshold": 0.7
+    }
+  }
+}

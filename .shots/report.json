@@ -1,0 +1,348 @@
+{
+  "results": [
+    {
+      "name": "1(a) Exactly one canvas in DOM",
+      "pass": true,
+      "detail": "Found 1 canvases"
+    },
+    {
+      "name": "1(a) Canvas is #ascii-background",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "1(a) Canvas has WebGL context",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "1(b) Bloom pass exists",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "1(b) Bloom enabled by default",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "1(b) Bloom config matches pass config",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "1(b) ASCII canvas exists and is offscreen",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "1(b) API limitation noted",
+      "pass": true,
+      "detail": "bloom.renderer and bloom.composer not exposed (only UnrealBloomPass)"
+    },
+    {
+      "name": "1(c/d) Scene renderer has ACES tone mapping",
+      "pass": true,
+      "detail": "toneMapping = 4"
+    },
+    {
+      "name": "1(d) No vignette in config.post",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "1(d) No grain in config.post",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "1(d) No flick in config.interact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "1(d) No damping in config.interact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "1(d) No deadzone in config.interact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "1(d) No returnOnRelease in config.interact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "1(d) No puppeteer in config.interact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "1(c) Source code uses NoToneMapping for bloom renderer",
+      "pass": true,
+      "detail": "Not found in postfx.js"
+    },
+    {
+      "name": "1(c) Bloom toggle works",
+      "pass": true,
+      "detail": "initial: true, after: false"
+    },
+    {
+      "name": "2(a) h1 selection is empty",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "2(b) h1 user-select is none",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "2(c) nav user-select is none",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "2(d) All links user-select is none",
+      "pass": true,
+      "detail": "Got: [\"none\",\"none\"]"
+    },
+    {
+      "name": "2(e) Links have pointer-events (clickable)",
+      "pass": true,
+      "detail": "Got: [\"auto\",\"auto\"]"
+    },
+    {
+      "name": "3(a) pointer.held true on down",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "3(a) Distance decreases on hold",
+      "pass": true,
+      "detail": "pre: 8.5000, held: 7.4805"
+    },
+    {
+      "name": "3(a) Held distance near expected",
+      "pass": true,
+      "detail": "expected ~7.48, got 7.4805"
+    },
+    {
+      "name": "3(a) Swing approximately doubles on hold",
+      "pass": true,
+      "detail": "preAngle: 0.5748, heldAngle: 1.1497, ratio: 2.0001"
+    },
+    {
+      "name": "3(a) Distance returns after release",
+      "pass": true,
+      "detail": "pre: 8.5000, post: 8.4997"
+    },
+    {
+      "name": "3(a) pointer.held false after release",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "3(b) No flicker on short tap",
+      "pass": true,
+      "detail": "Crossings: 0"
+    },
+    {
+      "name": "4(a) Both links have target=_blank",
+      "pass": true,
+      "detail": "Targets: _blank, _blank"
+    },
+    {
+      "name": "4(b) Links have noopener and noreferrer",
+      "pass": true,
+      "detail": "Rel: noopener noreferrer, noopener noreferrer"
+    },
+    {
+      "name": "4(c) Popup opened on click",
+      "pass": true,
+      "detail": "Popups: 1"
+    },
+    {
+      "name": "4(d) Original page did not navigate",
+      "pass": true,
+      "detail": "Original: http://localhost:5199/, Current: http://localhost:5199/"
+    }
+  ],
+  "consoleMessages": [
+    {
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x5c5c001ac400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x5c5c00b4a400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x5c5c001ac400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x5c5c00b4a400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+    }
+  ],
+  "pageErrors": [],
+  "cameraPreHold": {
+    "x": 4.621328687294208,
+    "y": 0,
+    "z": 7.133955506168481,
+    "dist": 8.5,
+    "angle": 0.5748223837507709,
+    "held": false
+  },
+  "cameraHeld": {
+    "x": 6.827087094950603,
+    "y": 0,
+    "z": 3.0575197800158067,
+    "dist": 7.480477618924406,
+    "angle": 1.149730703592865,
+    "held": true
+  },
+  "cameraPostHold": {
+    "dist": 8.499685178946217,
+    "angle": 0.5751774726425984,
+    "held": false
+  },
+  "shortTapSeries": [
+    {
+      "time": 0,
+      "dist": 8.235577611952987
+    },
+    {
+      "time": 12.299999952316284,
+      "dist": 8.325740114575437
+    },
+    {
+      "time": 97.70000004768372,
+      "dist": 8.38510165518564
+    },
+    {
+      "time": 185.79999995231628,
+      "dist": 8.430310631119855
+    },
+    {
+      "time": 274,
+      "dist": 8.454050278892487
+    },
+    {
+      "time": 365.10000002384186,
+      "dist": 8.469703027824954
+    },
+    {
+      "time": 456.5,
+      "dist": 8.481623957479373
+    },
+    {
+      "time": 541.2999999523163,
+      "dist": 8.487889803553125
+    },
+    {
+      "time": 631.1000000238419,
+      "dist": 8.4920151357627
+    },
+    {
+      "time": 720.5,
+      "dist": 8.495156935026435
+    },
+    {
+      "time": 807.2999999523163,
+      "dist": 8.496806722626177
+    },
+    {
+      "time": 893,
+      "dist": 8.497895563407466
+    },
+    {
+      "time": 979,
+      "dist": 8.498612438653566
+    },
+    {
+      "time": 1064.7000000476837,
+      "dist": 8.499085110714693
+    }
+  ],
+  "canvasInfo": {
+    "totalCanvases": 1,
+    "hasAsciiBackground": true,
+    "isWebGL": true
+  },
+  "bloomInfo": {
+    "bloomExists": true,
+    "bloomEnabled": true,
+    "bloomStrength": 0.8,
+    "bloomRadius": 0.45,
+    "bloomThreshold": 0.7,
+    "configBloom": {
+      "enabled": true,
+      "strength": 0.8,
+      "radius": 0.45,
+      "threshold": 0.7
+    },
+    "asciiCanvasExists": true,
+    "asciiCanvasIsOffscreen": true
+  },
+  "toneMappingInfo": {
+    "sceneRendererToneMapping": 4,
+    "hasVignette": false,
+    "hasGrain": false,
+    "postKeys": [
+      "bloom",
+      "aberration",
+      "ramp",
+      "invert",
+      "quality"
+    ],
+    "interactKeys": [
+      "enabled",
+      "strength",
+      "tilt",
+      "zoom",
+      "holdStrength",
+      "spring",
+      "invert"
+    ]
+  },
+  "selectInfo": {
+    "h1Selected": "",
+    "h1UserSelect": "none",
+    "navUserSelect": "none",
+    "linkUserSelects": [
+      "none",
+      "none"
+    ],
+    "linkPointerEvents": [
+      "auto",
+      "auto"
+    ]
+  },
+  "linkInfo": [
+    {
+      "href": "https://github.com/WanTheDev",
+      "text": "GitHub",
+      "target": "_blank",
+      "rel": "noopener noreferrer"
+    },
+    {
+      "href": "https://wanthedev.itch.io/",
+      "text": "itch.io",
+      "target": "_blank",
+      "rel": "noopener noreferrer"
+    }
+  ]
+}

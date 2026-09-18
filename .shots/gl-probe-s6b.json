@@ -1,0 +1,33 @@
+{
+  "s6b": {
+    "shrinkWarnings": 0,
+    "growWarnings": 0,
+    "total": 0
+  },
+  "s6c": {
+    "growWarnings": 39
+  },
+  "s6d": {
+    "warnings": 40,
+    "firstWarningOffsetMs": 42,
+    "lastWarningOffsetMs": 2957,
+    "samples": 290,
+    "mismatchSamples": 1,
+    "mismatchSpanMs": 0,
+    "firstMismatch": {
+      "n": 29,
+      "drawing": "1x1",
+      "layout": "1280x800",
+      "inner": "1280x800",
+      "asciiCanvas": "1x1"
+    },
+    "lastMismatch": {
+      "n": 29,
+      "drawing": "1x1",
+      "layout": "1280x800",
+      "inner": "1280x800",
+      "asciiCanvas": "1x1"
+    },
+    "warningWithinMismatchWindow": true
+  }
+}

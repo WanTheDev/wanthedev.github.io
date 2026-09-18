@@ -1,0 +1,97 @@
+{
+  "warningCount": 24,
+  "firstWarningTs": 1789731920795,
+  "lastWarningTs": 1789731923242,
+  "beforeJumpTs": 1789731920758,
+  "warningsBeforeJump": 0,
+  "warningsAfterJump": 24,
+  "traceCount": 1,
+  "traceFirst": [
+    {
+      "setSize": "composite",
+      "w": 1280,
+      "h": 800,
+      "pr": 1,
+      "ts": 1789731920783
+    }
+  ],
+  "traceAroundJump": [
+    {
+      "setSize": "composite",
+      "w": 1280,
+      "h": 800,
+      "pr": 1,
+      "ts": 1789731920783
+    }
+  ],
+  "correlated": [
+    {
+      "warningTs": 1789731920795,
+      "near": [
+        {
+          "setSize": "composite",
+          "w": 1280,
+          "h": 800,
+          "pr": 1,
+          "ts": 1789731920783
+        }
+      ]
+    },
+    {
+      "warningTs": 1789731920948,
+      "near": []
+    },
+    {
+      "warningTs": 1789731921055,
+      "near": []
+    },
+    {
+      "warningTs": 1789731921145,
+      "near": []
+    },
+    {
+      "warningTs": 1789731921236,
+      "near": []
+    },
+    {
+      "warningTs": 1789731921328,
+      "near": []
+    },
+    {
+      "warningTs": 1789731921437,
+      "near": []
+    },
+    {
+      "warningTs": 1789731921539,
+      "near": []
+    },
+    {
+      "warningTs": 1789731921648,
+      "near": []
+    },
+    {
+      "warningTs": 1789731921736,
+      "near": []
+    },
+    {
+      "warningTs": 1789731921848,
+      "near": []
+    },
+    {
+      "warningTs": 1789731921960,
+      "near": []
+    },
+    {
+      "warningTs": 1789731922068,
+      "near": []
+    },
+    {
+      "warningTs": 1789731922178,
+      "near": []
+    },
+    {
+      "warningTs": 1789731922281,
+      "near": []
+    }
+  ]
+}
