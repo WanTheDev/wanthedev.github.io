@@ -10,7 +10,7 @@
 export const glyphPresets = {
   classic: " .,:;irsWA253NTHE#9DEV",
   compact: " .-+=#@",
-  wanTheDev: " wantheDEV",
+  wanTheDev: "wanthedevWANTHEDEV",
   moonPhases: [" ", "🌑", "🌒", "🌓", "🌔", "🌕"],
 };
 
@@ -37,7 +37,7 @@ export const config = {
     contrast: 1.15,
     // Samples at or below this source luminance are empty, even if the first
     // glyph is a visible character. Raise it if the scene/grade lifts the void.
-    voidLuminance: 0.004,
+    voidLuminance: 0.0034,
     invert: false,
     fps: 30,
     spriteScale: 0.9,
@@ -48,14 +48,14 @@ export const config = {
     // Exponential scene fog. The effective density follows the camera's
     // framing distance so portrait windows keep the same haze as landscape.
     // These values are read live from asciiPortfolio.config.scene.fog.
-    fog: { enabled: true, color: 0x050608, density: 0.075 },
+    fog: { enabled: false, color: 0x050608, density: 0.075 },
     objectColor: 0xdde7f0,
     particleColor: 0x69727f,
-    particleCount: 250,
+    particleCount: 100,
     // Camera distance floor: 16:9 and any wider window use exactly this. On
     // narrower windows the distance is derived from the object's bounding sphere
     // so the knot is never cropped (see `src/scene.js`).
-    cameraZ: 10.5,
+    cameraZ: 0,
     // Group-LOCAL point the camera aims at — the frame centre. `null` (the
     // correct default) derives it from the knot + halo vertex mean, which keeps
     // the knot centred at every window shape. A THREE.Vector3 or `{ x, y, z }`
@@ -72,7 +72,7 @@ export const config = {
     // Multiplies every light intensity. The additive halo mesh around the knot
     // is what this mostly drives; bloom no longer reads the scene at all, it
     // runs on the finished ASCII canvas (see `post.bloom`).
-    lightScale: 1.6,
+    lightScale: 0.65,
   },
   post: {
     // The scene renders through the colour grade (ramp + aberration + invert);
@@ -80,7 +80,7 @@ export const config = {
     // ASCII canvas, so the glow sits on the glyphs themselves rather than on
     // the scene behind them. threshold is in plain sRGB luminance of the glyph
     // colours (near-white on near-black) and no longer pairs with lightScale.
-    bloom: { enabled: true, strength: 0.3, radius: 0.2, threshold: 0.3 },
+    bloom: { enabled: true, strength: 0.4, radius: 0.5, threshold: 0.3 },
     // Colour fringing: red and blue shift radially by this fraction of the
     // half-frame, so the corners separate about twice as much as the centre.
     aberration: 0.01,
@@ -96,7 +96,7 @@ export const config = {
     // The scene renders at `fraction` times the glyph grid, and the ASCII layer
     // averages each cell down to one colour. 1 oversamples a cell by the aspect
     // of its cell box; lower is cheaper and slightly softer, higher is sharper.
-    quality: { fraction: 1 },
+    quality: { fraction: 1.5 },
   },
 
   // Camera handling for pointer and touch: the camera swings on a sphere around
@@ -105,11 +105,11 @@ export const config = {
   // (`zoom`) and doubles the swing (`holdStrength`) for as long as it is held.
   interact: {
     enabled: true,
-    strength: 0.45, // max camera swing, in radians
+    strength: 0.25, // max camera swing, in radians
     tilt: 1, // vertical swing, as a fraction of strength
     zoom: 0.12, // camera moves this fraction closer while the pointer is held
     holdStrength: 2, // rotation strength multiplier while held - doubles the drag
-    spring: 4, // swing response speed in 1/s; higher = snappier
+    spring: 3, // swing response speed in 1/s; higher = snappier
     invert: false, // mirror the horizontal swing
   },
 

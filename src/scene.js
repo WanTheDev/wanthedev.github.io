@@ -61,7 +61,7 @@ export function createScene(
   group.rotation.set(-0.18, 0.35, 0.08);
   scene.add(group);
 
-  const geometry = new TorusKnotGeometry(1.9, 0.4, 90, 4, 2, 3);
+  const geometry = new TorusKnotGeometry(1.9, 0.35, 96, 6, 2, 3);
   const material = new MeshStandardMaterial({
     color: sceneOptions.objectColor,
     roughness: 0.38,
@@ -94,7 +94,10 @@ export function createScene(
   // `sceneOptions.cameraTarget` overrides it, in the same local space.
   const localTarget = new Vector3();
   {
-    let sumX = 0, sumY = 0, sumZ = 0, count = 0;
+    let sumX = 0,
+      sumY = 0,
+      sumZ = 0,
+      count = 0;
     const knotPos = geometry.attributes.position;
     for (let i = 0; i < knotPos.count; i++) {
       sumX += knotPos.getX(i);
@@ -157,7 +160,8 @@ export function createScene(
     }
     if (!scene.fog) scene.fog = new FogExp2(fog.color, 0);
     scene.fog.color.set(fog.color);
-    scene.fog.density = Math.max(0, fog.density) * (sceneOptions.cameraZ / framingDistance);
+    scene.fog.density =
+      Math.max(0, fog.density) * (sceneOptions.cameraZ / framingDistance);
   }
 
   function frameDistance(aspect) {
@@ -214,7 +218,12 @@ export function createScene(
   // pointer-pull zoom factor.
   const rig = { angleX: 0, angleY: 0, distance: 1 };
 
-  function resize(width, height, fraction = 1, viewportAspect = width / height) {
+  function resize(
+    width,
+    height,
+    fraction = 1,
+    viewportAspect = width / height,
+  ) {
     // Clamp to avoid NaN / degenerate draw calls from zero or negative sizes.
     width = Math.max(1, Math.floor(width));
     height = Math.max(1, Math.floor(height));
@@ -236,7 +245,14 @@ export function createScene(
     // further left.
     const off = sceneOptions.framingOffset;
     if (off && (off.x || off.y)) {
-      camera.setViewOffset(viewportAspect, 1, -off.x * viewportAspect, -off.y, viewportAspect, 1);
+      camera.setViewOffset(
+        viewportAspect,
+        1,
+        -off.x * viewportAspect,
+        -off.y,
+        viewportAspect,
+        1,
+      );
     } else {
       camera.clearViewOffset();
     }
