@@ -115,5 +115,11 @@ single GPU re-allocation instead of hundreds), and `devicePixelRatio` changes
 (browser zoom, dragging to a different-DPI monitor) are tracked automatically
 via `matchMedia` — no manual refresh needed.
 
+Browser zoom scales the ASCII cell size in CSS pixels so the same physical
+window keeps approximately the same glyph grid. Resizing the actual window
+still adds or removes rows and columns. The displayed canvas holds its last
+rendered size while a resize is pending, preventing a stretched intermediate
+frame.
+
 `asciiPortfolio.scene`, `camera`, `renderer`, `fx`, `bloom`, `composite`,
 `ascii`, and `pointer` expose the current foundation for further experiments.

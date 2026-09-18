@@ -205,7 +205,7 @@ export function createScene(
   // pointer-pull zoom factor.
   const rig = { angleX: 0, angleY: 0, distance: 1 };
 
-  function resize(width, height, fraction = 1) {
+  function resize(width, height, fraction = 1, viewportAspect = width / height) {
     // Clamp to avoid NaN / degenerate draw calls from zero or negative sizes.
     width = Math.max(1, Math.floor(width));
     height = Math.max(1, Math.floor(height));
@@ -213,16 +213,21 @@ export function createScene(
     // fraction of the glyph grid, so a bigger canvas costs no extra fill.
     renderer.setPixelRatio(Math.max(0.25, fraction));
     renderer.setSize(width, height, false);
-    camera.aspect = width / height;
+    // The render target is one pixel per glyph, but glyph cells are taller
+    // than they are wide. Project for the displayed viewport, not the grid's
+    // column/row ratio, or the final ASCII image stretches the scene.
+    camera.aspect = viewportAspect;
     // Apply framing offset (from config.framingOffset) as a screen-space nudge.
-    // `setViewOffset` shifts the frustum in SCREEN space, so the offset is the
-    // same fraction of the frame at every aspect ratio. Measured convention:
+    // `setViewOffset` overwrites camera.aspect with fullWidth/fullHeight, so
+    // its full frame must use the displayed aspect too (not the glyph grid).
+    // The offset is the same fraction of the frame at every aspect ratio.
+    // Measured convention:
     // POSITIVE x moves the object right, POSITIVE y moves it down — the value is
     // negated below precisely because a frustum shifted +x shows the object
     // further left.
     const off = sceneOptions.framingOffset;
     if (off && (off.x || off.y)) {
-      camera.setViewOffset(width, height, -off.x * width, -off.y * height, width, height);
+      camera.setViewOffset(viewportAspect, 1, -off.x * viewportAspect, -off.y, viewportAspect, 1);
     } else {
       camera.clearViewOffset();
     }

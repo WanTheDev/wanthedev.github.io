@@ -42,27 +42,42 @@ scheduleResize.pending = false;
 let appliedWidth = -1;
 let appliedHeight = -1;
 let appliedDpr = -1;
+let appliedZoomDpr = -1;
+// DPR changes with browser zoom even when the physical window has not moved.
+// Keep the initial display DPR as the grid's reference; the capped DPR below
+// is only for the canvas backing stores and must not affect cell density.
+const referenceDpr = window.devicePixelRatio || 1;
+
+function viewportSize() {
+  const zoomDpr = window.devicePixelRatio || 1;
+  return {
+    w: Math.max(1, window.innerWidth),
+    h: Math.max(1, window.innerHeight),
+    dpr: Math.min(zoomDpr, config.performance.maxDevicePixelRatio),
+    zoomDpr,
+  };
+}
 
 function resize() {
   // Guard: a 0x0 or extreme window must not drive a NaN draw call.
-  const w = Math.max(1, window.innerWidth);
-  const h = Math.max(1, window.innerHeight);
-  const dpr = Math.min(window.devicePixelRatio || 1, config.performance.maxDevicePixelRatio);
-  if (w === appliedWidth && h === appliedHeight && dpr === appliedDpr) return;
-  applySize(w, h, dpr);
+  const { w, h, dpr, zoomDpr } = viewportSize();
+  if (w === appliedWidth && h === appliedHeight && dpr === appliedDpr
+    && zoomDpr === appliedZoomDpr) return;
+  applySize(w, h, dpr, zoomDpr);
 }
 
 // The resize work itself, split out so a non-size change that still moves the
 // glyph grid (a `cellSize` edit via `set`) can force it without pretending the
 // window moved.
-function applySize(w, h, dpr) {
+function applySize(w, h, dpr, zoomDpr) {
   appliedWidth = w;
   appliedHeight = h;
   appliedDpr = dpr;
-  ascii.resize(w, h, dpr);
+  appliedZoomDpr = zoomDpr;
+  ascii.resize(w, h, dpr, referenceDpr / zoomDpr);
   // The ASCII layer averages each glyph cell down to one colour, so rendering
   // the scene at its cell grid is all the detail this page can show.
-  world.resize(ascii.columns, ascii.rows, config.post.quality.fraction);
+  world.resize(ascii.columns, ascii.rows, config.post.quality.fraction, w / h);
   bloom.setSize(w, h, dpr);
 }
 
@@ -116,11 +131,8 @@ async function setAsciiOptions(options) {
   await ascii.setOptions(options);
   // Force the pass: the glyph options may have changed `cellSize`, which moves
   // the columns/rows (and so the scene render size) without the window moving.
-  applySize(
-    Math.max(1, window.innerWidth),
-    Math.max(1, window.innerHeight),
-    Math.min(window.devicePixelRatio || 1, config.performance.maxDevicePixelRatio),
-  );
+  const { w, h, dpr, zoomDpr } = viewportSize();
+  applySize(w, h, dpr, zoomDpr);
   render();
   start();
 }
@@ -144,15 +156,15 @@ window.addEventListener("resize", scheduleResize);
 // monitor, OS scale change). The only path that re-sizes backing stores is a
 // window 'resize' event, which a DPR-only change does not fire.
 if (window.matchMedia) {
-  const dprQuery = window.matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`);
+  let dprQuery = window.matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`);
   // Older Safari only has addListener; fall back gracefully.
   const dprHandler = () => {
     // Re-arm for the new DPR so subsequent changes are also caught.
-    const nextQuery = window.matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`);
-    if (nextQuery.addEventListener) nextQuery.addEventListener("change", dprHandler);
-    else if (nextQuery.addListener) nextQuery.addListener(dprHandler);
     if (dprQuery.removeEventListener) dprQuery.removeEventListener("change", dprHandler);
     else if (dprQuery.removeListener) dprQuery.removeListener(dprHandler);
+    dprQuery = window.matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`);
+    if (dprQuery.addEventListener) dprQuery.addEventListener("change", dprHandler);
+    else if (dprQuery.addListener) dprQuery.addListener(dprHandler);
     scheduleResize();
   };
   if (dprQuery.addEventListener) dprQuery.addEventListener("change", dprHandler);

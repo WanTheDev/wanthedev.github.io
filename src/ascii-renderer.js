@@ -44,6 +44,7 @@ export class AsciiRenderer {
     this.width = 1;
     this.height = 1;
     this.devicePixelRatio = 1;
+    this.cellScale = 1;
     this.columns = 1;
     this.rows = 1;
     this.imageGlyphs = [];
@@ -74,7 +75,7 @@ export class AsciiRenderer {
       this.imageGlyphs = [];
     }
 
-    this.resize(this.width, this.height, this.devicePixelRatio);
+    this.resize(this.width, this.height, this.devicePixelRatio, this.cellScale);
   }
 
   updatePalette() {
@@ -85,7 +86,7 @@ export class AsciiRenderer {
     );
   }
 
-  resize(width, height, devicePixelRatio = 1) {
+  resize(width, height, devicePixelRatio = 1, cellScale = 1) {
     // Coerce to numbers and clamp to sane minimums; NaN inputs must not
     // produce a NaN backing store that breaks the next draw.
     width = Number(width);
@@ -97,9 +98,12 @@ export class AsciiRenderer {
     this.width = Math.floor(width);
     this.height = Math.floor(height);
     this.devicePixelRatio = devicePixelRatio;
+    this.cellScale = cellScale;
 
-    const cellWidth = this.options.cellSize;
-    const cellHeight = this.options.cellSize * this.options.lineHeight;
+    // Browser zoom shrinks the CSS viewport and raises DPR. Shrink the cell
+    // in CSS pixels by the same factor so the grid retains its character count.
+    const cellWidth = this.options.cellSize * this.cellScale;
+    const cellHeight = cellWidth * this.options.lineHeight;
     this.columns = Math.max(1, Math.ceil(this.width / cellWidth));
     this.rows = Math.max(1, Math.ceil(this.height / cellHeight));
 
@@ -146,8 +150,8 @@ export class AsciiRenderer {
     context.fillStyle = options.colors.background;
     context.fillRect(0, 0, this.width, this.height);
 
-    const cellWidth = options.cellSize;
-    const cellHeight = options.cellSize * options.lineHeight;
+    const cellWidth = options.cellSize * this.cellScale;
+    const cellHeight = cellWidth * options.lineHeight;
     const isImageMode = options.glyphs.mode === "image";
     const glyphs = isImageMode
       ? this.imageGlyphs
@@ -159,7 +163,7 @@ export class AsciiRenderer {
 
     context.textAlign = "center";
     context.textBaseline = "middle";
-    context.font = `${options.cellSize}px ${options.fontFamily}`;
+    context.font = `${cellWidth}px ${options.fontFamily}`;
     // In `source` mode the glyph takes the sampled scene colour, so the
     // post-processing hues (ramp, aberration, bloom) survive the ASCII pass.
     const tint = options.colors.mode === "source";

@@ -213,6 +213,10 @@ export function createBloomComposite(canvas, sourceCanvas, options) {
     renderer.setSize(width, height, false);
     composer.setPixelRatio(pixelRatio);
     composer.setSize(width, height);
+    // A fluid CSS box would stretch the previous frame during a resize drag
+    // until the next animation frame reallocates and redraws the buffers.
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
   }
 
   function render() {
